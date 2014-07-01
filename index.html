@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Simpleblend</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+	<link href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/styles.min.css" rel="stylesheet">
+	<noscript>link href="css/svgs/icons.fallback.css" rel="stylesheet"></noscript>
+
+</head>
+<body ng-controller="mainCtrl">
+	<nav class="container-fluid navbar-fixed-top nav nav-main" ui-scrollfix="+320">
+		<a href="" class="pull-left logo-primary">{{ app.name }}</a>
+		<ul class="pull-right list-inline text-right">
+			<li><a href="#about" du-smooth-scroll>About</a></li>
+			<li><a href="#work" du-smooth-scroll>Work</a></li>
+			<li><a href="#services" du-smooth-scroll>Services</a></li>
+			<li><a href="#contact" du-smooth-scroll>Contact</a></li>
+		</ul>
+	</nav>
+
+	<landing></landing>
+	<about></about>
+	<work></work>
+	<services></services>
+	<contact></contact>
+
+	<script type="text/javascript" src="js/app.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+// Navigation
+.nav {
+	padding: 3rem;
+	ul, li {
+		margin: 0;
+		padding: 0;
+	}
+}
+.nav-main{
+	background-color: transparent;
+	position: fixed;
+	// padding: 2.5em;
+
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out; /* IE10 is actually unprefixed */
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+
+	ul, li:last-child a {
+		padding-right: 0;
+	}
+	ul a{
+		padding: 2rem;
+		font-size: 1.7rem;
+		cursor: pointer;
+		&:hover{
+			color: $color-3;
+		}
+	}
+}
+
+// Utility classes for structure
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Page specific structure
+.landing {
+	height:100%;
+	padding-top: 26rem;
+	background-image: url('../imgs/bg2.jpg'); // 2, 5, 6
+	background-size: cover;
+	h1 {
+		font-size: 7.5rem;
+		// text-shadow: 0px 0px 0 $color-4, 4px 5px 0 rgba(0,0,0,0.25);
+		text-shadow: 4px 3px 0px $color-4, 9px 8px 0px rgba(0, 0, 0, 0.15);
+
+	}
+	.btn {
+		margin-top: 5rem;
+	}
+}
+.page {
+	padding: 6rem;
+	min-height: 100%;
+}
+.about {
+	background-color: $color-1;
+	h1 {
+
+	}
+}
+.work {
+	background-color: $color-2;
+	h1 {
+
+	}
+	ul {
+		width: 100%;
+		padding: 0;
+		margin: 0 auto;
+	}
+}
+.services {
+	background-color: $color-3;
+	h1 {
+
+	}
+}
+.contact {
+	position: relative;
+	background: $color-4;
+	// background: $color-4 url('../imgs/contact.jpg') no-repeat;
+	// background-size: contain;
+	i {
+		position: absolute;
+		bottom: 0;
+	}
+	.col-sm-10 {
+		margin: 0 7.8%;
+		padding: 0;
+	}
+	h1 {
+
+	}
+}
+.icon-logo {
+	background-size: 60%;
+	background-position: 50%;
+	background-color: rgba(14, 21, 25, 0.6);
+	padding: 6em 0;
+	margin: 0 1% 1% 0;
+
+}
+.icon-logo.col-sm-3 {
+	width: 24%;
+}
+
+.icon-logo:nth-child(4n) {
+	margin-right: 0;
+}
+.icon-logo:hover {
+	background-color: rgba(14, 21, 25, 0.2);
+	cursor: pointer;
+}
+.icon-logo-blueclawco {
+	background-size: 20%;
+}
