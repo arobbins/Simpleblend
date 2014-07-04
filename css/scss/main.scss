@@ -1,4 +1,3 @@
-@import 'variables';
 html {
 	font-size: 62.5%;
 	height: 100%;
@@ -6,11 +5,12 @@ html {
 body {
 	margin: 0;
 	font-size: 1.8rem;
-	font-family: $font-secondary;
+	font-family: 'PT Sans', Helvetica, Sans-serif;
 	height: 100%;
 	perspective: 1200px;
    transform-style: preserve-3d;
 }
+@import 'variables';
 @import 'resets';
 @import 'structure';
 @import 'buttons';
