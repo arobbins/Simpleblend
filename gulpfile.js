@@ -1,5 +1,5 @@
 /* ====================================================================
-Variables
+Definitions
 ==================================================================== */
 var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
@@ -14,37 +14,46 @@ var gulp = require('gulp'),
 	svgo = require('imagemin-svgo'),
 	paths = {
 		html: [
-			'./**/*.html'
+			'./index.html',
+			'./views/*.html'
 		],
-		sass: [
-			'css/scss/*.scss'
-		],
-		imgs: {
-			'src' : 'imgs/*',
-			'dest' : 'imgs'
+		sass: {
+			main: 'css/scss/main.scss',
+			all: 'css/scss/*.scss'
 		},
-		styles: [
-			'css/styles.min.css'
-		],
-		scripts: [
-			// Order matters for vendor libs
-			'js/vendor/angular.min.js',
-			'js/vendor/angular-ui-router.min.js',
-			'js/vendor/angular-scroll.min.js',
-			'js/vendor/ui-bootstrap-tpls-0.11.0.min.js',
-			'js/vendor/ui-utils.min.js',
-
-			'js/app/app.js',
-			'js/app/controllers/*.js',
-			'js/app/services/*.js',
-			'js/app/directives/*.js'
-		]
+		css: {
+			dest: 'css',
+			main: 'css/styles.min.css'
+		},
+		js: {
+			vendor: [
+				// Order matters for vendor libraries
+				'js/vendor/angular.min.js',
+				'js/vendor/angular-ui-router.min.js',
+				'js/vendor/angular-scroll.min.js',
+				'js/vendor/ui-bootstrap-tpls-0.11.0.min.js',
+				'js/vendor/ui-utils.min.js',
+				'js/vendor/svg.logos.js'
+			],
+			local: [
+				'js/app/app.js',
+				'js/app/controllers/*.js',
+				'js/app/services/*.js',
+				'js/app/directives/*.js'
+			],
+			dest: 'js',
+			main: 'scripts.min.js'
+		},
+		images: {
+			'src': 'images/*',
+			'dest': 'images'
+		}
 	};
+	paths.js.all = paths.js.vendor.concat(paths.js.local);
 
 /* ====================================================================
-Local Web Server
+Server
 ==================================================================== */
-
 gulp.task('browser-sync', function() {
 	browserSync.init(null, {
 		server: {
@@ -54,55 +63,76 @@ gulp.task('browser-sync', function() {
 });
 
 /* ====================================================================
-Stylesheets
+Styles
 ==================================================================== */
-
 gulp.task('styles', function() {
-    gulp.src('css/scss/main.scss')
-		.pipe(sass({includePaths: ['scss']}))
+	gulp.src(paths.sass.main)
+		.pipe(sass({
+			includePaths: ['scss']
+		}))
 		.pipe(minifyCSS())
-		.pipe(rename('styles.min.css'))
-		.pipe(gulp.dest('css'))
+		.pipe(rename(paths.css.main))
+		.pipe(gulp.dest(paths.css.dest))
 		.pipe(browserSync.reload({
-			stream:true
+			stream: true
 		}));
+});
+
+/* ====================================================================
+Linting
+==================================================================== */
+gulp.task('linting', function() {
+	return gulp.src(paths.js.local)
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'));
 });
 
 /* ====================================================================
 Scripts
 ==================================================================== */
-
-gulp.task('scripts', function() {
-  return gulp.src(paths.scripts)
-    .pipe(uglify())
-    .pipe(concat('scripts.min.js'))
-    .pipe(gulp.dest('js'))
-    .pipe(browserSync.reload({
-    	stream:true
-    }));
+gulp.task('scripts', ['linting'], function() {
+	return gulp.src(paths.js.all)
+		.pipe(uglify())
+		.pipe(concat(paths.js.main))
+		.pipe(gulp.dest(paths.js.dest))
+		.pipe(browserSync.reload({
+			stream: true
+		}));
 });
 
 /* ====================================================================
 Images
 ==================================================================== */
-
 gulp.task('images', function() {
-	return gulp.src(paths.imgs.src)
-	  .pipe(imagemin({
-	      progressive: true,
-	      svgoPlugins: [{removeViewBox: false}],
-	      use: [
-	      	pngcrush(),
-	      	svgo()
-	      ]
-	  }))
-	  .pipe(gulp.dest(paths.imgs.dest));
+    return gulp.src(paths.images.src)
+		.pipe(imagemin({
+			progressive: true,
+			svgoPlugins: [{
+				removeViewBox: false
+			}],
+			use: [
+				pngcrush(),
+				svgo()
+			]
+		}))
+		.pipe(gulp.dest(paths.images.dest));
+});
+
+/* ====================================================================
+HTML
+==================================================================== */
+gulp.task('html', function() {
+	return gulp.src(paths.html)
+		.pipe(browserSync.reload({
+			stream: true
+		}));
 });
 
 /* ====================================================================
 Tying everything together...
 ==================================================================== */
-
-gulp.task('default', ['styles', 'scripts', 'images', 'browser-sync'], function() {
-	gulp.watch([paths.sass, paths.scripts, paths.html], ['styles', 'scripts']);
+gulp.task('default', ['browser-sync', 'styles', 'linting', 'scripts', 'images', 'html'], function() {
+	gulp.watch([paths.sass.all], ['styles']);
+	gulp.watch([paths.js.all], ['linting', 'scripts']);
+	gulp.watch([paths.html], ['html']);
 });

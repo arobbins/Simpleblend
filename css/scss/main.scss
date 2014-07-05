@@ -8,10 +8,10 @@ body {
 	font-family: 'PT Sans', Helvetica, Sans-serif;
 	height: 100%;
 	perspective: 1200px;
-   transform-style: preserve-3d;
 }
-@import 'variables';
 @import 'resets';
+@import 'variables';
+@import 'mixins';
 @import 'structure';
 @import 'buttons';
 @import 'type';

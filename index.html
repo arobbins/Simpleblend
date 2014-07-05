@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html ng-app="app">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Simpleblend</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-	<link href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-	<link href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/styles.min.css" rel="stylesheet">
-	<noscript>link href="css/svgs/icons.fallback.css" rel="stylesheet"></noscript>
-
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Simpleblend</title>
+   <meta name="description">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="http://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet" type="text/css">
+   <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel=stylesheet type="text/css">
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+   <link rel="stylesheet" href="css/styles.min.css">
+   <noscript>link href="css/svgs/icons.fallback.css" rel="stylesheet"></noscript>
 </head>
+
 <body ng-controller="mainCtrl">
-	<nav class="container-fluid navbar-fixed-top nav nav-main" ui-scrollfix="+320">
-		<a href="" class="pull-left logo-primary">{{ app.name }}</a>
-		<ul class="pull-right list-inline text-right">
-			<li><a href="#about" du-smooth-scroll>About</a></li>
-			<li><a href="#work" du-smooth-scroll>Work</a></li>
-			<li><a href="#services" du-smooth-scroll>Services</a></li>
-			<li><a href="#contact" du-smooth-scroll>Contact</a></li>
-		</ul>
-	</nav>
+   <!--
 
-	<landing></landing>
-	<about></about>
-	<work></work>
-	<services></services>
-	<contact></contact>
+   ___| _)                  |        |     |                   |
+ \___ \  |  __ `__ \  __ \  |   _ \  __ \  |   _ \  __ \    _` |
+       | |  |   |   | |   | |   __/  |   | |   __/  |   |  (   |
+ _____/ _| _|  _|  _| .__/ _| \___| _.__/ _| \___| _|  _| \__,_|
+                     _|
 
+I'm assuming if you're reading this, we're of similar ilk. If you or your company is in need of any help I'm always looking for new opportunities! Definitely don't hesitate to get in touch, even if to just say hi. Hope to talk to you soon!
 
-	<script type="text/javascript" src="js/scripts.min.js"></script>
+Cheers,
+
+Andrew Robbins
+Owner, Simpleblend
+arobbins@simpleblend.net
+
+-->
+   <nav class="container-fluid navbar-fixed-top nav nav-has-scrollfix" ui-scrollfix="+320">
+      <div class="row"><a href="/" class="col-3-sm pull-left logo">{{ app.name }}</a>
+         <ul class="col-9-sm pull-right nav-list">
+            <li class="nav-item">
+               <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+               <a href="#work" class="nav-link">Work</a>
+            </li>
+            <li class="nav-item">
+               <a href="#services" class="nav-link">Services</a>
+            </li>
+            <li class=nav-item>
+               <a href="#contact" class="nav-link">Contact</a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+   <landing></landing>
+   <about></about>
+   <work></work>
+   <services></services>
+   <contact></contact>
+   <script type="text/javascript" src="js/scripts.min.js"></script>
 </body>
+
 </html>

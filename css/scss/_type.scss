@@ -1,44 +1,40 @@
-h1, h2, h3{
-	letter-spacing: 0.1rem;
-	font-family: 'Arvo', serif;
-
+h1, h2, h3 {
+    letter-spacing: 0.1rem;
+    font-family:'Arvo', serif;
 }
 h1 {
-	font-size: 4rem;
-	margin-top: 0;
+    font-size: 4rem;
+    margin-top: 0;
 }
 h2 {
-	font-size: 2.2rem;
+    font-size: 2.2rem;
 }
 h3 {
-	font-size: 1.9rem;
+    font-size: 1.9rem;
 }
 p, a, li, em, strong, b, i, span {
-	letter-spacing: 0.06rem;
+    letter-spacing: 0.06rem;
 }
 a {
-	color: $color-light;
+    color: $color-light;
 }
 a:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
-
-.landing, .contact, .services, .work {
-	color: $color-light;
+.page-landing, .page-contact, .page-services, .page-work {
+    color: $color-light;
 }
-.landing h2 {
-	letter-spacing: 0.3rem;
+.page-landing h2 {
+    letter-spacing: 0.3rem;
 }
-
-// Logo
-.logo-primary {
-	font-size: 2rem;
-	&:hover {
-		color: $color-light;
-	}
+.logo {
+    font-size: 2rem;
+    &:hover {
+        color: $color-light;
+    }
 }
-.logo-secondary {
-	&:hover {
-		color: $color-primary;
-	}
+.logo {
+    &:hover {
+        color: $color-primary;
+    }
 }

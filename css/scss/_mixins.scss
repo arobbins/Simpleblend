@@ -1,0 +1,8 @@
+// Utilities
+.center {
+	display: block;
+	margin: 0 auto;
+}
+.drop-shadow {
+	text-shadow: 4px 3px 0px $color-4, 7px 6px 0px rgba(0, 0, 0, 0.15);
+}

@@ -20,5 +20,10 @@
 		-ms-transition: all 0.3s ease-out; /* IE10 is actually unprefixed */
 		-o-transition: all 0.3s ease-out;
 		transition: all 0.3s ease-out;
+
 	}
+}
+
+.nav.ui-scrollfix ul a:hover{
+	color: $color-dark;
 }
