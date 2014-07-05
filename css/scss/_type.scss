@@ -1,9 +1,9 @@
 h1, h2, h3 {
     letter-spacing: 0.1rem;
-    font-family:'Arvo', serif;
+    font-family: $font-primary;
 }
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-top: 0;
 }
 h2 {
@@ -14,6 +14,7 @@ h3 {
 }
 p, a, li, em, strong, b, i, span {
     letter-spacing: 0.06rem;
+    line-height: 2.7rem;
 }
 a {
     color: $color-light;

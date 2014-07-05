@@ -22,10 +22,12 @@ var gulp = require('gulp'),
 			all: 'css/scss/*.scss'
 		},
 		css: {
-			dest: 'css',
-			main: 'css/styles.min.css'
+			main: 'styles.min.css',
+			dest: 'css'
 		},
 		js: {
+			main: 'scripts.min.js',
+			dest: 'js',
 			vendor: [
 				// Order matters for vendor libraries
 				'js/vendor/angular.min.js',
@@ -40,9 +42,7 @@ var gulp = require('gulp'),
 				'js/app/controllers/*.js',
 				'js/app/services/*.js',
 				'js/app/directives/*.js'
-			],
-			dest: 'js',
-			main: 'scripts.min.js'
+			]
 		},
 		images: {
 			'src': 'images/*',

@@ -1,4 +1,5 @@
 .btn {
+	padding: 1em 2.5em;
 	margin-top: 2rem;
 	font-family: $font-secondary;
 	border: 2px solid $color-light;
@@ -7,36 +8,39 @@
 	letter-spacing: 0.2rem;
 	text-transform: uppercase;
 	cursor: pointer;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-
-	i {
-		display: none;
-	}
+	position: relative;
+	overflow: hidden;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
 
 	&:hover {
 		color: $color-dark;
-		background-color: $color-light;
-		i {
-			display: inline-block;
-		}
+		background: $color-light;
+		padding-right: 3.6em;
+		padding-left: 2em;
 	}
 
 	&:after {
-		// content: '';
-		// position: absolute;
-		// z-index: -1;
-		// -webkit-transition: all 0.3s;
-		// -moz-transition: all 0.3s;
-		// transition: all 0.3s;
+		position: absolute;
+		content: '\f138'; // f0e7 (lighting bolt)
+		font-family: FontAwesome;
+		right: -40%;
+		transition: .3s;
+		color: #323232;
+		top: 0.98em;
+		font-size: 1em;
 	}
+
 }
+
+.btn:hover:after {
+  right: 1.9em;
+}
+
 .btn-l {
-	padding: 1.1rem 2.9rem;
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 }
 .btn-s {
-	padding: 0.9rem 2.7rem;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 }
