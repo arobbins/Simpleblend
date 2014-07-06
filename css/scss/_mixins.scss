@@ -4,7 +4,7 @@
 	margin: 0 auto;
 }
 .drop-shadow {
-	text-shadow: 4px 3px 0px $color-4, 7px 6px 0px rgba(0, 0, 0, 0.15);
+	text-shadow: 3px 2px 0px $color-4, 7px 6px 0px rgba(0, 0, 0, 0.15);
 }
 .thumb {
 	border-radius: 50%;
@@ -16,6 +16,6 @@
 	transition: all 0.8s ease;
 
 	&:hover {
-		opacity: 0.8;
+		// opacity: 0.8;
 	}
 }

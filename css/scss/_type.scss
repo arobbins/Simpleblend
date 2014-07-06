@@ -3,7 +3,7 @@ h1, h2, h3 {
     font-family: $font-primary;
 }
 h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-top: 0;
 }
 h2 {
@@ -36,6 +36,6 @@ a:hover {
 }
 .logo {
     &:hover {
-        color: $color-primary;
+        // color: $color-primary;
     }
 }
