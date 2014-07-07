@@ -10,7 +10,7 @@
 					window.onscroll = function (event) {
 					  var el = document.getElementsByClassName(attrs.class)[0],
 					  		start = Math.abs(el.getBoundingClientRect().top),
-							height = el.offsetHeight - 400,
+							height = el.offsetHeight - 500,
 							children = el.children,
 							opacity = 1 - (start / height);
 
