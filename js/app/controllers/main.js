@@ -1,6 +1,6 @@
 (function(){
 
-	var mainCtrl = function($scope){
+	var mainCtrl = function($scope, $document){
 		$scope.app = {};
 		$scope.app.name = 'Simpleblend';
 
@@ -18,9 +18,15 @@
 
 		};
 
+		var sectionAbout = angular.element(document.getElementById('about'));
+
+		$scope.toSection2 = function() {
+			$document.scrollTo(sectionAbout, 0, 1000);
+		};
+
 	};
 
 	angular.module('app')
-		.controller('mainCtrl', ['$scope', mainCtrl]);
+		.controller('mainCtrl', ['$scope', '$document', mainCtrl]);
 
 }());

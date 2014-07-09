@@ -16,7 +16,7 @@
 </head>
 
 <body ng-controller="mainCtrl">
-	<!--
+<!--
 
 	___| _)                  |        |     |                   |
  \___ \  |  __ `__ \  __ \  |   _ \  __ \  |   _ \  __ \    _` |
@@ -34,19 +34,20 @@ arobbins@simpleblend.net
 
 -->
 	<nav class="container-fluid navbar-fixed-top nav nav-has-scrollfix" ui-scrollfix="+320">
-		<div class="row"><a href="/" class="col-3-sm pull-left logo">{{ app.name }}</a>
+		<div class="row">
+			<a href="/" class="col-3-sm pull-left logo">{{ app.name }}</a>
 			<ul class="col-9-sm pull-right nav-list">
 				<li class="nav-item">
-					<a href="#about" class="nav-link">About</a>
+					<a class="nav-link" ng-click="toSection2()" du-scrollspy>About</a>
 				</li>
 				<li class="nav-item">
-					<a href="#work" class="nav-link">Work</a>
+					<a href="#work" class="nav-link" du-scrollspy>Work</a>
 				</li>
 				<li class="nav-item">
-					<a href="#services" class="nav-link">Services</a>
+					<a href="#services" class="nav-link" du-scrollspy>Services</a>
 				</li>
 				<li class=nav-item>
-					<a href="#contact" class="nav-link">Contact</a>
+					<a href="#contact" class="nav-link" du-scrollspy>Contact</a>
 				</li>
 			</ul>
 		</div>

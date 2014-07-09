@@ -1,7 +1,7 @@
 (function(){
 	"use strict";
 
-	angular.module('app', ['ui.bootstrap', 'ui.router', 'ui.scrollfix']);
+	angular.module('app', ['ui.bootstrap', 'ui.router', 'ui.scrollfix', 'duScroll']);
 
 	angular.module('app')
 		.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
