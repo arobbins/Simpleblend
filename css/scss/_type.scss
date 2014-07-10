@@ -21,6 +21,7 @@ a {
 }
 a:hover {
     text-decoration: none;
+    color: $color-light;
 }
 .page-landing, .page-contact, .page-services, .page-work {
     color: $color-light;
@@ -31,7 +32,7 @@ a:hover {
 .logo {
     font-size: 2rem;
     &:hover {
-        color: $color-light;
+        // color: $color-light;
     }
 }
 .logo {

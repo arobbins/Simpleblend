@@ -18,11 +18,10 @@
 
 		};
 
-		var sectionAbout = angular.element(document.getElementById('about'));
 
-		$scope.toSection2 = function() {
-			$document.scrollTo(sectionAbout, 0, 1000);
-		};
+
+
+
 
 	};
 

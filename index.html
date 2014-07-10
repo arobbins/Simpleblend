@@ -35,19 +35,19 @@ arobbins@simpleblend.net
 -->
 	<nav class="container-fluid navbar-fixed-top nav nav-has-scrollfix" ui-scrollfix="+320">
 		<div class="row">
-			<a href="/" class="col-3-sm pull-left logo">{{ app.name }}</a>
+			<a href="#top" du-smooth-scroll du-scrollspy class="col-3-sm pull-left logo">{{ app.name }}</a>
 			<ul class="col-9-sm pull-right nav-list">
 				<li class="nav-item">
-					<a class="nav-link" ng-click="toSection2()" du-scrollspy>About</a>
+					<a href="#about" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>About</a>
 				</li>
 				<li class="nav-item">
-					<a href="#work" class="nav-link" du-scrollspy>Work</a>
+					<a href="#work" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>Work</a>
 				</li>
 				<li class="nav-item">
-					<a href="#services" class="nav-link" du-scrollspy>Services</a>
+					<a href="#services" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>Services</a>
 				</li>
 				<li class=nav-item>
-					<a href="#contact" class="nav-link" du-scrollspy>Contact</a>
+					<a href="#contact" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>Contact</a>
 				</li>
 			</ul>
 		</div>
@@ -63,6 +63,9 @@ arobbins@simpleblend.net
 	</footer>
 
 	<script type="text/javascript" src="js/scripts.min.js"></script>
+	<script type="text/javascript">
+	console.log(angular.element('div'));
+	</script>
 </body>
 
 </html>
