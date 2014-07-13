@@ -26,8 +26,16 @@ a:hover {
 .page-landing, .page-contact, .page-services, .page-work {
     color: $color-light;
 }
-.page-landing h2 {
-    letter-spacing: 0.3rem;
+.page-landing {
+	h1 {
+		letter-spacing: 0.3rem;
+		font-size: 7.6rem;
+		font-weight: bold;
+	}
+	h2 {
+    	letter-spacing: 0.3rem;
+    	font-size: 1.5em;
+	}
 }
 .logo {
     font-size: 2rem;
