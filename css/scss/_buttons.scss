@@ -1,31 +1,32 @@
 .btn {
-	width: 12em;
-	padding: 0.92em 2em;
-	margin-top: 3.5rem;
+	width: calc-em(200px, $font-size-base);
+	padding: calc-em(10px, $font-size-base) calc-em(18px, $font-size-base);
+	margin-top: calc-em(35px, $font-size-base);
 	font-family: $font-secondary;
-	border: 2px solid $color-light;
+	border: 2px solid $color-white;
 	border-radius: 0;
 	background: none;
-	letter-spacing: 0.2rem;
+	letter-spacing: calc-em(2px, $font-size-base);
 	text-transform: uppercase;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
+	text-align: center;
 	-webkit-transition: background 0.2s, padding 0.2s, width 0.2s;
 	-moz-transition: background 0.2s, padding 0.2s, width 0.2s;
 	transition: background 0.2s, padding 0.2s, width 0.2s;
 
 	&:hover {
 		color: $color-dark;
-		background: $color-light;
+		background: $color-white;
 	}
 }
 
 .btn-animated {
 	&:hover {
-		padding-right: 3.6em;
-		padding-left: 2em;
-		width: 13em;
+		padding-right: calc-em(36px, $font-size-base);
+		padding-left: calc-em(20px, $font-size-base);
+		width: calc-em(200px, $font-size-base);
 	}
 	&:after {
 		position: absolute;
@@ -34,21 +35,21 @@
 		right: -40%;
 		transition: .2s;
 		color: $color-dark;
-		top: 0.91em;
-		font-size: 1em;
+		top: calc-em(10px, $font-size-base);
+		font-size: calc-em(16px, $font-size-base);
 	}
 	&:hover:after {
-		right: 1.9em;
+		right: calc-em(20px, $font-size-base)
 	}
 }
 
 .btn-wide {
-	width: 20em;
+	width: calc-em(300px, $font-size-base)
 }
 
 .btn-l {
-	font-size: 1.6rem;
+	font-size: calc-em(16px, $font-size-base)
 }
 .btn-s {
-	font-size: 1.3rem;
+	font-size: calc-em(13px, $font-size-base)
 }

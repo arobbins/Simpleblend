@@ -1,53 +1,59 @@
 h1, h2, h3 {
-    letter-spacing: 0.1rem;
+    letter-spacing: calc-em(1px, $font-size-base);
+    margin-bottom: calc-em(10px, $font-size-base);
     font-family: $font-primary;
 }
 h1 {
-    font-size: 3.5rem;
-    margin-top: 0;
+    font-size: calc-em($font-size-l, $font-size-base);
+    margin: 0 0 ($font-size-l / 4) 0;
 }
 h2 {
-    font-size: 2.2rem;
+    font-size: calc-em($font-size-m, $font-size-base);
+    margin: 0 0 ($font-size-m / 4) 0;
 }
 h3 {
-    font-size: 1.9rem;
+    font-size: calc-em($font-size-s, $font-size-base);
+    margin: 0 0 ($font-size-s / 4) 0;
 }
 p, a, li, em, strong, b, i, span {
-    letter-spacing: 0.06rem;
-    line-height: 2.7rem;
+    letter-spacing: calc-em(0.5px, $font-size-base);
+    line-height: calc-em($font-size-m, $font-size-base);
+}
+p {
+	font-size: calc-em(17px, $font-size-base);
 }
 a {
-    color: $color-light;
+    color: $color-white;
 }
 a:hover {
     text-decoration: none;
-    color: $color-light;
+    color: $color-white;
 }
-.page-landing, .page-contact, .page-services, .page-work {
-    color: $color-light;
+.page-landing,
+.page-contact,
+.page-services,
+.page-work {
+    color: $color-white;
 }
 .page-landing {
 	h1 {
-		letter-spacing: 0.3rem;
-		font-size: 7.6rem;
-		font-weight: bold;
+		letter-spacing: calc-em(0.5px, $font-size-base);
+		font-size: calc-em(90px, $font-size-base);
+		margin: 0;
 	}
 	h2 {
-    	letter-spacing: 0.3rem;
-    	font-size: 1.5em;
+    	letter-spacing: calc-em(1px, $font-size-base);
+    	font-size: calc-em(30px, $font-size-base);
+    	margin: calc-em(4px, $font-size-base) 0 0 0;
 	}
 }
 .logo {
-    font-size: 2rem;
+    font-size: calc-em(18px, $font-size-base);;
     &:hover {
         // color: $color-light;
     }
 }
-.logo {
-    &:hover {
-        // color: $color-primary;
-    }
-}
+
 .page-services {
 	p {
 		// color: $color-2;

@@ -3,8 +3,11 @@
 	display: block;
 	margin: 0 auto;
 }
+.text-center {
+	text-align: center;
+}
 .drop-shadow {
-	text-shadow: 3px 2px 0px $color-4, 7px 6px 0px rgba(0, 0, 0, 0.15);
+	text-shadow: 3px 2px 0px #323232, 7px 6px 0px rgba(0, 0, 0, 0.15);
 }
 .thumb {
 	border-radius: 50%;

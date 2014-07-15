@@ -1,18 +1,8 @@
-html {
-	font-size: 62.5%;
-	height: 100%;
-}
-body {
-	margin: 0;
-	font-size: 1.8rem;
-	font-family: 'PT Sans', Helvetica, Sans-serif;
-	height: 100%;
-	perspective: 1200px;
-}
-@import 'resets';
-@import 'variables';
-@import 'mixins';
-@import 'structure';
-@import 'buttons';
-@import 'type';
-@import 'overrides';
+@import 'variables',
+		  'functions',
+		  'resets',
+		  'mixins',
+		  'structure',
+		  'buttons',
+		  'type',
+		  'overrides';

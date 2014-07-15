@@ -1,0 +1,9 @@
+@function calc-em($target, $context) {
+	@return ($target / $context) * 1em;
+}
+@function calc-rem($target, $fontsize-base) {
+	@return ($target / $fontsize-base) * 1rem;
+}
+@function calc-percent($target, $context) {
+	@return ($target / $context) * 100%;
+}

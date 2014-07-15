@@ -1,6 +1,6 @@
 // Navigation
 .nav {
-	padding: 2.5rem 4rem;
+	padding: calc-em(25px, $font-size-base) calc-em(40px, $font-size-base);
 }
 .nav-list {
 	margin: 0;
@@ -9,7 +9,7 @@
 }
 .nav-item {
 	float: left;
-	padding: 0rem 2rem;
+	padding: 0 calc-em(20px, $font-size-base);
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
 	-ms-transition: all 0.3s ease-out;
@@ -23,8 +23,8 @@
 	}
 }
 .nav-link {
-	padding: 1.5rem 0rem;
-	font-size: 1.7rem;
+	padding: calc-em(15px, $font-size-base) 0;
+	font-size: calc-em(17px, $font-size-base);
 	cursor: pointer;
 	&:hover {
 		color: white;
@@ -48,24 +48,24 @@
 }
 // Page specific structure
 .page {
-	padding: 6rem;
+	padding: calc-em(60px, $font-size-base);
 	min-height: 100%;
 }
 .page-landing {
 	height:100%;
-	padding-top: 23rem;
+	padding-top: calc-em(230px, $font-size-base);
 	background-image: url('../images/bg.jpg');
 	background-size: cover;
 
 	.btn {
-		margin-top: 5rem;
+		margin-top: calc-em(40px, $font-size-base);
 	}
 }
 .page-about {
-	background-color: $color-1;
+	background-color: $color-white;
 }
 .page-work {
-	background-color: $color-2;
+	background-color: $color-work;
 	ul {
 		width: 100%;
 		padding: 0;
@@ -76,13 +76,13 @@
 	}
 }
 .page-services {
-	background-color: $color-3;
+	background-color: $color-services;
 }
 .page-contact {
 	position: relative;
-	background: $color-4;
+	background: $color-contact;
 
-	.col-sm-10 {
+	.col-sm-7 {
 		margin: 0 7.8%;
 		padding: 0;
 	}
@@ -91,7 +91,7 @@
 	background-size: 60%;
 	background-position: 50%;
 	background-color: rgba(14, 21, 25, 0.6);
-	padding: 6em 0;
+	padding: calc-em(40px, $font-size-base) 0;
 	margin: 0 1% 1% 0;
 	// background: url('../images/bg_amtrak.jpg') no-repeat;
 	// background-size: contain;
@@ -112,11 +112,11 @@
 }
 footer {
 	width: 100%;
-	padding: 1.2em 0 1em 0;
-	background-color: black;
+	padding: calc-em(20px, $font-size-base) 0 calc-em(16px, $font-size-base) 0;
+	background-color: $color-footer;
 }
 footer small {
 	display: block;
 	text-align: center;
-	color: darken($color-light, 80%);
+	color: darken($color-white, 20%);
 }

@@ -1,14 +1,20 @@
+// Font sizes
+$font-size-base: 16px;
+$font-size-l: 40px;
+$font-size-m: 35px;
+$font-size-s: 20px;
+
 // Font stack
-$font-primary: 'Roboto Slab', serif;
+$font-primary: 'Rokkitt', serif;
 $font-secondary: 'PT Sans', Helvetica, Sans-serif;
 
 // Colors
-$color-light: white;
-$color-dark: #454545;
+$color-white: white;
+$color-dark: #0f1830;
 $color-primary: #a6ebff;
 $color-secondary: #0e1523;
+$color-footer: #122030;
+$color-work: rgb(114, 157, 191);
+$color-services: rgb(191, 118, 114);
+$color-contact: rgb(114, 188, 191);
 
-$color-1: #FFFFFF;
-$color-2: #2b324c;
-$color-3: #c63838;
-$color-4: #0e1523;
