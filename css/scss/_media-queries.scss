@@ -1,0 +1,12 @@
+@media screen and (min-width: 1600px) {
+	.page-landing {
+		h1 {
+			letter-spacing: calc-em(0.7px, $font-size-base);
+			font-size: calc-em(92px, $font-size-base);
+		}
+		h2 {
+			letter-spacing: calc-em(1px, $font-size-base);
+			font-size: calc-em(38px, $font-size-base);
+		}
+	}
+}

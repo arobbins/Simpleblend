@@ -1,6 +1,6 @@
 .btn {
-	width: calc-em(200px, $font-size-base);
-	padding: calc-em(10px, $font-size-base) calc-em(18px, $font-size-base);
+	width: calc-em(190px, $font-size-base);
+	padding: calc-em(8px, $font-size-base) calc-em(15px, $font-size-base);
 	margin-top: calc-em(35px, $font-size-base);
 	font-family: $font-secondary;
 	border: 2px solid $color-white;
@@ -26,7 +26,7 @@
 	&:hover {
 		padding-right: calc-em(36px, $font-size-base);
 		padding-left: calc-em(20px, $font-size-base);
-		width: calc-em(200px, $font-size-base);
+		width: calc-em(190px, $font-size-base);
 	}
 	&:after {
 		position: absolute;
@@ -35,7 +35,7 @@
 		right: -40%;
 		transition: .2s;
 		color: $color-dark;
-		top: calc-em(10px, $font-size-base);
+		top: calc-em(7px, $font-size-base);
 		font-size: calc-em(16px, $font-size-base);
 	}
 	&:hover:after {
