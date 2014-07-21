@@ -10,7 +10,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
 	<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel=stylesheet type="text/css">
-	<!-- <link href="css/vendor/font-awesome.min.css" rel=stylesheet type="text/css"> -->
+	<link rel="stylesheet" href="//f.fontdeck.com/s/css/d75Az9FP6isGkw8Z08GmBJQeVPo/DOMAIN_NAME/47403.css" type="text/css" />
 	<link rel="stylesheet" href="css/styles.min.css">
 	<noscript>link href="css/svgs/icons.fallback.css" rel="stylesheet"></noscript>
 </head>
@@ -33,25 +33,29 @@ Owner, Simpleblend
 arobbins@simpleblend.net
 
 -->
-	<nav class="container-fluid navbar-fixed-top nav nav-has-scrollfix" ui-scrollfix="+320">
-		<div class="row">
-			<a href="#top" du-smooth-scroll du-scrollspy class="col-3-sm pull-left logo">{{ app.name }}</a>
-			<ul class="col-9-sm pull-right nav-list">
-				<li class="nav-item">
-					<a href="#about" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>About</a>
-				</li>
-				<li class="nav-item">
-					<a href="#work" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>Work</a>
-				</li>
-				<li class="nav-item">
-					<a href="#services" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>Services</a>
-				</li>
-				<li class=nav-item>
-					<a href="#contact" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>Contact</a>
-				</li>
-			</ul>
+
+
+
+	<nav class="nav nav-has-scrollfix" ui-scrollfix="+320">
+		<div class="logo">
+			<a href="#top" du-smooth-scroll du-scrollspy>{{ app.name }}</a>
 		</div>
+		<ul class="nav-list">
+			<li class="nav-item">
+				<a href="#about" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>About</a>
+			</li>
+			<li class="nav-item">
+				<a href="#work" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>Work</a>
+			</li>
+			<li class="nav-item">
+				<a href="#services" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>Services</a>
+			</li>
+			<li class="nav-item">
+				<a href="#contact" class="nav-link" offset="65" du-smooth-scroll du-scrollspy>Contact</a>
+			</li>
+		</ul>
 	</nav>
+
 	<landing></landing>
 	<about></about>
 	<work></work>
@@ -62,10 +66,9 @@ arobbins@simpleblend.net
 		<small>&copy; Simpleblend, LLC 2014</small>
 	</footer>
 
+
+
 	<script type="text/javascript" src="js/scripts.min.js"></script>
-	<script type="text/javascript">
-	console.log(angular.element('div'));
-	</script>
 </body>
 
 </html>

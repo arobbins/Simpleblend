@@ -22,3 +22,20 @@
 		// opacity: 0.8;
 	}
 }
+
+.fade.ng-hide-add, .fade.ng-hide-remove {
+	max-height: 0;
+	overflow-y: hidden;
+	-webkit-transition: max-height 0.5s ease-in-out;
+	-moz-transition: max-height 0.5s ease-in-out;
+	-o-transition: max-height 0.5s ease-in-out;
+	transition: max-height 0.5s ease-in-out;
+}
+.fade.ng-hide-add.ng-hide-add-active,
+.fade.ng-hide-remove {
+	height: 0;
+}
+.fade.ng-hide-add,
+.fade.ng-hide-remove.ng-hide-remove-active {
+	height: 500px;
+}

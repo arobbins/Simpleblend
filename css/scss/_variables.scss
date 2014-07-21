@@ -1,11 +1,12 @@
 // Font sizes
 $font-size-base: 16px;
-$font-size-l: 40px;
-$font-size-m: 35px;
+$font-size-xs: 18px;
 $font-size-s: 20px;
+$font-size-m: 30px;
+$font-size-l: 40px;
 
 // Font stack
-$font-primary: 'Rokkitt', serif;
+$font-primary: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 $font-secondary: 'PT Sans', Helvetica, Sans-serif;
 
 // Colors
@@ -13,7 +14,11 @@ $color-white: white;
 $color-dark: #0f1830;
 $color-primary: #a6ebff;
 $color-secondary: #0e1523;
-$color-work: #91bed4;
-$color-services: #304269;
-$color-contact: rgb(114, 188, 191);
-$color-footer: #0a1121;
+$color-about: #f7faff;
+$color-work: #84bbdd;
+$color-services: #263a50;
+$color-contact: #1bbc9b;
+$color-footer: #1a1f24;
+
+// Spacing
+$gutter: 20px;

@@ -12,6 +12,7 @@ var gulp = require('gulp'),
 	imagemin = require('gulp-imagemin'),
 	pngcrush = require('imagemin-pngcrush'),
 	svgo = require('imagemin-svgo'),
+	prefix = require('gulp-autoprefixer')
 	paths = {
 		html: [
 			'./index.html',
@@ -33,9 +34,10 @@ var gulp = require('gulp'),
 				'js/vendor/angular.min.js',
 				'js/vendor/angular-ui-router.min.js',
 				'js/vendor/angular-scroll.min.js',
-				'js/vendor/ui-bootstrap-tpls-0.11.0.min.js',
+				// 'js/vendor/ui-bootstrap-tpls-0.11.0.min.js',
 				'js/vendor/ui-utils.min.js',
-				'js/vendor/svg.logos.js'
+				'js/vendor/svg.logos.js',
+				'js/vendor/angular-animate.js'
 			],
 			local: [
 				'js/app/app.js',
@@ -70,6 +72,7 @@ gulp.task('styles', function() {
 		.pipe(sass({
 			includePaths: ['scss']
 		}))
+		.pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
 		.pipe(minifyCSS())
 		.pipe(rename(paths.css.main))
 		.pipe(gulp.dest(paths.css.dest))

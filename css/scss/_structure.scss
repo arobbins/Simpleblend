@@ -1,30 +1,48 @@
 // Navigation
 .nav {
-	padding: calc-em(25px, $font-size-base) calc-em(40px, $font-size-base);
+	// padding: calc-em(25px, $font-size-base) calc-em(40px, $font-size-base);
+	display: flex;
+	flex-wrap: wrap;
+	background-color: transparent;
+	position: fixed;
+	width: 100%;
+	padding: calc-em($gutter, $font-size-base) calc-em(30px, $font-size-base);
+
+	.logo {
+		flex: 2 auto;
+	}
+	ul {
+		// flex: 1;
+		// justify-content: flex-end;
+
+	}
 }
 .nav-list {
+	// flex: 2;
+	display: flex;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 .nav-item {
-	float: left;
-	padding: 0 calc-em(20px, $font-size-base);
+	// flex: 1;
+	// float: left;
+	padding: 0 calc-em($gutter, $font-size-base);
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
 	-ms-transition: all 0.3s ease-out;
 	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
-	&:first-child {
-		padding-left: 0;
-	}
-	&:last-child {
-		padding-right: 0;
-	}
+	// &:first-child {
+	// 	padding-left: 0;
+	// }
+	// &:last-child {
+	// 	padding-right: 0;
+	// }
 }
 .nav-link {
-	padding: calc-em(15px, $font-size-base) 0;
-	font-size: calc-em(17px, $font-size-base);
+	// padding: calc-em(15px, $font-size-base) 0;
+	font-size: calc-em($font-size-xs, $font-size-base);
 	cursor: pointer;
 	&:hover {
 		color: white;
@@ -33,12 +51,16 @@
 		-webkit-transition: opacity .15s ease-in-out;
 	}
 }
+
+// Below two rules are for hover effect
 .nav ul:hover > li {
 	opacity: 0.3;
 }
 .nav ul:hover > li:hover {
 	opacity: 1;
 }
+
+// Fading out menu on scroll
 .nav-has-scrollfix {
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
@@ -46,45 +68,106 @@
 	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
 }
-// Page specific structure
-.page {
-	padding: calc-em(60px, $font-size-base);
-	min-height: 100%;
-}
-.page-landing {
-	height:100%;
-	padding-top: calc-em(230px, $font-size-base);
-	background-image: url('../images/bg.jpg');
-	background-size: cover;
 
-	.btn {
-		margin-top: calc-em(40px, $font-size-base);
+.page {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	min-height: 100%;
+	// width: calc-percent(200px, 100%);
+
+	.content {
+		width: 100%;
+		padding: calc-em(50px, $font-size-base);
 	}
 }
+.page-landing {
+	background-image: url('../images/bg.jpg');
+	background-size: cover;
+	padding-bottom: 7%;
+	* {
+		margin: auto;
+	}
+	// .btn {
+	// 	margin-top: calc-em(40px, $font-size-base);
+	// }
+}
 .page-about {
-	background-color: $color-white;
+	background-color: $color-about;
+
+	.content {
+		display: flex;
+		flex-wrap: wrap;
+		// flex-flow: row;
+	}
+	.one {
+		flex: 2 auto;
+		width: 60%;
+	}
+	.two {
+		// width: 30%;
+	}
 }
 .page-work {
 	background-color: $color-work;
+
+	.content {
+		display: flex;
+	   flex-direction: row;
+	   justify-content:center; /* default is stretch */
+	   align-items: center;
+	   padding-bottom: 10em;
+	}
+	section {
+		display: flex;
+		h2 {
+			flex: 2;
+		}
+		img {
+
+			height: 50px;
+		}
+	}
 	ul {
-		width: 100%;
-		padding: 0;
-		margin: 0 auto;
+		width: 100%
 	}
 	li {
+		width: 100%;
+		border-bottom: 1px dotted #dff3ff;
+	}
+	h2 {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
 
+		&:hover {
+			cursor: pointer;
+			background-color: darken($color-work, 5%);
+		}
+		&.visible {
+			background-color: darken($color-work, 5%);
+		}
+	}
+	aside {
+		padding: calc-em($gutter, $font-size-base);
+	}
+	.btn {
+		display: inline-block;
 	}
 }
 .page-services {
 	background-color: $color-services;
 }
 .page-contact {
-	position: relative;
+	h1 {
+		// background-color: $color-services;
+	}
 	background: $color-contact;
+	// justify-content: center;
 
-	.col-sm-7 {
-		margin: 0 7.8%;
-		padding: 0;
+	.content {
+		width: 75%;
 	}
 }
 .icon-logo {
@@ -110,13 +193,14 @@
 .icon-logo-blueclawco {
 	background-size: 20%;
 }
+
 footer {
-	width: 100%;
-	padding: calc-em(20px, $font-size-base) 0 calc-em(16px, $font-size-base) 0;
+	padding: calc-em(30px, $font-size-base);
 	background-color: $color-footer;
-}
-footer small {
-	display: block;
-	text-align: center;
-	color: darken($color-white, 20%);
+	display: flex;
+	justify-content: center;
+
+	small {
+		color: darken($color-white, 20%);
+	}
 }
