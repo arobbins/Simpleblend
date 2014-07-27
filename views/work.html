@@ -3,14 +3,13 @@
 	<div class="content">
 	   <ul>
 	   	<li ng-repeat="work in work">
-	   		<div>
-	   			<h2 ng-click="toggled = !toggled" ng-class="{visible: toggled}">{{ work.client }} <i class="fa" ng-class="{'fa-chevron-down': toggled===true, 'fa-chevron-right': toggled===false,}"></i></h2>
-	   			<!-- <img src="images/logo_details.png"> -->
-	   			<!-- <a href="#">css</a> -->
-	   		</div>
-	   		<aside ng-show="toggled" class="fade">
-					<p>{{ work.description }}</p>
-	   			<a href="http://google.com" class="btn btn-s">See project</a>
+	   		<h2 slide-toggle="#row_{{$index}}" ng-click="toggled = !toggled" ng-class="{visible: toggled}">{{ work.client }} <i class="fa" ng-class="{'fa-chevron-down': toggled===true, 'fa-chevron-right': toggled===false,}"></i></h2>
+	   		<aside id="row_{{$index}}" class="slideable" easing="linear" duration="0.3s">
+	   			<img src="../images/{{ work.image }}">
+	   			<a href="http://google.com" class="btn btn-s">See project <i class="fa fa-external-link"></i></a>
+	   			<p>{{ work.description }}</p>
+	   			<img src="../images/amtrak_1.jpg">
+	   			<img src="../images/amtrak_2.jpg">
 	   		</aside>
 	   	</li>
 	   </ul>

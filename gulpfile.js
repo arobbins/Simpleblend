@@ -34,9 +34,9 @@ var gulp = require('gulp'),
 				'js/vendor/angular.min.js',
 				'js/vendor/angular-ui-router.min.js',
 				'js/vendor/angular-scroll.min.js',
-				// 'js/vendor/ui-bootstrap-tpls-0.11.0.min.js',
 				'js/vendor/ui-utils.min.js',
 				'js/vendor/svg.logos.js',
+				'js/vendor/angularSlideables.js',
 				'js/vendor/angular-animate.js'
 			],
 			local: [
