@@ -158,21 +158,27 @@
 	aside {
 		// padding: 2em;
 		div {
+			// border: 1px solid blue;
 			display: flex;
-			flex-direction: column;
-			img {
-				align-self: flex-start;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			align-items: flex-start;
+			img:last-child {
+				// border: 1px solid yellow;
+				// align-self: flex-end;
 			}
 			a {
-				align-self: flex-end;
+				// border: 1px solid red;
 			}
 			p {
+				// border: 1px solid green;
 				// flex-direction: column;
 			}
 		}
 	}
 	.btn {
 		display: inline-block;
+		margin: 0;
 	}
 }
 .page-services {

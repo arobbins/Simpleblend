@@ -13,45 +13,65 @@ var gulp = require('gulp'),
 	pngcrush = require('imagemin-pngcrush'),
 	svgo = require('imagemin-svgo'),
 	prefix = require('gulp-autoprefixer')
-	paths = {
-		html: [
-			'./index.html',
-			'./views/*.html'
-		],
-		sass: {
-			main: 'css/scss/main.scss',
-			all: 'css/scss/*.scss'
-		},
-		css: {
-			main: 'styles.min.css',
-			dest: 'css'
-		},
-		js: {
-			main: 'scripts.min.js',
-			dest: 'js',
-			vendor: [
-				// Order matters for vendor libraries
-				'js/vendor/angular.min.js',
-				'js/vendor/angular-ui-router.min.js',
-				'js/vendor/angular-scroll.min.js',
-				'js/vendor/ui-utils.min.js',
-				'js/vendor/svg.logos.js',
-				'js/vendor/angularSlideables.js',
-				'js/vendor/angular-animate.js'
-			],
-			local: [
-				'js/app/app.js',
-				'js/app/controllers/*.js',
-				'js/app/services/*.js',
-				'js/app/directives/*.js'
+	config = {
+		html: {
+			paths: [
+				'./index.html',
+				'./views/*.html'
 			]
 		},
+		css: {
+			names: {
+				vendor: 'vendor.min.css',
+				local: 'local.min.css',
+				dest: 'css'
+			},
+			paths: {
+				vendor: [
+					'css/vendor/angular-carousel.min.css'
+				],
+				local: {
+					entry: 'css/scss/main.scss',
+					all: 'css/scss/*.scss'
+				}
+			}
+		},
+		js: {
+			names: {
+				vendor: 'vendor.min.js',
+				local: 'local.min.js',
+				dest: 'js'
+			},
+			paths: {
+				vendor: [
+					// Order matters here
+					'js/vendor/angular.min.js',
+					'js/vendor/angular-ui-router.min.js',
+					'js/vendor/angular-scroll.min.js',
+					'js/vendor/ui-utils.min.js',
+					'js/vendor/svg.logos.js',
+					'js/vendor/angularSlideables.js',
+					'js/vendor/angular-animate.js',
+					'js/vendor/angular-touch.min.js',
+					'js/vendor/angular-carousel.min.js'
+				],
+				local: [
+					'js/app/app.js',
+					'js/app/controllers/*.js',
+					'js/app/services/*.js',
+					'js/app/directives/*.js'
+				]
+			}
+		},
 		images: {
-			'src': 'images/*',
-			'dest': 'images'
+			paths: [
+				'images/*'
+			],
+			names: {
+				dest: 'images'
+			}
 		}
 	};
-	paths.js.all = paths.js.vendor.concat(paths.js.local);
 
 /* ====================================================================
 Server
@@ -65,17 +85,56 @@ gulp.task('browser-sync', function() {
 });
 
 /* ====================================================================
-Styles
+Styles - Vendor
 ==================================================================== */
-gulp.task('styles', function() {
-	gulp.src(paths.sass.main)
+gulp.task('styles-vendor', function() {
+	gulp.src(config.css.paths.vendor)
+		.pipe(minifyCSS())
+		.pipe(rename(config.css.names.vendor))
+		.pipe(gulp.dest(config.css.names.dest))
+		.pipe(browserSync.reload({
+			stream: true
+		}));
+});
+
+/* ====================================================================
+Styles - Local
+==================================================================== */
+gulp.task('styles-local', function() {
+	gulp.src(config.css.paths.local.entry)
 		.pipe(sass({
 			includePaths: ['scss']
 		}))
 		.pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
 		.pipe(minifyCSS())
-		.pipe(rename(paths.css.main))
-		.pipe(gulp.dest(paths.css.dest))
+		.pipe(rename(config.css.names.local))
+		.pipe(gulp.dest(config.css.names.dest))
+		.pipe(browserSync.reload({
+			stream: true
+		}));
+});
+
+/* ====================================================================
+Scripts - Vendor
+==================================================================== */
+gulp.task('scripts-vendor', ['linting'], function() {
+	return gulp.src(config.js.paths.vendor)
+		.pipe(uglify())
+		.pipe(concat(config.js.names.vendor))
+		.pipe(gulp.dest(config.js.names.dest))
+		.pipe(browserSync.reload({
+			stream: true
+		}));
+});
+
+/* ====================================================================
+Scripts - Local
+==================================================================== */
+gulp.task('scripts-local', ['linting'], function() {
+	return gulp.src(config.js.paths.local)
+		.pipe(uglify())
+		.pipe(concat(config.js.names.local))
+		.pipe(gulp.dest(config.js.names.dest))
 		.pipe(browserSync.reload({
 			stream: true
 		}));
@@ -85,29 +144,16 @@ gulp.task('styles', function() {
 Linting
 ==================================================================== */
 gulp.task('linting', function() {
-	return gulp.src(paths.js.local)
+	return gulp.src(config.js.paths.local)
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
-});
-
-/* ====================================================================
-Scripts
-==================================================================== */
-gulp.task('scripts', ['linting'], function() {
-	return gulp.src(paths.js.all)
-		.pipe(uglify())
-		.pipe(concat(paths.js.main))
-		.pipe(gulp.dest(paths.js.dest))
-		.pipe(browserSync.reload({
-			stream: true
-		}));
 });
 
 /* ====================================================================
 Images
 ==================================================================== */
 gulp.task('images', function() {
-    return gulp.src(paths.images.src)
+    return gulp.src(config.images.paths)
 		.pipe(imagemin({
 			progressive: true,
 			svgoPlugins: [{
@@ -118,14 +164,14 @@ gulp.task('images', function() {
 				svgo()
 			]
 		}))
-		.pipe(gulp.dest(paths.images.dest));
+		.pipe(gulp.dest(config.images.names.dest));
 });
 
 /* ====================================================================
 HTML
 ==================================================================== */
 gulp.task('html', function() {
-	return gulp.src(paths.html)
+	return gulp.src(config.html.paths)
 		.pipe(browserSync.reload({
 			stream: true
 		}));
@@ -134,8 +180,8 @@ gulp.task('html', function() {
 /* ====================================================================
 Tying everything together...
 ==================================================================== */
-gulp.task('default', ['browser-sync', 'styles', 'linting', 'scripts', 'images', 'html'], function() {
-	gulp.watch([paths.sass.all], ['styles']);
-	gulp.watch([paths.js.all], ['linting', 'scripts']);
-	gulp.watch([paths.html], ['html']);
+gulp.task('default', ['browser-sync', 'styles-vendor', 'styles-local', 'linting', 'scripts-vendor', 'scripts-local', 'images', 'html'], function() {
+	gulp.watch([config.css.paths.local.all], ['styles-vendor', 'styles-local']);
+	gulp.watch([config.js.paths.local], ['linting', 'scripts']);
+	gulp.watch([config.html.paths], ['html']);
 });

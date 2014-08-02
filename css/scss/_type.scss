@@ -30,6 +30,12 @@ a:hover {
 	text-decoration: none;
 	color: $color-white;
 }
+.logo {
+	font-size: calc-em(18px, $font-size-base);;
+	&:hover {
+		// color: $color-light;
+	}
+}
 .page-landing,
 .page-contact,
 .page-services,
@@ -38,26 +44,20 @@ a:hover {
 }
 .page-landing {
 	h1 {
-		letter-spacing: calc-em(0.5px, $font-size-base);
-		font-size: calc-em(85px, $font-size-base);
+		letter-spacing: calc-em(0.2px, $font-size-base);
+		font-size: calc-em(96px, $font-size-base);
 		text-shadow: 4px 3px 0px $color-footer, 7px 6px 0px rgba(0, 0, 0, 0.15);
 		margin: 0;
+		font-weight: bold;
 	}
 	h2 {
 		letter-spacing: calc-em(1px, $font-size-base);
-		font-size: calc-em(30px, $font-size-base);
-		margin: calc-em(7px, $font-size-base) 0 0 0;
+		font-size: calc-em(36px, $font-size-base);
+		margin: calc-em(4px, $font-size-base) 0 0 0;
 		font-weight: 100;
 	}
 }
-.logo {
-	font-size: calc-em(18px, $font-size-base);;
-	&:hover {
-		// color: $color-light;
-	}
-}
 .page-work {
-
 	h2 {
 		padding: calc-em($gutter, $font-size-m);
 		margin: 0;
@@ -67,15 +67,6 @@ a:hover {
 	}
 }
 .page-services {
-	p {
-		// color: $color-2;
-	}
-	h1 {
-		// color: $color-4;
-	}
-	h2 {
-		// color: $color-4;
-	}
 	ul {
 		list-style: none;
 		// color: $color-2;
@@ -88,5 +79,10 @@ a:hover {
 		text-align: center;
 		font-size: 1.2em;
 		float: left;
+	}
+}
+.page-about {
+	h1 {
+		color: $color-dark;
 	}
 }

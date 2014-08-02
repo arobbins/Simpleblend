@@ -1,7 +1,14 @@
 (function(){
 	"use strict";
 
-	angular.module('app', ['ui.router', 'ui.scrollfix', 'duScroll', 'ngAnimate', 'angularSlideables']);
+	angular.module('app', [
+	               'ui.router',
+	               'ui.scrollfix',
+	               'duScroll',
+	               'ngAnimate',
+	               'angularSlideables',
+	               'angular-carousel'
+	]);
 
 	angular.module('app')
 		.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){

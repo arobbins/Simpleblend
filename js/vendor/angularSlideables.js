@@ -37,7 +37,7 @@ angular.module('angularSlideables', [])
                 if (!content) content = target.querySelector('.slideable_content');
 
                 if(!attrs.expanded) {
-                    target.style.maxHeight = 400 + 'px';
+                    target.style.maxHeight = 1000 + 'px';
                     target.style.opacity = 1;
                 } else {
                     target.style.maxHeight = 0;
