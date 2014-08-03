@@ -10,7 +10,7 @@ angular.module('angularSlideables', [])
             return function postLink(scope, element, attrs) {
                 // default properties
                 attrs.duration = (!attrs.duration) ? '0.3s' : attrs.duration;
-                attrs.easing = (!attrs.easing) ? 'ease-in-out' : attrs.easing;
+                attrs.easing = (!attrs.easing) ? 'ease' : attrs.easing;
                 element.css({
                     'overflow': 'hidden',
                     'max-height': 0,
@@ -37,11 +37,12 @@ angular.module('angularSlideables', [])
                 if (!content) content = target.querySelector('.slideable_content');
 
                 if(!attrs.expanded) {
-                    target.style.maxHeight = 1000 + 'px';
+                    target.style.maxHeight = 900 + 'px';
                     target.style.opacity = 1;
+
                 } else {
                     target.style.maxHeight = 0;
-                    target.style.opacity = 0;
+                    target.style.opacity = 0.5;
                 }
                 attrs.expanded = !attrs.expanded;
             });

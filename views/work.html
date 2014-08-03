@@ -4,17 +4,29 @@
 	   <ul>
 	   	<li ng-repeat="work in work">
 	   		<h2 slide-toggle="#row_{{$index}}" ng-click="toggled = !toggled" ng-class="{visible: toggled}">{{ work.client }} <i class="fa" ng-class="{'fa-chevron-down': toggled===true, 'fa-chevron-right': toggled===false,}"></i></h2>
-	   		<aside id="row_{{$index}}" class="slideable" easing="linear" duration="0.2s">
-	   			<img ng-src="../images/{{ work.logo }}">
-	   			<a href="http://google.com" class="btn btn-s">See project <i class="fa fa-external-link"></i></a>
+	   		<aside id="row_{{$index}}" class="slideable" easing="ease" duration="0.6s">
+	   			<img ng-src="../images/{{ work.images.logo }}">
+	   			<a href="http://google.com" class="btn btn-s">View project <i class="fa fa-external-link"></i></a>
 	   			<p>{{ work.description }}</p>
-	   			<ul rn-carousel>
-	   				<li ng-repeat="image in work.images">
-	   					<img ng-src="../images/{{ work.images[$index] }}">
+	   			<ul rn-carousel rn-carousel-control>
+	   				<li>
+							<img src="images/amtrak_desktop_1.jpg"
+							 	  srcset="images/amtrak_desktop_1.jpg 696w,
+							          images/amtrak_mobile_1.jpg 480w"
+							 	  sizes="(max-width: 36em) 50%, 50%"
+							 	  alt="Amtrak">
+						</li>
+						<li>
+							<img src="images/amtrak_desktop_2.jpg"
+							 	  srcset="images/amtrak_desktop_2.jpg 696w,
+							          images/amtrak_mobile_2.jpg 480w"
+							 	  sizes="(max-width: 36em) 50%, 50%"
+							 	  alt="Amtrak">
 	   				</li>
 	   			</ul>
 	   		</aside>
 	   	</li>
 	   </ul>
+
 	</div>
 </section>

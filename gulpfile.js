@@ -182,6 +182,7 @@ Tying everything together...
 ==================================================================== */
 gulp.task('default', ['browser-sync', 'styles-vendor', 'styles-local', 'linting', 'scripts-vendor', 'scripts-local', 'images', 'html'], function() {
 	gulp.watch([config.css.paths.local.all], ['styles-vendor', 'styles-local']);
-	gulp.watch([config.js.paths.local], ['linting', 'scripts']);
+	gulp.watch([config.js.paths.local], ['linting', 'scripts-local']);
+	gulp.watch([config.js.paths.vendor], ['scripts-vendor']);
 	gulp.watch([config.html.paths], ['html']);
 });

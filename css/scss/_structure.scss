@@ -1,6 +1,7 @@
 // Navigation
 .nav {
 	// padding: calc-em(25px, $font-size-base) calc-em(40px, $font-size-base);
+	z-index: 1;
 	display: flex;
 	flex-wrap: wrap;
 	background-color: transparent;
@@ -131,7 +132,7 @@
 	ul {
 		width: 100%
 	}
-	li {
+	> li {
 		width: 100%;
 		&:first-child {
 			h2 {
@@ -173,6 +174,14 @@
 			p {
 				// border: 1px solid green;
 				// flex-direction: column;
+			}
+			.rn-carousel-container {
+				display: flex;
+				align-items: center;
+				li {
+					img {
+					}
+				}
 			}
 		}
 	}
