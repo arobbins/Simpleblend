@@ -5,7 +5,7 @@ angular.module('angularSlideables', [])
         compile: function (element, attr) {
             // wrap tag
             var contents = element.html();
-            element.html('<div class="slideable_content" style="margin:0 !important; padding:2em 2em 4em 2em !important;" >' + contents + '</div>');
+            element.html('<div class="slideable_content" style="margin:0 !important; padding:1.3em 1.3em 2.5em 1.3em !important;" >' + contents + '</div>');
 
             return function postLink(scope, element, attrs) {
                 // default properties

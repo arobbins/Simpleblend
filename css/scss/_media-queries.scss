@@ -10,15 +10,111 @@
 		}
 	}
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 	.page {
-		// justify-content: center;
+		.content {
+			padding: calc-em($gutter*2, $font-size-base) calc-em($gutter, $font-size-base) calc-em($gutter, $font-size-base) calc-em($gutter, $font-size-base);
+		}
 	}
+	.page-about {
+		.two, .one {
+			align-self: center;
+			width: 85%;
+		}
+		.content {
+			flex-direction: column;
+		}
+	}
+	.page-landing {
+		h1 {
+			font-size: calc-em($font-size-xl + 10, $font-size-base);
+		}
+		h2 {
+			line-height: 1;
+			font-size: calc-em($font-size-l, $font-size-base);
+		}
+	}
+	.page-work {
+		h2 {
+			padding-top: calc-em($gutter/3, $font-size-base);
+			padding-bottom: calc-em($gutter/3, $font-size-base);
+			font-size: calc-em($font-size-s + 10, $font-size-base);
+			i {
+				font-size: calc-em($font-size-s, $font-size-s + 10);
+			}
+		}
+		aside div {
+			nav {
+				order: 1;
+				justify-content: center;
+				margin-top: calc-em($gutter*2, $font-size-base);
 
-	// .nav {
-	// 	justify-content: center;
-	// 	.logo {
-	// 		flex: 0;
-	// 	}
-	// }
+				img {
+					display: none;
+				}
+			}
+			p {
+				margin-top: 0;
+			}
+			.rn-carousel-control {
+				font-size: calc-em($font-size-m, $font-size-base);
+			}
+		}
+	}
+	.page-contact {
+		h1 {
+			font-size: calc-em($font-size-l - 8, $font-size-base);
+		}
+		p {
+			width: 100%;
+		}
+	}
+	.nav {
+		flex-direction: column;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.nav-item {
+		font-size: 15px;
+		padding: 0 calc-em(10px, $font-size-base);
+	}
+	.logo {
+		display: none;
+	}
+	.nav-list {
+		align-self: center;
+	}
+	h1 {
+		line-height: 1;
+		text-align: center;
+		font-size: calc-em($font-size-l, $font-size-base);
+	}
+	p {
+		font-size: calc-em($font-size-base, $font-size-base);
+	}
+	.btn-wide {
+		width: calc-em(250px, $font-size-base);
+	}
+}
+@media screen and (min-width: 480px) and (max-width: 600px) {
+	.nav-item {
+		padding: 0 calc-em($font-size-m, $font-size-base);
+	}
+}
+@media screen and (max-width: 1024px) {
+	.page-about {
+		.content {
+			flex-direction: column;
+		}
+		.one, .two {
+			width: 100%;
+			flex: 0 auto;
+		}
+		p {
+			margin-bottom: calc-em($gutter * 1.4, $font-size-base);
+		}
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
 }

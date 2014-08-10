@@ -7,8 +7,8 @@
 
 		$scope.work = [
 			{
-				client: 'Amtrak Guest Rewards',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet egestas augue, vel pellentesque nunc scelerisque in. Pellentesque sollicitudin egestas vulputate. Proin ligula tortor, porttitor vel accumsan blandit, laoreet sed mi. Vivamus laoreet feugiat lobortis.',
+				client: 'Amtrak',
+				description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies.',
 				link: 'dfsdf',
 				images: {
 					logo: 'logo_amtrak.svg',
@@ -22,7 +22,7 @@
 			},
 			{
 				client: 'Fraser',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet egestas augue, vel pellentesque nunc scelerisque in. Pellentesque sollicitudin egestas vulputate. Proin ligula tortor, porttitor vel accumsan blandit, laoreet sed mi. Vivamus laoreet feugiat lobortis.',
+				description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies.',
 				link: 'dfsdf',
 				work: [
 					'amtrak_desktop_1.jpg',
@@ -33,7 +33,7 @@
 			},
 			{
 				client: 'On Being',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet egestas augue, vel pellentesque nunc scelerisque in. Pellentesque sollicitudin egestas vulputate. Proin ligula tortor, porttitor vel accumsan blandit, laoreet sed mi. Vivamus laoreet feugiat lobortis.',
+				description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies.',
 				link: 'dfsdf',
 				work: [
 					'amtrak_desktop_1.jpg',
@@ -43,8 +43,8 @@
 				]
 			},
 			{
-				client: 'Wyndham Rewards',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet egestas augue, vel pellentesque nunc scelerisque in. Pellentesque sollicitudin egestas vulputate. Proin ligula tortor, porttitor vel accumsan blandit, laoreet sed mi. Vivamus laoreet feugiat lobortis.',
+				client: 'Wyndham',
+				description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies.',
 				link: 'dfsdf',
 				work: [
 					'amtrak_desktop_1.jpg',
@@ -55,7 +55,7 @@
 			},
 			{
 				client: 'Blue Claw Co.',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet egestas augue, vel pellentesque nunc scelerisque in. Pellentesque sollicitudin egestas vulputate. Proin ligula tortor, porttitor vel accumsan blandit, laoreet sed mi. Vivamus laoreet feugiat lobortis.',
+				description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies.',
 				link: 'dfsdf',
 				work: [
 					'amtrak_desktop_1.jpg',
@@ -66,7 +66,7 @@
 			},
 			{
 				client: 'Isolate & Bloom',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet egestas augue, vel pellentesque nunc scelerisque in. Pellentesque sollicitudin egestas vulputate. Proin ligula tortor, porttitor vel accumsan blandit, laoreet sed mi. Vivamus laoreet feugiat lobortis.',
+				description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies.',
 				link: 'dfsdf',
 				work: [
 					'amtrak_desktop_1.jpg',

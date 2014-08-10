@@ -130,16 +130,14 @@
 		}
 	}
 	ul {
-		width: 100%
-	}
-	> li {
 		width: 100%;
+	}
+	li {
 		&:first-child {
 			h2 {
 				border-top: none;
 			}
 		}
-		// border-bottom: 1px dotted #dff3ff;
 	}
 	h2 {
 		display: flex;
@@ -182,10 +180,25 @@
 			}
 			.rn-carousel-container {
 				align-self: center;
-				width: 60% !important; // Need important to override javascript inline styles
+				 // Need important to override javascript inline styles
 				li {
 					img {
 					}
+				}
+			}
+			.rn-carousel-slide {
+				max-width: 1270px;
+			}
+			.rn-carousel-control {
+				color: $color-dark;
+				font-size: $font-size-l;
+				&.rn-carousel-control-next:before {
+					content:"\f054";
+					font-family: FontAwesome;
+				}
+				&.rn-carousel-control-prev:before {
+					content:"\f053";
+					font-family: FontAwesome;
 				}
 			}
 		}
@@ -199,6 +212,12 @@
 	background-color: $color-services;
 }
 .page-contact {
+	justify-content: space-between;
+	flex-flow: column;
+	min-height: 93%;
+	.content {
+		padding-top: calc-em(80px, $font-size-base);
+	}
 	h1 {
 		// background-color: $color-services;
 	}
@@ -235,7 +254,7 @@
 }
 
 footer {
-	padding: calc-em(20px, $font-size-base);
+	padding: calc-em($gutter, $font-size-base) calc-em($gutter, $font-size-base) calc-em($gutter + 10, $font-size-base) calc-em($gutter, $font-size-base);
 	background-color: $color-footer;
 	display: flex;
 	flex-direction: column;
