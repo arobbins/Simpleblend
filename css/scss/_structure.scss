@@ -95,6 +95,7 @@
 }
 .page-about {
 	background-color: $color-about;
+	// background-image: url('../images/test.png');
 
 	.content {
 		display: flex;
@@ -111,6 +112,7 @@
 }
 .page-work {
 	background-color: $color-work;
+	// background-image: url('../images/test.png');
 
 	.content {
 		display: flex;
@@ -175,8 +177,7 @@
 				// border: 1px solid red;
 			}
 			p {
-				// border: 1px solid green;
-				// flex-direction: column;
+				margin-bottom: calc-em($gutter + 10, $font-size-base);
 			}
 			.rn-carousel-container {
 				align-self: center;
@@ -210,8 +211,14 @@
 }
 .page-services {
 	background-color: $color-services;
+	background-image: url('../images/lines.png');
+	img {
+		width: 18%;
+	}
 }
 .page-contact {
+	background-color: $color-contact;
+	// background-image: url('../images/test.png');
 	justify-content: space-between;
 	flex-flow: column;
 	min-height: 93%;
@@ -221,7 +228,7 @@
 	h1 {
 		// background-color: $color-services;
 	}
-	background: $color-contact;
+
 	// justify-content: center;
 
 	p {
