@@ -11,6 +11,7 @@
 
 	.logo {
 		flex: 2 auto;
+		// background-image: url('../images/logo.svg');
 	}
 	ul {
 		// flex: 1;
@@ -211,7 +212,7 @@
 }
 .page-services {
 	background-color: $color-services;
-	background-image: url('../images/lines.png');
+	// background-image: url('../images/lines.png');
 	img {
 		width: 18%;
 	}
