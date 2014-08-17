@@ -7,3 +7,6 @@
 @function calc-percent($target, $context) {
 	@return ($target / $context) * 100%;
 }
+@function calc-measure($fontsize, $widthcontext) {
+	@return (($fontsize * 30) / $widthcontext * 100em);
+}

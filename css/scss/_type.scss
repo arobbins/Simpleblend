@@ -7,7 +7,7 @@ h1, h2, h3 {
 h1 {
 	font-size: calc-em($font-size-l, $font-size-base);
 	margin: 0 0 ($font-size-l / 4) 0;
-	line-height: 1;
+	line-height: 0.9;
 }
 h2 {
 	font-size: calc-em($font-size-m, $font-size-base);
@@ -19,20 +19,28 @@ h3 {
 }
 p, a, li, em, strong, b, i, span {
 	letter-spacing: calc-em(0.5px, $font-size-base);
-	line-height: 1.5;
+	line-height: 1.6;
+	font-family: $font-secondary;
 }
 p {
-	font-size: calc-em(17px, $font-size-base);
+	font-size: calc-em($font-size-base, $font-size-base);
+	margin: $font-size-base 0;
 }
 a {
 	color: $color-white;
 }
+.highlight {
+	font-style: normal;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	padding: 3px 8px;
+}
 a:hover {
-	text-decoration: none;
+	// text-decoration: none;
 	color: $color-white;
 }
 .logo {
-	font-size: calc-em(18px, $font-size-base);;
+	font-size: calc-em($font-size-base, $font-size-base);;
 	&:hover {
 		// color: $color-light;
 	}
@@ -50,6 +58,7 @@ a:hover {
 		text-shadow: 4px 3px 0px $color-footer, 7px 6px 0px rgba(0, 0, 0, 0.15);
 		margin: 0;
 		font-weight: bold;
+		line-height: 1;
 	}
 	h2 {
 		letter-spacing: calc-em(1px, $font-size-base);
@@ -82,8 +91,19 @@ a:hover {
 		float: left;
 	}
 }
+.page-contact {
+	a {
+		// text-decoration: underline;
+	}
+}
 .page-about {
 	h1 {
 		color: $color-dark;
+	}
+	.highlight {
+		background-color: darken($color-white, 7);
+	}
+	a:last-child {
+		color: black;
 	}
 }

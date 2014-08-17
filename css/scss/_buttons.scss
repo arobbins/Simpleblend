@@ -1,5 +1,4 @@
 .btn {
-	width: calc-em(190px, $font-size-base);
 	padding: calc-rem(15px, $font-size-base);
 	margin-top: calc-em(35px, $font-size-base);
 	font-family: $font-secondary;
@@ -26,7 +25,6 @@
 	&:hover {
 		padding-right: calc-em(36px, $font-size-base);
 		padding-left: calc-em(20px, $font-size-base);
-		width: calc-em(190px, $font-size-base);
 	}
 	&:after {
 		position: absolute;

@@ -5,7 +5,7 @@ html {
 body {
 	height: 100%;
 	margin: 0;
-	font-family: 'PT Sans', Helvetica, Sans-serif;
+	font-family: $font-secondary;
 }
 ul {
 	list-style: none;
@@ -43,7 +43,16 @@ template {
 }
 a {
   background: transparent;
-  text-decoration: none;
+  // text-decoration: none;
+  i, &.btn {
+  	text-decoration: none;
+  }
+  &:hover {
+  	// text-decoration: none;
+  }
+}
+nav a {
+   text-decoration: none;
 }
 a:active,
 a:hover {
@@ -101,7 +110,7 @@ figure {
 	margin: 0;
 }
 .page-about ::selection {
-  background: $color-about; /* WebKit/Blink Browsers */
+  background: darken($color-about, 2); /* WebKit/Blink Browsers */
 }
 .page-about ::-moz-selection {
   background: $color-about; /* Gecko Browsers */

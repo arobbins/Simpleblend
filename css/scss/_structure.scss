@@ -44,7 +44,7 @@
 }
 .nav-link {
 	// padding: calc-em(15px, $font-size-base) 0;
-	font-size: calc-em($font-size-xs, $font-size-base);
+	font-size: calc-em($font-size-base, $font-size-base);
 	cursor: pointer;
 	&:hover {
 		color: white;
@@ -90,6 +90,9 @@
 	* {
 		margin: auto;
 	}
+	.btn {
+		width: calc-em(200px, $font-size-base);
+	}
 	// .btn {
 	// 	margin-top: calc-em(40px, $font-size-base);
 	// }
@@ -98,17 +101,31 @@
 	background-color: $color-about;
 	// background-image: url('../images/test.png');
 
+	h1 {
+		margin: 0;
+	}
+	p {
+		color: $color-dark;
+		max-width: 92%;
+		margin-top: calc-em(5px, $font-size-base);
+	}
+	a {
+		text-decoration: underline;
+		color: $color-work;
+		&:hover {
+			color: $color-dark;
+		}
+	}
 	.content {
 		display: flex;
 		flex-wrap: wrap;
-		// flex-flow: row;
 	}
 	.one {
-		flex: 2 auto;
-		width: 60%;
+		flex: 2 0 0;
+		// width: calc-measure($font-size-base, 1440px);
 	}
 	.two {
-		// width: 30%;
+		flex: 1 0 0;
 	}
 }
 .page-work {
@@ -178,6 +195,7 @@
 				// border: 1px solid red;
 			}
 			p {
+				max-width: calc-measure($font-size-base, 1338px);
 				margin-bottom: calc-em($gutter + 10, $font-size-base);
 			}
 			.rn-carousel-container {
@@ -212,9 +230,21 @@
 }
 .page-services {
 	background-color: $color-services;
-	// background-image: url('../images/lines.png');
+	background-image: url('../images/lines.png');
+
+	.content {
+		display: flex;
+	}
 	img {
-		width: 18%;
+		flex: 2 0 0;
+		align-self: flex-start;
+		margin: 0 5% 0 0;
+	}
+	aside {
+		flex: 1 0 0;
+	}
+	h1 {
+		font-size: calc-em(57px, $font-size-base);
 	}
 }
 .page-contact {
@@ -223,17 +253,28 @@
 	justify-content: space-between;
 	flex-flow: column;
 	min-height: 93%;
+
 	.content {
 		padding-top: calc-em(80px, $font-size-base);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
-	h1 {
-		// background-color: $color-services;
+	.btn {
+		margin-bottom: calc-em($gutter, $font-size-base);
+
+		& + a {
+
+			&:hover {
+				opacity: 0.6;
+			}
+			i {
+				padding-right: 10px;
+			}
+		}
 	}
-
-	// justify-content: center;
-
 	p {
-		width: 75%;
+		max-width: calc-measure($font-size-base, 1338px);
 		margin: 0 auto;
 	}
 }
