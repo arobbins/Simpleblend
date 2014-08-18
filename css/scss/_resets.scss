@@ -122,7 +122,7 @@ figure {
   background: $color-work; /* Gecko Browsers */
 }
 .page-services ::selection {
-  background: $color-services; /* WebKit/Blink Browsers */
+  background: desaturate(lighten($color-services, 15), 40); /* WebKit/Blink Browsers */
 }
 .page-services ::-moz-selection {
   background: $color-services; /* Gecko Browsers */

@@ -113,7 +113,7 @@
 		text-decoration: underline;
 		color: $color-work;
 		&:hover {
-			color: $color-dark;
+			opacity: 0.6;
 		}
 	}
 	.content {
@@ -196,10 +196,11 @@
 			}
 			p {
 				max-width: calc-measure($font-size-base, 1338px);
-				margin-bottom: calc-em($gutter + 10, $font-size-base);
+				margin-bottom: 0;
 			}
 			.rn-carousel-container {
 				align-self: center;
+				margin-bottom: 1em;
 				 // Need important to override javascript inline styles
 				li {
 					img {
@@ -207,7 +208,7 @@
 				}
 			}
 			.rn-carousel-slide {
-				max-width: 1270px;
+				max-width: 1338px;
 			}
 			.rn-carousel-control {
 				color: $color-dark;
@@ -235,10 +236,18 @@
 	.content {
 		display: flex;
 	}
-	img {
+	section {
+		display: flex;
+		flex-direction: column;
 		flex: 2 0 0;
 		align-self: flex-start;
 		margin: 0 5% 0 0;
+		div {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			margin-top: 2em;
+		}
 	}
 	aside {
 		flex: 1 0 0;
@@ -260,17 +269,22 @@
 		flex-direction: column;
 		justify-content: center;
 	}
+	aside {
+		display: flex;
+		justify-content: center;
+		i {
+			padding-right: 5px;
+		}
+		a:hover {
+			opacity: 0.6;
+		}
+	}
 	.btn {
 		margin-bottom: calc-em($gutter, $font-size-base);
 
 		& + a {
 
-			&:hover {
-				opacity: 0.6;
-			}
-			i {
-				padding-right: 10px;
-			}
+
 		}
 	}
 	p {

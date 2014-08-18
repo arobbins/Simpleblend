@@ -29,6 +29,9 @@ p {
 a {
 	color: $color-white;
 }
+small {
+	font-size: 0.7em;
+}
 .highlight {
 	font-style: normal;
 	background-color: rgba(0, 0, 0, 0.3);
@@ -69,7 +72,7 @@ a:hover {
 }
 .page-work {
 	h2 {
-		padding: calc-em($gutter, $font-size-m);
+		padding: calc-em($gutter - 10, $font-size-m) calc-em($gutter, $font-size-m);
 		margin: 0;
 	}
 	.link {
@@ -77,18 +80,32 @@ a:hover {
 	}
 }
 .page-services {
-	ul {
-		list-style: none;
-		// color: $color-2;
+	dl {
+		// list-style: none;
+		margin-top:
 	}
-	li {
-		background-color: rgba(0,0,0,0.5);
-		padding: 1em;
+	dt {
+		list-style: none;
+		background-color: rgba(0,0,0,0.3);
+		padding: 0.5em 0.9em;
 		border-radius: 0.5em;
-		width: 10%;
+		text-indent: 0;
+		margin: 0 0 0.7em 0;
+		font-size: 1.1em;
 		text-align: center;
-		font-size: 1.2em;
-		float: left;
+	}
+	dd {
+		font-size: 1.1em;
+		margin-bottom: 0.4em;
+		margin-left: 1em;
+
+		&:before {
+    		content: "\f111  ";
+    		font-family: FontAwesome;
+    		vertical-align: middle;
+    		font-size: 0.3em;
+			padding-right: 2em;
+  		}
 	}
 }
 .page-contact {

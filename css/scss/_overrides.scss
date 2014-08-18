@@ -28,3 +28,7 @@
 .nav.ui-scrollfix ul a:hover{
 	color: $color-dark;
 }
+
+.rn-carousel-container {
+	width: auto !important; // Need important to remove inline styles
+}

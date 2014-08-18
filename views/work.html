@@ -5,11 +5,6 @@
 	   	<li ng-repeat="work in work">
 	   		<h2 slide-toggle="#row_{{$index}}" ng-click="toggled = !toggled" ng-class="{visible: toggled}">{{ work.client }} <i class="fa" ng-class="{'fa-chevron-down': toggled===true, 'fa-chevron-right': toggled===false,}"></i></h2>
 	   		<aside id="row_{{$index}}" class="slideable" easing="ease" duration="0.6s">
-	   			<nav>
-	   				<img ng-src="../images/{{ work.images.logo }}">
-	   				<a href="http://google.com" class="btn btn-s">View project <i class="fa fa-external-link"></i></a>
-	   			</nav>
-	   			<p>{{ work.description }}</p>
 					<ul rn-carousel rn-carousel-control>
 	   				<li>
 							<img src="images/amtrak_desktop_1.jpg"
@@ -26,6 +21,11 @@
 							 	  alt="Amtrak">
 	   				</li>
 	   			</ul>
+	   			<nav>
+	   				<img ng-src="../images/{{ work.images.logo }}">
+	   				<a href="http://google.com" class="btn btn-s">View project <i class="fa fa-external-link"></i></a>
+	   			</nav>
+	   			<p>{{ work.description }}</p>
 	   		</aside>
 	   	</li>
 	   </ul>
