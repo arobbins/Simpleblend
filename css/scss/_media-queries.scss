@@ -1,3 +1,25 @@
+@media screen and (min-width: 1800px) {
+	.page-landing {
+		h1 {
+			letter-spacing: calc-em(0.7px, $font-size-base);
+			font-size: calc-em(114px, $font-size-base);
+		}
+		h2 {
+			letter-spacing: calc-em(1px, $font-size-base);
+			font-size: calc-em(45px, $font-size-base);
+		}
+		.page-services {
+			.content {
+				max-width: 1480px;
+			}
+		}
+		.page-work {
+			.content {
+				max-width: 1480px;
+			}
+		}
+	}
+}
 @media screen and (min-width: 1600px) {
 	.page-landing {
 		h1 {

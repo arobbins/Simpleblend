@@ -82,17 +82,20 @@ a:hover {
 .page-services {
 	dl {
 		// list-style: none;
-		margin-top:
+		background-color: rgba(0,0,0,0.3);
+		border-radius: 0.5em;
+		padding: 0 0 0.7em 0;
 	}
 	dt {
 		list-style: none;
 		background-color: rgba(0,0,0,0.3);
 		padding: 0.5em 0.9em;
-		border-radius: 0.5em;
-		text-indent: 0;
 		margin: 0 0 0.7em 0;
+		border-top-left-radius: 0.5em;
+		border-top-right-radius: 0.5em;
+		text-indent: 0;
 		font-size: 1.1em;
-		text-align: center;
+		// text-align: center;
 	}
 	dd {
 		font-size: 1.1em;
@@ -106,6 +109,12 @@ a:hover {
     		font-size: 0.3em;
 			padding-right: 2em;
   		}
+  		// &:nth-child(odd) {
+  		// 	color: white;
+  		// }
+  		// &:nth-child(even) {
+  		// 	color: lightblue;
+  		// }
 	}
 }
 .page-contact {

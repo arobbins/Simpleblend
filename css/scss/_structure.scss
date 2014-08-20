@@ -164,7 +164,7 @@
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		border-top: 1px dotted #dff3ff;
+		border-top: 1px solid #b3d8ee;
 
 		&:hover {
 			cursor: pointer;
@@ -254,6 +254,13 @@
 	}
 	h1 {
 		font-size: calc-em(57px, $font-size-base);
+	}
+	dl {
+		width: 20em;
+
+		&:first-child {
+			margin-right: 5%;
+		}
 	}
 }
 .page-contact {
