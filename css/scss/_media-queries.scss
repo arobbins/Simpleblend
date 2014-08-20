@@ -34,6 +34,9 @@
 }
 @media screen and (max-width: 600px) {
 	.page {
+		h1 {
+			margin-bottom: calc-em($font-size-base/2, $font-size-base);
+		}
 		.content {
 			padding: calc-em($gutter*2, $font-size-base) calc-em($gutter, $font-size-base) calc-em($gutter, $font-size-base) calc-em($gutter, $font-size-base);
 		}
@@ -45,15 +48,17 @@
 		}
 		.content {
 			flex-direction: column;
+			padding-bottom: calc-em($gutter*2, $font-size-base);
 		}
 	}
 	.page-landing {
 		h1 {
-			font-size: calc-em($font-size-xl + 10, $font-size-base);
+			font-size: calc-em($font-size-68, $font-size-base);
+			margin-bottom: 0;
 		}
 		h2 {
 			line-height: 1;
-			font-size: calc-em($font-size-l, $font-size-base);
+			font-size: calc-em($font-size-32, $font-size-base);
 		}
 	}
 	.page-work {
@@ -91,6 +96,22 @@
 			width: 100%;
 		}
 	}
+	.page-services {
+		.content {
+			padding-bottom: 2em;
+		}
+		dl {
+
+			width: 100%;
+			align-self: center;
+			&:first-child {
+				margin-right: 0;
+			}
+		}
+		section div {
+			flex-direction: column;
+		}
+	}
 	.nav {
 		flex-direction: column;
 		padding-left: 0;
@@ -104,7 +125,7 @@
 		display: none;
 	}
 	.nav-list {
-		align-self: center;
+		justify-content: space-around;
 	}
 	h1 {
 		line-height: 1;
@@ -114,8 +135,8 @@
 	p {
 		font-size: calc-em($font-size-base, $font-size-base);
 	}
-	.btn-wide {
-		width: calc-em(250px, $font-size-base);
+	.btn {
+		width: 100%;
 	}
 }
 @media screen and (min-width: 480px) and (max-width: 600px) {
@@ -136,7 +157,56 @@
 			margin-bottom: calc-em($gutter * 1.4, $font-size-base);
 		}
 	}
+	.page-services {
+		.content {
+			flex-direction: column;
+		}
+		section {
+			order: 2;
+			img {
+				order: 2;
+			}
+			div {
+				margin: 0 0 calc-em($gutter, $font-size-base) 0;
+			}
+		}
+		aside {
+			order: 1;
+		}
+	}
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-
+@media screen and (max-width: 768px) {
+	.page-about p {
+		font-size: 0.9em;
+		max-width: 100%;
+	}
+	.page-services {
+		section {
+			margin: 0;
+		}
+	}
+}
+@media screen and (max-width: 480px) {
+	.page p {
+		font-size: .8em;
+	}
+	.page-services {
+		h1 {
+			font-size: 2.7em;
+		}
+	}
+	.btn-l {
+		font-size: calc-em(13px, $font-size-base);
+	}
+}
+@media screen and (max-width: 320px) {
+	.page-landing {
+		h1 {
+			font-size: calc-em($font-size-68, $font-size-base);
+			margin-bottom: calc-em($font-size-base - 13, $font-size-base);
+		}
+		h2 {
+			// font-size: calc-em($font-size-32, $font-size-base);
+		}
+	}
 }

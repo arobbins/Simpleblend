@@ -256,7 +256,7 @@
 		font-size: calc-em(57px, $font-size-base);
 	}
 	dl {
-		width: 20em;
+		min-width: 48%;
 
 		&:first-child {
 			margin-right: 5%;
