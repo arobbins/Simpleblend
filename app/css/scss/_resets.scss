@@ -43,12 +43,8 @@ template {
 }
 a {
   background: transparent;
-  // text-decoration: none;
   i, &.btn {
   	text-decoration: none;
-  }
-  &:hover {
-  	// text-decoration: none;
   }
 }
 nav a {

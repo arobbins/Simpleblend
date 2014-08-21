@@ -1,0 +1,35 @@
+<section class="page page-work" id="work">
+	<div class="content">
+	   <ul>
+	   	<li ng-repeat="work in work">
+	   		<h2 slide-toggle="#row_{{$index}}" ng-click="toggled = !toggled" ng-class="{visible: toggled}">{{ work.client }} <i class="fa" ng-class="{'fa-chevron-down': toggled===true, 'fa-chevron-right': toggled===false,}"></i></h2>
+	   		<aside id="row_{{$index}}" class="slideable" easing="ease" duration="0.6s">
+					<ul rn-carousel rn-carousel-control>
+	   				<li>
+							<img src="images/amtrak_desktop_1.jpg"
+							 	  srcset="images/amtrak_desktop_1.jpg 696w,
+							          images/amtrak_mobile_1.jpg 480w"
+							 	  sizes="(max-width: 48em) 33.3vw, 100vw"
+							 	  alt="Amtrak">
+						</li>
+						<li>
+							<img src="images/amtrak_desktop_2.jpg"
+							 	  srcset="images/amtrak_desktop_2.jpg 696w,
+							          images/amtrak_mobile_2.jpg 480w"
+							 	  sizes="(max-width: 48em) 33.3vw, 100vw"
+							 	  alt="Amtrak">
+	   				</li>
+	   			</ul>
+	   			<section>
+		   			<p>{{ work.description }}</p>
+						<nav>
+		   				<!-- <img ng-src="../images/{{ work.images.logo }}"> -->
+		   				<a href="http://google.com" class="btn btn-s">View project <i class="fa fa-external-link"></i></a>
+		   			</nav>
+	   			</section>
+	   		</aside>
+	   	</li>
+	   </ul>
+
+	</div>
+</section>

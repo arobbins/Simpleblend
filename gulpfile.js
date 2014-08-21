@@ -12,27 +12,28 @@ var gulp = require('gulp'),
 	imagemin = require('gulp-imagemin'),
 	pngcrush = require('imagemin-pngcrush'),
 	svgo = require('imagemin-svgo'),
-	prefix = require('gulp-autoprefixer')
+	prefix = require('gulp-autoprefixer'),
+	merge = require('merge-stream');
 	config = {
 		html: {
 			paths: [
-				'./index.html',
-				'./views/*.html'
+				'app/index.html',
+				'app/views/*.html'
 			]
 		},
 		css: {
 			names: {
 				vendor: 'vendor.min.css',
 				local: 'local.min.css',
-				dest: 'css'
+				dest: 'dist/css'
 			},
 			paths: {
 				vendor: [
-					'css/vendor/angular-carousel.min.css'
+					'app/css/vendor/angular-carousel.min.css'
 				],
 				local: {
-					entry: 'css/scss/main.scss',
-					all: 'css/scss/*.scss'
+					entry: 'app/css/scss/main.scss',
+					all: 'app/css/scss/*.scss'
 				}
 			}
 		},
@@ -40,36 +41,36 @@ var gulp = require('gulp'),
 			names: {
 				vendor: 'vendor.min.js',
 				local: 'local.min.js',
-				dest: 'js'
+				dest: 'dist/js'
 			},
 			paths: {
 				vendor: [
 					// Order matters here
-					'js/vendor/angular.min.js',
-					'js/vendor/angular-ui-router.min.js',
-					'js/vendor/angular-scroll.min.js',
-					'js/vendor/ui-utils.min.js',
-					'js/vendor/svg.logos.js',
-					'js/vendor/angularSlideables.js',
-					'js/vendor/angular-animate.js',
-					'js/vendor/angular-touch.min.js',
-					'js/vendor/angular-carousel.min.js',
-					'js/vendor/appscroll.js'
+					'app/js/vendor/angular.min.js',
+					'app/js/vendor/angular-ui-router.min.js',
+					'app/js/vendor/angular-scroll.min.js',
+					'app/js/vendor/ui-utils.min.js',
+					'app/js/vendor/svg.logos.js',
+					'app/js/vendor/angularSlideables.js',
+					'app/js/vendor/angular-animate.js',
+					'app/js/vendor/angular-touch.min.js',
+					'app/js/vendor/angular-carousel.min.js',
+					'app/js/vendor/appscroll.js'
 				],
 				local: [
-					'js/app/app.js',
-					'js/app/controllers/*.js',
-					'js/app/services/*.js',
-					'js/app/directives/*.js'
+					'app/js/app/app.js',
+					'app/js/app/controllers/*.js',
+					'app/js/app/services/*.js',
+					'app/js/app/directives/*.js'
 				]
 			}
 		},
 		images: {
 			paths: [
-				'images/*'
+				'app/images/*'
 			],
 			names: {
-				dest: 'images'
+				dest: 'dist/images'
 			}
 		}
 	};
@@ -80,7 +81,7 @@ Server
 gulp.task('browser-sync', function() {
 	browserSync.init(null, {
 		server: {
-			baseDir: "./"
+			baseDir: "./dist"
 		}
 	});
 });
@@ -172,10 +173,14 @@ gulp.task('images', function() {
 HTML
 ==================================================================== */
 gulp.task('html', function() {
-	return gulp.src(config.html.paths)
-		.pipe(browserSync.reload({
-			stream: true
-		}));
+
+	var htmlEntry = gulp.src(config.html.paths[0])
+		.pipe(gulp.dest('./dist'));
+	var htmlviews = gulp.src(config.html.paths[1])
+		.pipe(gulp.dest('./dist/views'));
+
+	return merge(htmlEntry, htmlviews);
+
 });
 
 /* ====================================================================

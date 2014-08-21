@@ -1,6 +1,4 @@
-// Navigation
 .nav {
-	// padding: calc-em(25px, $font-size-base) calc-em(40px, $font-size-base);
 	z-index: 1;
 	display: flex;
 	flex-wrap: wrap;
@@ -11,39 +9,23 @@
 
 	.logo {
 		flex: 2 auto;
-		// background-image: url('../images/logo.svg');
-	}
-	ul {
-		// flex: 1;
-		// justify-content: flex-end;
-
 	}
 }
 .nav-list {
-	// flex: 2;
 	display: flex;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 .nav-item {
-	// flex: 1;
-	// float: left;
 	padding: 0 calc-em($gutter - 5, $font-size-base);
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
 	-ms-transition: all 0.3s ease-out;
 	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
-	// &:first-child {
-	// 	padding-left: 0;
-	// }
-	// &:last-child {
-	// 	padding-right: 0;
-	// }
 }
 .nav-link {
-	// padding: calc-em(15px, $font-size-base) 0;
 	font-size: calc-em($font-size-base, $font-size-base);
 	cursor: pointer;
 	&:hover {
@@ -76,7 +58,6 @@
 	flex-flow: row;
 	justify-content: center;
 	min-height: 100%;
-	// width: calc-percent(200px, 100%);
 
 	.content {
 		width: 100%;
@@ -93,13 +74,10 @@
 	.btn {
 		width: calc-em(200px, $font-size-base);
 	}
-	// .btn {
-	// 	margin-top: calc-em(40px, $font-size-base);
-	// }
 }
 .page-about {
 	background-color: $color-about;
-	// background-image: url('../images/test.png');
+
 	p {
 		color: $color-dark;
 		max-width: 92%;
@@ -118,7 +96,6 @@
 	}
 	.one {
 		flex: 2 0 0;
-		// width: calc-measure($font-size-base, 1440px);
 	}
 	.two {
 		flex: 1 0 0;
@@ -126,14 +103,12 @@
 }
 .page-work {
 	background-color: $color-work;
-	// background-image: url('../images/test.png');
 
 	.content {
 		display: flex;
 	   flex-direction: row;
 	   justify-content:center; /* default is stretch */
 	   align-items: center;
-	   // padding-bottom: 4em;
 	}
 	section {
 		display: flex;
@@ -175,15 +150,11 @@
 	aside {
 
 		> div {
-			// border: 1px solid blue;
 			display: flex;
 			flex-flow: column wrap;
 			justify-content: center;
 			align-items: flex-start;
 
-			a {
-				// border: 1px solid red;
-			}
 			p {
 				max-width: calc-measure($font-size-base, 1338px);
 				margin-bottom: 0;
@@ -191,7 +162,7 @@
 			.rn-carousel-container {
 				align-self: center;
 				margin-bottom: 1em;
-				 // Need important to override javascript inline styles
+
 				li {
 					img {
 					}
@@ -255,7 +226,6 @@
 }
 .page-contact {
 	background-color: $color-contact;
-	// background-image: url('../images/test.png');
 	justify-content: space-between;
 	flex-flow: column;
 	min-height: 93%;
@@ -269,6 +239,7 @@
 	aside {
 		display: flex;
 		justify-content: center;
+
 		i {
 			padding-right: 5px;
 		}
@@ -295,9 +266,6 @@
 	background-color: rgba(14, 21, 25, 0.6);
 	padding: calc-em(40px, $font-size-base) 0;
 	margin: 0 1% 1% 0;
-	// background: url('../images/bg_amtrak.jpg') no-repeat;
-	// background-size: contain;
-	// opacity: 0.3;
 }
 .icon-logo.col-sm-3 {
 	width: 24%;

@@ -17,25 +17,12 @@
 	-o-transition: all 0.8s ease;
 	-ms-transition: all 0.8s ease;
 	transition: all 0.8s ease;
-
-	&:hover {
-		// opacity: 0.8;
-	}
 }
 
 .fade.ng-hide-add, .fade.ng-hide-remove {
 	height: 500px !important;
-	// overflow-y: hidden;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
-}
-.fade.ng-hide-add.ng-hide-add-active,
-.fade.ng-hide-remove {
-	// height: 500px !important;
-}
-.fade.ng-hide-add,
-.fade.ng-hide-remove.ng-hide-remove-active {
-	// height: 500px !important;
 }
