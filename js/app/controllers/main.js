@@ -4,7 +4,6 @@
 		$scope.app = {};
 		$scope.app.name = 'Simpleblend';
 		$scope.toggled = false;
-
 		$scope.work = [
 			{
 				client: 'Amtrak',

@@ -6,7 +6,7 @@ h1, h2, h3 {
 }
 h1 {
 	font-size: calc-em($font-size-l, $font-size-base);
-	margin: 0 0 ($font-size-l / 4) 0;
+	margin: 0 0 calc-em($font-size-base/2.5, $font-size-base) 0;
 	line-height: 0.9;
 }
 h2 {
@@ -30,7 +30,7 @@ a {
 	color: $color-white;
 }
 small {
-	font-size: 0.7em;
+	font-size: 0.6em;
 }
 .highlight {
 	font-style: normal;

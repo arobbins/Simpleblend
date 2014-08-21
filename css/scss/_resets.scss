@@ -110,10 +110,10 @@ figure {
 	margin: 0;
 }
 .page-about ::selection {
-  background: darken($color-about, 2); /* WebKit/Blink Browsers */
+  background: darken($color-about, 3); /* WebKit/Blink Browsers */
 }
 .page-about ::-moz-selection {
-  background: $color-about; /* Gecko Browsers */
+  background: darken($color-about, 3); /* Gecko Browsers */
 }
 .page-work ::selection {
   background: $color-work; /* WebKit/Blink Browsers */
@@ -125,7 +125,7 @@ figure {
   background: desaturate(lighten($color-services, 15), 40); /* WebKit/Blink Browsers */
 }
 .page-services ::-moz-selection {
-  background: $color-services; /* Gecko Browsers */
+  background: desaturate(lighten($color-services, 15), 40); /* Gecko Browsers */
 }
 .page-contact ::selection {
   background: $color-contact; /* WebKit/Blink Browsers */

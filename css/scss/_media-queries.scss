@@ -34,9 +34,6 @@
 }
 @media screen and (max-width: 600px) {
 	.page {
-		h1 {
-			margin-bottom: calc-em($font-size-base/2, $font-size-base);
-		}
 		.content {
 			padding: calc-em($gutter*2, $font-size-base) calc-em($gutter, $font-size-base) calc-em($gutter, $font-size-base) calc-em($gutter, $font-size-base);
 		}
@@ -118,8 +115,8 @@
 		padding-right: 0;
 	}
 	.nav-item {
-		font-size: 15px;
-		padding: 0 calc-em(10px, $font-size-base);
+		font-size: $font-size-base;
+		padding: 0;
 	}
 	.logo {
 		display: none;
@@ -130,18 +127,10 @@
 	h1 {
 		line-height: 1;
 		text-align: center;
-		font-size: calc-em($font-size-l, $font-size-base);
+		font-size: calc-em($font-size-40, $font-size-base);
 	}
 	p {
 		font-size: calc-em($font-size-base, $font-size-base);
-	}
-	.btn {
-		width: 100%;
-	}
-}
-@media screen and (min-width: 480px) and (max-width: 600px) {
-	.nav-item {
-		padding: 0 calc-em($font-size-m, $font-size-base);
 	}
 }
 @media screen and (max-width: 1024px) {
@@ -150,11 +139,13 @@
 			flex-direction: column;
 		}
 		.one, .two {
-			width: 100%;
+			width: 89%;
 			flex: 0 auto;
+			align-self: center;
 		}
 		p {
 			margin-bottom: calc-em($gutter * 1.4, $font-size-base);
+			max-width: 100%;
 		}
 	}
 	.page-services {
@@ -162,6 +153,7 @@
 			flex-direction: column;
 		}
 		section {
+			align-self: center;
 			order: 2;
 			img {
 				order: 2;
@@ -175,6 +167,13 @@
 		}
 	}
 }
+@media screen and (min-width: 768px) and (max-width: 1024px){
+	.page-services {
+		p {
+			width: 86%;
+		}
+	}
+}
 @media screen and (max-width: 768px) {
 	.page-about p {
 		font-size: 0.9em;
@@ -184,29 +183,43 @@
 		section {
 			margin: 0;
 		}
+		h1 {
+			font-size: calc-em($font-size-40, $font-size-base);
+		}
+	}
+	.page-work {
+		.content {
+			padding-left: calc-em($font-size-base, $font-size-base);
+			padding-right: calc-em($font-size-base, $font-size-base);
+		}
 	}
 }
 @media screen and (max-width: 480px) {
 	.page p {
 		font-size: .8em;
 	}
-	.page-services {
-		h1 {
-			font-size: 2.7em;
-		}
-	}
 	.btn-l {
 		font-size: calc-em(13px, $font-size-base);
+	}
+	.logo {
+		display: flex;
+		justify-content: center;
+	}
+	.nav-list {
+		display: none;
+	}
+	.btn {
+		width: 100%;
 	}
 }
 @media screen and (max-width: 320px) {
 	.page-landing {
 		h1 {
-			font-size: calc-em($font-size-68, $font-size-base);
+			font-size: calc-em($font-size-xl, $font-size-base);
 			margin-bottom: calc-em($font-size-base - 13, $font-size-base);
 		}
 		h2 {
-			// font-size: calc-em($font-size-32, $font-size-base);
+			font-size: calc-em($font-size-s + 5, $font-size-base);
 		}
 	}
 }

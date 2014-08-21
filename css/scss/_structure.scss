@@ -29,7 +29,7 @@
 .nav-item {
 	// flex: 1;
 	// float: left;
-	padding: 0 calc-em($gutter, $font-size-base);
+	padding: 0 calc-em($gutter - 5, $font-size-base);
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
 	-ms-transition: all 0.3s ease-out;
@@ -100,10 +100,6 @@
 .page-about {
 	background-color: $color-about;
 	// background-image: url('../images/test.png');
-
-	h1 {
-		margin: 0;
-	}
 	p {
 		color: $color-dark;
 		max-width: 92%;
@@ -271,7 +267,7 @@
 	min-height: 93%;
 
 	.content {
-		padding-top: calc-em(80px, $font-size-base);
+		padding-top: calc-em(60px, $font-size-base);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

@@ -117,7 +117,7 @@ gulp.task('styles-local', function() {
 /* ====================================================================
 Scripts - Vendor
 ==================================================================== */
-gulp.task('scripts-vendor', ['linting'], function() {
+gulp.task('scripts-vendor', function() {
 	return gulp.src(config.js.paths.vendor)
 		.pipe(uglify())
 		.pipe(concat(config.js.names.vendor))
