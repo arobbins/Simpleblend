@@ -134,6 +134,9 @@
 	}
 }
 @media screen and (max-width: 1024px) {
+	.page-landing {
+		background-image: url('../images/bg_opt.jpg');
+	}
 	.page-about {
 		.content {
 			flex-direction: column;
@@ -164,6 +167,17 @@
 		}
 		aside {
 			order: 1;
+		}
+	}
+	.page-work {
+		section {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			nav {
+				margin-top: 2em;
+				align-self: center;
+			}
 		}
 	}
 }

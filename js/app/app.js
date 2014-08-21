@@ -18,7 +18,16 @@
 				url: '/',
 				controller: ['$scope', function($scope){
 					$scope.page = 'page-home';
+
+					// Activating AppScroll plugin to prevent website dragging on iDevices.
+					var scroller = new AppScroll({
+						toolbar: toolbarElement,
+						scroller: contentElement
+					});
+					scroller.on();
+
 				}]
 			});
 		}]);
+
 }());

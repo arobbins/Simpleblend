@@ -53,7 +53,8 @@ var gulp = require('gulp'),
 					'js/vendor/angularSlideables.js',
 					'js/vendor/angular-animate.js',
 					'js/vendor/angular-touch.min.js',
-					'js/vendor/angular-carousel.min.js'
+					'js/vendor/angular-carousel.min.js',
+					'js/vendor/appscroll.js'
 				],
 				local: [
 					'js/app/app.js',
