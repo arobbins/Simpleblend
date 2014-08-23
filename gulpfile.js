@@ -13,12 +13,13 @@ var gulp = require('gulp'),
 	pngcrush = require('imagemin-pngcrush'),
 	svgo = require('imagemin-svgo'),
 	prefix = require('gulp-autoprefixer'),
-	merge = require('merge-stream');
+	merge = require('merge-stream'),
+	sourcemaps = require('gulp-sourcemaps');
 	config = {
 		html: {
 			paths: [
-				'app/index.html',
-				'app/views/*.html'
+				'./app/index.html',
+				'./app/views/*.html'
 			]
 		},
 		css: {
@@ -134,8 +135,10 @@ Scripts - Local
 ==================================================================== */
 gulp.task('scripts-local', ['linting'], function() {
 	return gulp.src(config.js.paths.local)
-		.pipe(uglify())
-		.pipe(concat(config.js.names.local))
+		.pipe(sourcemaps.init())
+			.pipe(uglify())
+			.pipe(concat(config.js.names.local))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(config.js.names.dest))
 		.pipe(browserSync.reload({
 			stream: true
@@ -179,7 +182,10 @@ gulp.task('html', function() {
 	var htmlviews = gulp.src(config.html.paths[1])
 		.pipe(gulp.dest('./dist/views'));
 
-	return merge(htmlEntry, htmlviews);
+	return merge(htmlEntry, htmlviews)
+	.pipe(browserSync.reload({
+		stream: true
+	}));
 
 });
 

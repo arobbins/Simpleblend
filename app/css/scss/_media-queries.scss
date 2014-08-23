@@ -1,4 +1,7 @@
 @media screen and (min-width: 1800px) {
+	body {
+		font-size: 1.3em;
+	}
 	.page-landing {
 		h1 {
 			letter-spacing: calc-em(0.7px, $font-size-base);

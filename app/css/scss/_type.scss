@@ -34,7 +34,8 @@ small {
 }
 .highlight {
 	font-style: normal;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: darken($color-white, 86);
+	color: white;
 	border-radius: 5px;
 	padding: 3px 8px;
 }
@@ -108,9 +109,6 @@ a:hover {
 .page-about {
 	h1 {
 		color: $color-dark;
-	}
-	.highlight {
-		background-color: darken($color-white, 7);
 	}
 	a:last-child {
 		color: black;

@@ -31,7 +31,6 @@ angular.module('angularSlideables', [])
             attrs.expanded = false;
 
             element.bind('click', function() {
-            	element.parent().parent().toggleClass('test');
 
                 if (!target) target = document.querySelector(attrs.slideToggle);
                 if (!content) content = target.querySelector('.slideable_content');

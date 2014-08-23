@@ -93,6 +93,7 @@
 	.content {
 		display: flex;
 		flex-wrap: wrap;
+		max-width: 2200px;
 	}
 	.one {
 		flex: 2 0 0;
@@ -109,6 +110,7 @@
 	   flex-direction: row;
 	   justify-content:center; /* default is stretch */
 	   align-items: center;
+	   // max-width: 2200px;
 	}
 	section {
 		display: flex;
@@ -169,7 +171,7 @@
 				}
 			}
 			.rn-carousel-slide {
-				max-width: 1338px;
+				// max-width: 1338px;
 			}
 			.rn-carousel-control {
 				color: $color-dark;
@@ -196,6 +198,7 @@
 
 	.content {
 		display: flex;
+		max-width: 2200px;
 	}
 	section {
 		display: flex;
@@ -235,6 +238,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		max-width: 2200px;
 	}
 	aside {
 		display: flex;
