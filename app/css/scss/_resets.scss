@@ -105,6 +105,18 @@ img {
 figure {
 	margin: 0;
 }
+nav ::selection {
+	background: darken($color-services, 8); /* WebKit/Blink Browsers */
+}
+nav ::-moz-selection {
+	background: darken($color-services, 8); /* WebKit/Blink Browsers */
+}
+.page-landing ::selection {
+  background: darken($color-services, 8); /* WebKit/Blink Browsers */
+}
+.page-landing ::-moz-selection {
+  background: darken($color-services, 8); /* Gecko Browsers */
+}
 .page-about ::selection {
   background: darken($color-about, 3); /* WebKit/Blink Browsers */
 }
@@ -118,10 +130,10 @@ figure {
   background: $color-work; /* Gecko Browsers */
 }
 .page-services ::selection {
-  background: desaturate(lighten($color-services, 15), 40); /* WebKit/Blink Browsers */
+  background: desaturate(lighten($color-services, 30), 35); /* WebKit/Blink Browsers */
 }
 .page-services ::-moz-selection {
-  background: desaturate(lighten($color-services, 15), 40); /* Gecko Browsers */
+  background: desaturate(lighten($color-services, 30), 35); /* Gecko Browsers */
 }
 .page-contact ::selection {
   background: $color-contact; /* WebKit/Blink Browsers */
