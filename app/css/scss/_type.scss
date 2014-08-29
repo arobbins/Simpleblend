@@ -69,7 +69,8 @@ a:hover {
 }
 .page-work {
 	h2 {
-		padding: calc-em($gutter - 10, $font-size-m) calc-em($gutter, $font-size-m);
+		font-size: calc-em(34px, $font-size-base);
+		padding: calc-em($gutter - 20, $font-size-m) calc-em($gutter, $font-size-m);
 		margin: 0;
 	}
 	.link {
