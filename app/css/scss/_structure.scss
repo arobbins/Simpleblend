@@ -77,9 +77,12 @@
 }
 .page-about {
 /** To edit this background, follow this link:
-http://svgeneration.com/generate/Arrow-stripes?scale=31&background=ffffff&stripe=dedede&stripe-width=0.06&
+http://svgeneration.com/generate/Zig-Zag?scale=30&background=ffffff&stripe=f5f5f5&stripe-width=0.15&
 */
-background-color: #ffffff;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzYyJz4KCTxkZWZzPgoJCTxwYXR0ZXJuIHBhdHRlcm5Vbml0cz0ndXNlclNwYWNlT25Vc2UnIGlkPSdjJyB3aWR0aD0nMzEnIGhlaWdodD0nNjInIHg9JzAnIHk9JzAnIHZpZXdCb3g9JzAgMCA1IDEwJz4KCQkJPHBhdGggZmlsbC1vcGFjaXR5PScwJyBzdHJva2U9JyNkZWRlZGUnIHN0cm9rZS13aWR0aD0nMC4wNicgZD0nTS0yLDFMNywxME0tMiw2TDcsMTVNLTIsLTRMNyw1Jy8+CgkJPC9wYXR0ZXJuPgoJCTxwYXR0ZXJuIHBhdHRlcm5Vbml0cz0ndXNlclNwYWNlT25Vc2UnIGlkPSdjMicgd2lkdGg9JzMxJyBoZWlnaHQ9JzYyJyB4PScxMDAlJyB5PScwJyB2aWV3Qm94PScwIDAgNSAxMCc+CgkJCTxwYXRoIGZpbGwtb3BhY2l0eT0nMCcgc3Ryb2tlPScjZGVkZWRlJyBzdHJva2Utd2lkdGg9JzAuMDYnIGQ9J003LDFMLTIsMTBNNyw2TC0yLDE1TTcsLTRMLTIsNScvPgoJCTwvcGF0dGVybj4KCTwvZGVmcz4KCTxyZWN0IHdpZHRoPSc1MCUnIGhlaWdodD0nMTAwJScgZmlsbD0ndXJsKCNjKScvPgoJPHJlY3QgeD0nNTAlJyB3aWR0aD0nNTAlJyBoZWlnaHQ9JzEwMCUnIGZpbGw9J3VybCgjYzIpJy8+Cjwvc3ZnPg==');
+background-color: #ffffff;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMCcgaGVpZ2h0PSc2MCcgdmlld0JveD0nMCAwIDUgMTAnPgoJPHBhdGggZD0nTTAsMGw1LDVsLTUsNW0tMSwtNmwxLDFsLTEsMU00LC0xbDYsNmwtNiw2JyBmaWxsLW9wYWNpdHk9JzAnIHN0cm9rZT0nI2Y1ZjVmNScgc3Ryb2tlLXdpZHRoPScwLjE1Jy8+Cjwvc3ZnPg==');
+
+
+
 
 
 
@@ -91,9 +94,6 @@ background-color: #ffffff;background-image:url('data:image/svg+xml;base64,PHN2Zy
 	a {
 		text-decoration: underline;
 		color: $color-work;
-		&:hover {
-			opacity: 0.6;
-		}
 	}
 	.content {
 		display: flex;
@@ -108,16 +108,7 @@ background-color: #ffffff;background-image:url('data:image/svg+xml;base64,PHN2Zy
 	}
 }
 .page-work {
-background-color: #84bbdd;
-
-
-
-
-
-
-
-
-
+	background-color: #84bbdd;
 
 	.content {
 		display: flex;

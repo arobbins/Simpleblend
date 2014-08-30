@@ -70,7 +70,7 @@ a:hover {
 .page-work {
 	h2 {
 		font-size: calc-em(34px, $font-size-base);
-		padding: calc-em($gutter - 20, $font-size-m) calc-em($gutter, $font-size-m);
+		padding: calc-em($gutter - 10, $font-size-m) calc-em($gutter, $font-size-m);
 		margin: 0;
 	}
 	.link {
@@ -111,7 +111,7 @@ a:hover {
 	h1 {
 		color: $color-dark;
 	}
-	a:last-child {
-		color: black;
+	a:hover {
+		color: $color-dark;
 	}
 }
