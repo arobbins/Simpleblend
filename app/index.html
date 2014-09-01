@@ -40,7 +40,8 @@
 
 	-->
 
-	<nav class="nav nav-has-scrollfix" ui-scrollfix="+320">
+	<nav class="nav nav-has-scrollfix" ui-scrollfix="+320" ng-class="{'drawer-close': options.toggled}">
+		{{ options.toggled }}
 		<div class="logo">
 			<a href="#top" du-smooth-scroll du-scrollspy> {{ app.name }}</a>
 		</div>

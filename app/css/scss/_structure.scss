@@ -319,3 +319,17 @@ footer {
 }
 
 // Misc - cateogorize
+
+/* Hide show drawer styles */
+.drawer-close {
+	padding: 0.9em 0;
+	* {
+		display: none;
+	}
+	&:hover {
+		padding: 1em;
+		* {
+			display: flex;
+		}
+	}
+}

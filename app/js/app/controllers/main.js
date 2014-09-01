@@ -4,11 +4,14 @@
 
 		$scope.app = {};
 		$scope.app.name = 'Simpleblend';
-		$scope.toggled = false;
+		$scope.options = {
+			toggled: false
+		};
+
 		$scope.work = [
 			{
 				client: 'Amtrak',
-				description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies.',
+				description: 'While working at ad agency Olson, I had the oppurtunity to work heavily with Amtrak Guest Rewards - the loyalty side of Amtrak. I was a lead developer in the Front-end development space and helped redesign the entire site in the fall of 2013. Services provided: Coldfusion, HTML, CSS, JavaScript, and SQL.',
 				link: 'dfsdf',
 				images: {
 					logo: 'logo_amtrak.svg',
@@ -22,7 +25,7 @@
 			},
 			{
 				client: 'Blue Claw Co.',
-				description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies.',
+				description: 'While working with Blue Claw I was in charge of Design and Development for the entire brand. From logo creation to e-commerence implementation. I helped form a cohesive identity for the brand, and push their web pressence forward. Services provided: Design, HTML, CSS, JavaScript, Email development.',
 				link: 'dfsdf',
 				work: [
 					'amtrak_desktop_1.jpg',
@@ -33,7 +36,7 @@
 			},
 			{
 				client: 'Toys R Us',
-				description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies.',
+				description: 'While working at ad agency Olson, I had the oppurtunity of working with Rewards R Us - the loyalty side of Toys R Us. They were looking to redesign their loyalty site to match more closly with the main brand. I played the lead Designer and co-developer of the project.',
 				link: 'dfsdf',
 				work: [
 					'amtrak_desktop_1.jpg',
@@ -66,7 +69,7 @@
 			},
 			{
 				client: 'Isolate & Bloom',
-				description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies.',
+				description: 'My good friend Robert Mcgraw asked me to help develop the web pressence for his company Isolate & Bloom. Being such a huge inspiration for me personally, I couldn\'t say no.',
 				link: 'dfsdf',
 				work: [
 					'amtrak_desktop_1.jpg',
@@ -76,6 +79,7 @@
 				]
 			}
 		];
+		// $scope.hideNav;
 	};
 
 	angular.module('app')
