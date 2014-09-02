@@ -5,8 +5,10 @@
 		$scope.app = {};
 		$scope.app.name = 'Simpleblend';
 		$scope.options = {
-			toggled: false
+			toggled: false,
+			panelCounter: 0
 		};
+
 
 		$scope.work = [
 			{

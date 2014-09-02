@@ -79,7 +79,8 @@
 /** To edit this background, follow this link:
 http://svgeneration.com/generate/Zig-Zag?scale=30&background=ffffff&stripe=f5f5f5&stripe-width=0.15&
 */
-background-color: #ffffff;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMCcgaGVpZ2h0PSc2MCcgdmlld0JveD0nMCAwIDUgMTAnPgoJPHBhdGggZD0nTTAsMGw1LDVsLTUsNW0tMSwtNmwxLDFsLTEsMU00LC0xbDYsNmwtNiw2JyBmaWxsLW9wYWNpdHk9JzAnIHN0cm9rZT0nI2Y1ZjVmNScgc3Ryb2tlLXdpZHRoPScwLjE1Jy8+Cjwvc3ZnPg==');
+background-color: #ffffff;
+// background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMCcgaGVpZ2h0PSc2MCcgdmlld0JveD0nMCAwIDUgMTAnPgoJPHBhdGggZD0nTTAsMGw1LDVsLTUsNW0tMSwtNmwxLDFsLTEsMU00LC0xbDYsNmwtNiw2JyBmaWxsLW9wYWNpdHk9JzAnIHN0cm9rZT0nI2Y1ZjVmNScgc3Ryb2tlLXdpZHRoPScwLjE1Jy8+Cjwvc3ZnPg==');
 
 
 
@@ -150,7 +151,7 @@ background-color: #ffffff;background-image:url('data:image/svg+xml;base64,PHN2Zy
 			cursor: pointer;
 			background-color: darken($color-work, 5%);
 		}
-		&.visible {
+		&.panel-open {
 			background-color: darken($color-work, 5%);
 		}
 	}
