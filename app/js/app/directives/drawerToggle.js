@@ -16,6 +16,8 @@
 							var currentPanel = angular.element(this),
 								 wrapper = document.getElementById('work');
 
+
+
 							// Detecting mousescroll
 							angular.element(wrapper).on('mousewheel', function(){
 								console.log('on wrapper element');
@@ -30,6 +32,10 @@
 							// If clicked panel is already open
 							if(angular.element(this).hasClass('panel-open')){
 
+								// Toggling styles
+								angular.element(this).toggleClass('panel-open');
+								angular.element(this).find('i').toggleClass('fa-chevron-down');
+
 								scope.options.panelCounter--;
 								scope.$apply();
 
@@ -42,6 +48,11 @@
 
 							// If clicked panel isn't already open
 							} else {
+
+								// Toggling styles
+								angular.element(this).toggleClass('panel-open');
+								angular.element(this).find('i').toggleClass('fa-chevron-down');
+
 								scope.options.panelCounter++;
 								scope.$apply();
 
@@ -58,10 +69,6 @@
 								scope.options.toggled = !scope.options.toggled;
 								scope.$apply();
 							}
-
-							// Toggling styles
-							angular.element(this).toggleClass('panel-open');
-							angular.element(this).find('i').toggleClass('fa-chevron-down');
 
 						});
 					}, [0]);
