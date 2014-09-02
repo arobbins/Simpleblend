@@ -2,7 +2,7 @@
 	<div class="content">
 	   <ul panel-toggle>
 	   	<li ng-repeat="work in work" class="panel">
-	   		<h2 slide-toggle="#row_{{$index}}">{{ work.client }} <i class="fa fa-chevron-right"></i></h2>
+	   		<h2 href="#work" slide-toggle="#row_{{$index}}">{{ work.client }} <i class="fa fa-chevron-right"></i></h2>
 	   		<aside id="row_{{$index}}" class="slideable" easing="ease" duration="0.6s">
 					<ul rn-carousel rn-carousel-control>
 	   				<li>
