@@ -328,7 +328,7 @@ footer {
 		display: none;
 	}
 	&:hover {
-		padding: 1em;
+		padding: calc-em($gutter, $font-size-base) calc-em(30px, $font-size-base);
 		* {
 			display: flex;
 		}
