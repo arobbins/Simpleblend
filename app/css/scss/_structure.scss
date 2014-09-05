@@ -58,6 +58,7 @@
 	flex-flow: row;
 	justify-content: center;
 	min-height: 100%;
+	-webkit-transform: translateZ(0);
 
 	.content {
 		width: 100%;
@@ -110,6 +111,7 @@ background-color: #ffffff;
 }
 .page-work {
 	background-color: #84bbdd;
+	transform: translateZ(0);
 
 	.content {
 		display: flex;

@@ -100,15 +100,26 @@ gulp.task('styles-vendor', function() {
 		}));
 });
 
+var options = {
+	autoprefixer: {
+  		map: true,
+  		from: 'scss',
+  		to: 'local.min.css'
+	}
+};
+
 /* ====================================================================
 Styles - Local
 ==================================================================== */
 gulp.task('styles-local', function() {
 	gulp.src(config.css.paths.local.entry)
 		.pipe(sass({
+			errLogToConsole: true,
+			sourceMap: 'scss',
+			sourceComments: 'map',
 			includePaths: ['scss']
 		}))
-		.pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+		.pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7", options.autoprefixer))
 		.pipe(minifyCSS())
 		.pipe(rename(config.css.names.local))
 		.pipe(gulp.dest(config.css.names.dest))
