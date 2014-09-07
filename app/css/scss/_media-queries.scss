@@ -35,13 +35,25 @@
 		}
 	}
 }
+
+// @media screen and (max-width: 892px) {
+// 	.page-landing h1 {
+// 		padding-top: 1.7em;
+// 	}
+// }
+
+
 @media screen and (max-width: 600px) {
+
 	.page {
 		.content {
-			padding: calc-em($gutter*2, $font-size-base) calc-em($gutter/2, $font-size-base);
+			padding: calc-em($gutter*2, $font-size-base) calc-em($gutter, $font-size-base);
 		}
 	}
 	.page-about {
+		h1 {
+			font-size: calc-em($font-size-m, $font-size-base);
+		}
 		.two, .one {
 			align-self: center;
 			width: 85%;
@@ -51,21 +63,22 @@
 			padding-bottom: calc-em($gutter*2, $font-size-base);
 		}
 	}
-	.page-landing {
-		h1 {
-			font-size: calc-em($font-size-68, $font-size-base);
-			margin-bottom: 0;
+	.page.page-landing {
+		background-image: url('../images/bg_opt_phone.jpg');
+
+		.content {
+			padding: 9.7em 0;
 		}
-		h2 {
-			line-height: 1;
-			font-size: calc-em($font-size-32, $font-size-base);
+
+		h1, h2, .btn {
+			display: none;
 		}
 	}
 	.page-work {
 		h2 {
 			padding-top: calc-em($gutter/3, $font-size-base);
 			padding-bottom: calc-em($gutter/3, $font-size-base);
-			font-size: calc-em($font-size-s + 10, $font-size-base);
+			font-size: calc-em($font-size-s + 5, $font-size-base);
 			i {
 				font-size: calc-em($font-size-s, $font-size-s + 10);
 			}
@@ -89,6 +102,9 @@
 		}
 	}
 	.page-contact {
+		.content {
+			// padding-top: 5em;
+		}
 		h1 {
 			font-size: calc-em($font-size-m, $font-size-base);
 		}
@@ -97,15 +113,23 @@
 		}
 	}
 	.page-services {
+		h1 {
+			font-size: calc-em($font-size-m - 5, $font-size-base);
+			text-align: left;
+		}
 		.content {
 			padding-bottom: 2em;
 		}
 		dl {
-
 			width: 100%;
 			align-self: center;
+
 			&:first-child {
 				margin-right: 0;
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-top: 0;
 			}
 		}
 		section div {
@@ -122,7 +146,7 @@
 		padding: 0;
 	}
 	.logo {
-		display: none;
+		// display: none;
 	}
 	.nav-list {
 		justify-content: space-around;
@@ -134,6 +158,50 @@
 	}
 	p {
 		font-size: calc-em($font-size-base, $font-size-base);
+	}
+	.logo {
+		.type {
+			display: none;
+		}
+	}
+	.nav {
+		padding: calc-em(5px, $font-size-base) calc-em(30px, $font-size-base);
+		.mark-black {
+			display: none;
+		}
+		&.ui-scrollfix {
+			.mark-black {
+				display: flex;
+				justify-content: center;
+				height: 50px;
+			}
+		}
+		&.ui-scrollfix + .page-landing{
+			.mark-white {
+				display: none;
+			}
+		}
+		&.panel-close.ui-scrollfix {
+			.mark-black {
+				display: none;
+			}
+		}
+	}
+	.nav-list,
+	.type {
+		display: none !important;
+	}
+	.scrollDown,
+	.mark-white {
+		display: block;
+		text-align: center;
+	}
+	.mark-white {
+		// padding-top: 11em;
+
+		img {
+			width: 120px;
+		}
 	}
 }
 @media screen and (max-width: 1024px) {
@@ -163,9 +231,10 @@
 			order: 2;
 			img {
 				order: 2;
+				margin-top: 1em;
 			}
 			div {
-				margin: 0 0 calc-em($gutter, $font-size-base) 0;
+				margin-top: 0;
 			}
 		}
 		aside {
@@ -183,6 +252,12 @@
 			}
 		}
 	}
+
+
+
+
+
+
 }
 @media screen and (min-width: 768px) and (max-width: 1024px){
 	.page-services {
@@ -199,12 +274,15 @@
 		max-width: 100%;
 	}
 	.page-services {
-		section {
-			margin: 0;
+		// section {
+		// 	margin: 0;
+		// }
+		div {
+			margin-top: 1.2em !important;
 		}
-		h1 {
-			font-size: calc-em($font-size-m, $font-size-base);
-		}
+		// h1 {
+		// 	font-size: calc-em($font-size-m, $font-size-base);
+		// }
 	}
 	.page-work {
 		.content {
@@ -212,10 +290,11 @@
 			padding-right: calc-em($font-size-base, $font-size-base);
 		}
 	}
+
 }
 @media screen and (max-width: 568px) {
 	.page p {
-		font-size: .9em;
+		font-size: .8em;
 	}
 	.page-about {
 		.one {
@@ -228,18 +307,31 @@
 	.btn-l {
 		font-size: calc-em(13px, $font-size-base);
 	}
-	.logo {
-		display: flex;
-		justify-content: center;
-	}
-	.nav-list {
-		display: none;
-	}
+
 	.btn {
 		// width: 100%;
 	}
+	.page-services dt, .page-services dd {
+		font-size: calc-em($font-size-16, $font-size-base);
+	}
+
+
+	.panel-close {
+		&:hover {
+			padding: 0.27em;
+			.type, ul {
+				display: none;
+			}
+		}
+	}
+
 }
 @media screen and (max-width: 320px) {
+	.page-services {
+		section div {
+			margin-top: 0;
+		}
+	}
 	.page-landing {
 		h1 {
 			font-size: calc-em($font-size-xl, $font-size-base);

@@ -34,10 +34,18 @@ small {
 }
 .highlight {
 	font-style: normal;
-	background-color: darken($color-white, 86);
-	color: white;
 	border-radius: 5px;
 	padding: 3px 8px;
+	// border: 1px solid $color-dark;
+	background-color: $color-dark;
+	color: $color-white;
+}
+a {
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
 }
 a:hover {
 	color: $color-white;
@@ -113,5 +121,10 @@ a:hover {
 	}
 	a:hover {
 		color: $color-dark;
+	}
+}
+footer {
+	a:hover {
+		opacity: 0.8;
 	}
 }

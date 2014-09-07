@@ -5,25 +5,78 @@
 	background-color: transparent;
 	position: fixed;
 	width: 100%;
-	padding: calc-em($gutter, $font-size-base) calc-em(30px, $font-size-base);
+	padding: calc-em($gutter - 5, $font-size-base) calc-em(30px, $font-size-base);
 
 	.logo {
 		flex: 2 auto;
+
+		.type .mark-black {
+			display: none;
+		}
+		.type .mark-white {
+			height: 38px;
+			display: inline;
+		}
+	}
+	&.ui-scrollfix {
+		.type .mark-white {
+			display: none;
+		}
+		.type .mark-black {
+			height: 38px;
+			display: inline;
+		}
 	}
 }
+
+.scrollDown,
+.mark-white,
+.mark-black {
+	display: none;
+}
+
+
+@keyframes pulse {
+  from {
+    // opacity: 1.0;
+    top: 58%;
+  }
+
+  50% {
+    // opacity: 0.5;
+    top: 60%;
+  }
+
+  to {
+    // opacity: 0.5;
+    top: 58%;
+  }
+}
+
+.scrollDown {
+	animation: pulse 1s infinite ease-in-out;
+	font-size: 1.9em;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
 .nav-list {
 	display: flex;
+	align-items: center;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 .nav-item {
 	padding: 0 calc-em($gutter - 5, $font-size-base);
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-ms-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
 }
 .nav-link {
 	font-size: calc-em($font-size-base, $font-size-base);
@@ -68,9 +121,9 @@
 .page-landing {
 	background-image: url('../images/bg.jpg');
 	background-size: cover;
-	padding-bottom: 7%;
-	* {
-		margin: auto;
+
+	h1 {
+		padding-top: 2em;
 	}
 	.btn {
 		width: calc-em(200px, $font-size-base);
@@ -326,12 +379,12 @@ footer {
 /* Hide show drawer styles */
 .panel-close {
 	padding: 0.6em 0;
-	* {
+	.mark-black, .type, ul {
 		display: none;
 	}
 	&:hover {
 		padding: calc-em($gutter, $font-size-base) calc-em(30px, $font-size-base);
-		* {
+		.type, ul {
 			display: flex;
 		}
 	}

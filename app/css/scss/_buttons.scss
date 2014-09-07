@@ -8,7 +8,7 @@
 	letter-spacing: calc-em(2px, $font-size-base);
 	text-transform: uppercase;
 	cursor: pointer;
-	position: relative;
+	// position: relative;
 	overflow: hidden;
 	text-align: center;
 	-webkit-transition: background 0.2s, padding 0.2s, width 0.2s;
@@ -20,7 +20,11 @@
 		background: $color-white;
 	}
 }
-
+.page-landing {
+	.btn {
+		position: relative;
+	}
+}
 .btn-animated {
 	&:hover {
 		padding-right: calc-em(36px, $font-size-base);

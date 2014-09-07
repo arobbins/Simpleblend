@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Simpleblend</title>
+	<title>Simpleblend - Quality Front-end Development</title>
 	<meta name="description">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
@@ -42,7 +42,14 @@
 
 	<nav class="nav nav-has-scrollfix" ui-scrollfix="+320" ng-class="{'panel-close': options.toggled}">
 		<div class="logo">
-			<a href="#top" du-smooth-scroll du-scrollspy> {{ app.name }}</a>
+			<a class="type" href="#top" du-smooth-scroll du-scrollspy>
+				<img class="mark-black" src="images/mark-black.svg">
+				<img class="mark-white" src="images/mark-white.svg">
+				{{ app.name }}
+			</a>
+			<a class="mark-black" href="#top" du-smooth-scroll du-scrollspy>
+				<img src="images/mark-black.svg">
+			</a>
 		</div>
 		<ul class="nav-list">
 			<li class="nav-item">
