@@ -5,7 +5,7 @@
 	background-color: transparent;
 	position: fixed;
 	width: 100%;
-	padding: calc-em($gutter - 5, $font-size-base) calc-em(30px, $font-size-base);
+	padding: calc-em($gutter - 5, $font-size-base) calc-em(20px, $font-size-base);
 
 	.logo {
 		flex: 2 auto;
@@ -55,7 +55,7 @@
 
 .scrollDown {
 	animation: pulse 1s infinite ease-in-out;
-	font-size: 1.9em;
+	font-size: 2em;
 	width: 100%;
 	position: absolute;
 	left: 0;
