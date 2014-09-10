@@ -9,7 +9,6 @@
 			panelCounter: 0
 		};
 
-
 		$scope.work = [
 			{
 				client: 'Amtrak',

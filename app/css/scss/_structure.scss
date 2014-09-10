@@ -14,8 +14,10 @@
 			display: none;
 		}
 		.type .mark-white {
-			height: 38px;
-			display: inline;
+			height: 35px;
+			display: inline-block;
+			position: relative;
+			top: -2px;
 		}
 	}
 	&.ui-scrollfix {
@@ -23,8 +25,10 @@
 			display: none;
 		}
 		.type .mark-black {
-			height: 38px;
-			display: inline;
+			height: 35px;
+			position: relative;
+			top: -2px;
+			display: inline-block;
 		}
 	}
 }
@@ -55,7 +59,7 @@
 
 .scrollDown {
 	animation: pulse 1s infinite ease-in-out;
-	font-size: 2em;
+	font-size: 2.4em;
 	width: 100%;
 	position: absolute;
 	left: 0;
@@ -123,7 +127,7 @@
 	background-size: cover;
 
 	h1 {
-		padding-top: 2em;
+		padding-top: 16%;
 	}
 	.btn {
 		width: calc-em(200px, $font-size-base);
