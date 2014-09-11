@@ -22,6 +22,9 @@
 			}
 		}
 	}
+	.nav .logo .type .mark-white {
+		height: 55px;
+	}
 }
 @media screen and (min-width: 1600px) {
 	.page-landing {
@@ -136,11 +139,6 @@
 			flex-direction: column;
 		}
 	}
-	.nav {
-		flex-direction: column;
-		padding-left: 0;
-		padding-right: 0;
-	}
 	.nav-item {
 		font-size: $font-size-base;
 		padding: 0;
@@ -165,7 +163,8 @@
 		}
 	}
 	.nav {
-		padding: calc-em(5px, $font-size-base) calc-em(30px, $font-size-base);
+		flex-direction: column;
+		padding: calc-em(10px, $font-size-base) 0;
 		.mark-black {
 			display: none;
 		}
@@ -199,15 +198,13 @@
 	.mark-white {
 		display: block;
 		text-align: center;
+		align-self: center;
 	}
 	.mark-white {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 28%;
-
 		img {
 			width: 260px;
+			position: relative;
+			top: -2em;
 		}
 	}
 }
@@ -286,7 +283,7 @@
 	.page-services {
 		.content {
 			section {
-				margin-top: 2em;
+				// margin-top: 2em;
 			}
 		}
 	}
@@ -378,5 +375,9 @@
 	}
 	.mark-white {
 		top: 31%;
+
+		img {
+			width: 210px;
+		}
 	}
 }
