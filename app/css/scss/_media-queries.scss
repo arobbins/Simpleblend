@@ -258,13 +258,16 @@
 	}
 }
 
-// @media screen and (max-width: 892px) {
-// 	.page-landing {
-// 		h1 {
-// 			padding-top: 1.6em;
-// 		}
-// 	}
-// }
+@media screen and (max-width: 850px) {
+	.page-landing {
+		h1 {
+			font-size: calc-em($font-size-68, $font-size-base);
+		}
+		h2 {
+			font-size: calc-em($font-size-32, $font-size-base);
+		}
+	}
+}
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
 	.page-services {
@@ -279,13 +282,6 @@
 	}
 	.page-about p {
 		max-width: 100%;
-	}
-	.page-services {
-		.content {
-			section {
-				// margin-top: 2em;
-			}
-		}
 	}
 	.page-work {
 		.content {
