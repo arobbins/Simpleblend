@@ -255,6 +255,9 @@
 				align-self: center;
 			}
 		}
+		aside > div p {
+			align-self: center;
+		}
 	}
 }
 
@@ -289,6 +292,7 @@
 			padding-right: calc-em($font-size-base, $font-size-base);
 		}
 	}
+
 }
 @media screen and (max-width: 568px) {
 	.page p {
@@ -364,6 +368,13 @@
 	.thumb {
 		max-width: 60%;
 	}
+	.slideable_content {
+		padding: 0 0 1em 0;
+	}
+	.rn-carousel-container {
+		width: 100%;
+		margin-top: 1em;
+	}
 }
 @media screen and (max-width: 320px) and (orientation:portrait) {
 	.page-landing {
@@ -375,5 +386,12 @@
 		img {
 			width: 210px;
 		}
+	}
+	.slideable_content {
+		padding: 0 0 1em 0;
+	}
+	.rn-carousel-container {
+		width: 100%;
+		margin-top: 1em;
 	}
 }

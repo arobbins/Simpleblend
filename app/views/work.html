@@ -1,30 +1,36 @@
 <section class="page page-work" id="work">
 	<div class="content">
 	   <ul panel-toggle>
-	   	<li ng-repeat="work in work" class="panel">
-	   		<h2 id="panel-{{$index}}" slide-toggle="#row_{{$index}}">{{ work.client }} <i class="fa fa-chevron-right"></i></h2>
+	   	<li ng-repeat="client in clients" class="panel">
+	   		<h2 id="panel-{{$index}}" slide-toggle="#row_{{$index}}">{{ client.name }} <i class="fa fa-chevron-right"></i></h2>
 	   		<aside id="row_{{$index}}" class="slideable" easing="ease" duration="0.5s">
 					<ul rn-carousel rn-carousel-control>
 	   				<li>
-							<img src="images/amtrak_desktop_1.jpg"
-							 	  srcset="images/amtrak_desktop_1.jpg 696w,
-							          images/amtrak_mobile_1.jpg 480w"
-							 	  sizes="(max-width: 48em) 33.3vw, 100vw"
-							 	  alt="Amtrak">
+							<img src="images/{{ client.images.desktop[0] }}"
+							 	  srcset="images/{{ client.images.desktop[0] }} 696w,
+							          images/{{ client.images.mobile[0] }} 480w"
+							 	  sizes="(max-width: 68em) 33.3vw, 100vw"
+							 	  alt="{{ client.name }} {{$index}}">
 						</li>
 						<li>
-							<img src="images/amtrak_desktop_2.jpg"
-							 	  srcset="images/amtrak_desktop_2.jpg 696w,
-							          images/amtrak_mobile_2.jpg 480w"
-							 	  sizes="(max-width: 48em) 33.3vw, 100vw"
-							 	  alt="Amtrak">
+							<img src="images/{{ client.images.desktop[1] }}"
+							 	  srcset="images/{{ client.images.desktop[1] }} 696w,
+							          images/{{ client.images.mobile[1] }} 480w"
+							 	  sizes="(max-width: 68em) 33.3vw, 100vw"
+							 	  alt="{{ client.name }} {{$index}}">
+	   				</li>
+	   				<li>
+							<img src="images/{{ client.images.desktop[2] }}"
+							 	  srcset="images/{{ client.images.desktop[2] }} 696w,
+							          images/{{ client.images.mobile[2] }} 480w"
+							 	  sizes="(max-width: 68em) 33.3vw, 100vw"
+							 	  alt="{{ client.name }} {{$index}}">
 	   				</li>
 	   			</ul>
 	   			<section>
-		   			<p>{{ work.description }}</p>
+		   			<p>{{ client.description }}</p>
 						<nav>
-		   				<!-- <img ng-src="../images/{{ work.images.logo }}"> -->
-		   				<a href="http://google.com" class="btn btn-s">View project <i class="fa fa-external-link"></i></a>
+		   				<a href="{{ client.link }}" class="btn btn-s">View project <i class="fa fa-external-link"></i></a>
 		   			</nav>
 	   			</section>
 	   		</aside>

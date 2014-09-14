@@ -5,7 +5,7 @@ angular.module('angularSlideables', [])
         compile: function (element, attr) {
             // wrap tag
             var contents = element.html();
-            element.html('<div class="slideable_content" style="margin:0 !important; padding:1.3em 1.3em 2.5em 1.3em !important;" >' + contents + '</div>');
+            element.html('<div class="slideable_content">' + contents + '</div>');
 
             return function postLink(scope, element, attrs) {
                 // default properties
@@ -36,7 +36,7 @@ angular.module('angularSlideables', [])
                 if (!content) content = target.querySelector('.slideable_content');
 
                 if(!attrs.expanded) {
-                    target.style.maxHeight = 900 + 'px';
+                    target.style.maxHeight = 1400 + 'px';
                     target.style.opacity = 1;
 
                 } else {

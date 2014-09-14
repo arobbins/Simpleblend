@@ -6,96 +6,52 @@
 				restrict: 'A',
 				link: function(scope, element, attrs){
 
-					// function getDeviceOrientation() {
-
-					//     if (Math.abs(window.orientation) === 90) {
-					//         // Landscape Mode
-					//         console.log('Landscape');
-
-					//     } else {
-					//         // Portrait Mode
-					//         console.log('Portrait');
-					//     }
-					// }
-
-					// getDeviceOrientation();
-
 					$timeout(function(){
 
+
 						var previousTarget = null,
-							 offset = 110,
-							 duration = 500,
-							 services = document.getElementById('services'),
-							 servicesOffset = services.getBoundingClientRect(),
-							 servicesTop = servicesOffset.top,
-							 work = document.getElementById('work'),
-							 workOffset = work.getBoundingClientRect(),
-							 workTop = work.offsetTop - 30,
-							 // workTop = wrapper.offsetTop - 30,
-							 panels = [];
+							offset = 110,
+							duration = 500,
 
+							about = document.getElementById('about'),
+							aboutThirdHeight = about.clientHeight / 3,
 
-						// function getScrollXY() {
-						//     var x = 0, y = 0;
-						//     if( typeof( window.pageYOffset ) == 'number' ) {
-						//         // Netscape
-						//         x = window.pageXOffset;
-						//         y = window.pageYOffset;
-						//     } else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
-						//         // DOM
-						//         x = document.body.scrollLeft;
-						//         y = document.body.scrollTop;
-						//     } else if( document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
-						//         // IE6 standards compliant mode
-						//         x = document.documentElement.scrollLeft;
-						//         y = document.documentElement.scrollTop;
-						//     }
-						//     return [x, y];
-						// }
-						// var xy = getScrollXY();
-						// var x = xy[0];
-						// var y = xy[1];
+							work = document.getElementById('work'),
+							workTop = work.offsetTop - 30,
 
+							services = document.getElementById('services'),
+							servicesThirdHeight = services.clientHeight / 3,
 
+							top  = document.documentElement.scrollTop || document.body.scrollTop,
+							panels = [];
+
+						/*
+							Function that finds the amount of pixels an element is
+							positioned from the top of the document. Traverses up the DOM
+							from each parent.
+						*/
+						function getOffsetTop(elem){
+							var offsetTop = 0;
+
+							do {
+								if (!isNaN(elem.offsetTop)){
+									offsetTop += elem.offsetTop;
+								}
+							} while(elem = elem.offsetParent);
+
+							return offsetTop;
+						}
 
 						element.find('h2').on('click', function(){
+
 							var currentPanel = angular.element(this),
 								 currentPanelTop = currentPanel[0].offsetTop,
 								 currentPanelID = currentPanel.attr('id');
 
-								 panels.push(currentPanelID);
+							// Adding the currently clicked panel to our panels array
+							panels.push(currentPanelID);
 
-							// Browser scroll
-							$document.on('mousewheel', function(e) {
-
-							// var xy = getScrollXY();
-							// var x = xy[0];
-							// var y = xy[1];
-
-
-
-
-								// if(scrollTop >= workHeight){
-								// 	console.log('above');
-								// } else if (scrollTop <= servicesHeight){
-								// 	console.log('below');
-								// }
-
-
-
-								// console.log(angular.element(wrapper)[0].offsetHeight);
-								// console.log(scrollTop);
-							});
-
-
-
-
-							function findLastPanel(){
-								return panels.length;
-							}
-
-							// If first click of unopened menu
-							// Initial check of counter, if 0, toggle menu
+							// If all panels are closed
 							if(scope.options.panelCounter === 0){
 
 								// Toggling styles
@@ -107,74 +63,114 @@
 									scope.options.panelCounter++;
 								});
 
+								console.log(panels, scope.options.panelCounter);
+
+								// Scroll listener
+								$document.on('scroll', function(){
+									if(scope.options.panelCounter > 0){
+										top  = document.documentElement.scrollTop || document.body.scrollTop;
+
+										if(top <= (getOffsetTop(about) + aboutThirdHeight) || top >= (getOffsetTop(services) - servicesThirdHeight)){
+											scope.$apply(function(){
+												scope.options.toggled = false;
+											});
+										} else {
+											scope.$apply(function(){
+												scope.options.toggled = true;
+											});
+										}
+									}
+								});
 
 								$timeout(function(){
 									var ctop = currentPanel[0].offsetTop -10;
 									$document.scrollTop(ctop, duration);
 
-								}, 200);
+								}, 125);
 
+							// If more than one panel is open
 							} else {
+
+								// Scroll listener
+								$document.on('scroll', function(){
+									if(scope.options.panelCounter > 0){
+
+										top  = document.documentElement.scrollTop || document.body.scrollTop;
+
+
+										if(top <= getOffsetTop(about) || top >= getOffsetTop(services)){
+											scope.$apply(function(){
+												scope.options.toggled = false;
+											});
+										} else {
+											scope.$apply(function(){
+												scope.options.toggled = true;
+											});
+										}
+									}
+								});
 
 								// If clicked panel is already open
 								if(angular.element(this).hasClass('panel-open')){
 
-									// Toggling styles
+									// Toggle panel
 									angular.element(this).toggleClass('panel-open');
 									angular.element(this).find('i').toggleClass('fa-chevron-down');
 
+									// Decrement counter
 									scope.$apply(function(){
 										scope.options.panelCounter--;
 									});
 
-									// At this point we've closed the currently viewed panel, now need to scroll user
-									// If additional panels are open.
+									console.log(panels, scope.options.panelCounter);
+
+									// At this point, check counter again
 									if(scope.options.panelCounter >= 1){
-										// Scroll to currently opened and previously clicked panel
-										// $document.scrollTop(currentPanelTop, currentPanelTop, duration);
+
 										var lastIndex = panels.lastIndexOf(currentPanelID),
 											 secondLastIndex = panels.lastIndexOf(currentPanelID) - 1,
-											 previousPanel = document.getElementById(panels[secondLastIndex]);
-										// console.log(panels);
-										// console.log(secondLastIndex);
-										// console.log(panels[secondLastIndex]);
+											 threeLast = panels.lastIndexOf(currentPanelID) - 2,
+											 previousPanel = document.getElementById(panels[secondLastIndex]),
+											 first = panels[0];
 
 										if (panels[lastIndex] === panels[secondLastIndex]) {
 											secondLastIndex--;
 											previousPanel = document.getElementById(panels[secondLastIndex]);
-											// console.log(panels);
-											// console.log(secondLastIndex);
-											// console.log(panels[secondLastIndex]);
-
-											// $timeout(function(){
-											// 	$document.scrollTop(previousPanel.offsetTop, -20, duration);
-											// }, 100);
 
 										}
-										$document.scrollTop(workTop, duration);
+
+										var el;
+										for (var i = 0; i <= panels.length; i++) {
+											el = document.getElementById(panels[i]);
+											if(!angular.element(el).hasClass('panel-open')){
+												panels.splice(i, 2);
+											}
+										}
+
+										console.log(panels, scope.options.panelCounter);
+
+										$document.scrollTop(previousPanel.offsetTop -25, duration);
 
 									}
 
-								// If clicked panel isn't already open
+								// If we clicked an unopened panel
 								} else {
 
-									// Toggling styles
+									// Toggle panel
 									angular.element(this).toggleClass('panel-open');
 									angular.element(this).find('i').toggleClass('fa-chevron-down');
 
+									// Increment counter
 									scope.$apply(function(){
 										scope.options.panelCounter++;
 									});
 
+									// Scroll to that panel
 									$document.scrollTop(currentPanelTop -20, duration);
-
-									// console.log(scope.options.panelCounter);
-									// console.log(panels);
-
 								}
 							}
 
-							// Checking counter again after other operations have completed. If 0, toggle menu.
+							// Finally, check counter again. If zero, scroll to center work section
 							if(scope.options.panelCounter === 0){
 
 								scope.$apply(function(){
@@ -184,6 +180,12 @@
 									$document.scrollTop(workTop, duration);
 
 								});
+
+								// Empty the panels array
+								while(panels.length > 0) {
+								    panels.pop();
+								}
+								console.log(panels, scope.options.panelCounter);
 							}
 
 						});

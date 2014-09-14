@@ -238,7 +238,9 @@ background-color: #ffffff;
 				}
 			}
 			.rn-carousel-slide {
-				// max-width: 1338px;
+				img {
+					width: 100%;
+				}
 			}
 			.rn-carousel-control {
 				color: $color-dark;
@@ -384,14 +386,19 @@ footer {
 
 /* Hide show drawer styles */
 .panel-close {
-	padding: 0.6em 0;
+	padding: 0.5em 0;
 	.mark-black, .type, ul {
 		display: none;
 	}
 	&:hover {
-		padding: calc-em($gutter, $font-size-base) calc-em(30px, $font-size-base);
+		padding: 1.11111em;
 		.type, ul {
 			display: flex;
 		}
 	}
+}
+
+.slideable_content {
+	margin: 0;
+	padding: 1.3em 1.3em 2.5em 1.3em;
 }

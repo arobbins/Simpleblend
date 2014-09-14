@@ -23,7 +23,7 @@ p, a, li, em, strong, b, i, span {
 	font-family: $font-secondary;
 }
 p {
-	font-size: calc-em($font-size-base, $font-size-base);
+	font-size: calc-em(17px, $font-size-base);
 	margin: $font-size-base 0;
 }
 a {
