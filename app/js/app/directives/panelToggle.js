@@ -86,7 +86,7 @@
 									var ctop = currentPanel[0].offsetTop -10;
 									$document.scrollTop(ctop, duration);
 
-								}, 125);
+								}, 180);
 
 							// If more than one panel is open
 							} else {

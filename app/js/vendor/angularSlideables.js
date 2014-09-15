@@ -14,8 +14,7 @@ angular.module('angularSlideables', [])
                 element.css({
                     'overflow': 'hidden',
                     'max-height': 0,
-                    'opacity': 0,
-                    'transitionProperty': 'all',
+                    'transitionProperty': 'max-height',
                     'transitionDuration': attrs.duration,
                     'transitionTimingFunction': attrs.easing
                 });
@@ -41,7 +40,6 @@ angular.module('angularSlideables', [])
 
                 } else {
                     target.style.maxHeight = 0;
-                    target.style.opacity = 0.5;
                 }
                 attrs.expanded = !attrs.expanded;
             });

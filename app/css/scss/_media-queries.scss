@@ -207,6 +207,9 @@
 			top: -2em;
 		}
 	}
+	.panel-close {
+		padding: 0;
+	}
 }
 @media screen and (max-width: 1024px) {
 	.page-landing {
@@ -323,7 +326,7 @@
 
 	.panel-close {
 		&:hover {
-			padding: 0.27em;
+			padding: 0;
 			.type, ul {
 				display: none;
 			}
