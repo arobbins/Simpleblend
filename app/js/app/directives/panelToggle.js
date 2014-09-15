@@ -10,18 +10,8 @@
 
 
 						var previousTarget = null,
-							offset = 110,
-							duration = 500,
-
-							about = document.getElementById('about'),
-							aboutThirdHeight = about.clientHeight / 3,
-
-							work = document.getElementById('work'),
-							workTop = work.offsetTop - 30,
-
-							services = document.getElementById('services'),
-							servicesThirdHeight = services.clientHeight / 3,
-
+							offset = 25,
+							duration = 400,
 							top  = document.documentElement.scrollTop || document.body.scrollTop,
 							panels = [];
 
@@ -45,8 +35,17 @@
 						element.find('h2').on('click', function(){
 
 							var currentPanel = angular.element(this),
-								 currentPanelTop = currentPanel[0].offsetTop,
-								 currentPanelID = currentPanel.attr('id');
+								 currentPanelTop = currentPanel[0].offsetTop - offset,
+								 currentPanelID = currentPanel.attr('id'),
+
+								 about = document.getElementById('about'),
+							aboutThirdHeight = about.clientHeight / 2,
+
+							work = document.getElementById('work'),
+							workTop = work.offsetTop - 30,
+
+							services = document.getElementById('services'),
+							servicesThirdHeight = services.clientHeight / 2;
 
 							// Adding the currently clicked panel to our panels array
 							panels.push(currentPanelID);
@@ -83,10 +82,10 @@
 								});
 
 								$timeout(function(){
-									var ctop = currentPanel[0].offsetTop -10;
+									var ctop = currentPanel[0].offsetTop - offset;
 									$document.scrollTop(ctop, duration);
 
-								}, 180);
+								}, 200);
 
 							// If more than one panel is open
 							} else {
@@ -149,7 +148,7 @@
 
 										console.log(panels, scope.options.panelCounter);
 
-										$document.scrollTop(previousPanel.offsetTop -25, duration);
+										$document.scrollTop(previousPanel.offsetTop - offset, duration);
 
 									}
 
@@ -166,7 +165,7 @@
 									});
 
 									// Scroll to that panel
-									$document.scrollTop(currentPanelTop -20, duration);
+									$document.scrollTop(currentPanelTop, duration);
 								}
 							}
 

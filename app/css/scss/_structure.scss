@@ -5,7 +5,6 @@
 	background-color: transparent;
 	position: fixed;
 	width: 100%;
-	padding: calc-em($gutter - 5, $font-size-base) calc-em(20px, $font-size-base);
 
 	.logo {
 		flex: 2 auto;
@@ -386,7 +385,7 @@ footer {
 
 /* Hide show drawer styles */
 .panel-close {
-	padding: 0.5em 0;
+	padding: 0;
 	.mark-black, .type, ul {
 		display: none;
 	}
@@ -396,6 +395,16 @@ footer {
 			display: flex;
 		}
 	}
+}
+
+.panel-open{
+	padding: calc-em($gutter - 5, $font-size-base) calc-em(20px, $font-size-base);
+	opacity: 1;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
 }
 
 .slideable_content {
