@@ -11,9 +11,10 @@
 
 						var previousTarget = null,
 							offset = 25,
-							duration = 400,
+							duration = 600,
 							top  = document.documentElement.scrollTop || document.body.scrollTop,
-							panels = [];
+							panels = [],
+							activePanels = [];
 
 						/*
 							Function that finds the amount of pixels an element is
@@ -35,17 +36,35 @@
 						element.find('h2').on('click', function(){
 
 							var currentPanel = angular.element(this),
-								 currentPanelTop = currentPanel[0].offsetTop - offset,
-								 currentPanelID = currentPanel.attr('id'),
+								currentPanelTop = currentPanel[0].offsetTop - offset,
+								currentPanelID = currentPanel.attr('id'),
 
-								 about = document.getElementById('about'),
-							aboutThirdHeight = about.clientHeight / 2,
+								about = document.getElementById('about'),
+								aboutThirdHeight = about.clientHeight / 2,
 
-							work = document.getElementById('work'),
-							workTop = work.offsetTop - 30,
+								work = document.getElementById('work'),
+								workTop = work.offsetTop - 30,
 
-							services = document.getElementById('services'),
-							servicesThirdHeight = services.clientHeight / 2;
+								services = document.getElementById('services'),
+								servicesThirdHeight = services.clientHeight / 2,
+
+								nav = document.getElementsByClassName('nav');
+
+
+								// Nothing in array
+								if(activePanels.length === 0){
+									activePanels.push(currentPanelID);
+
+								// Something in array
+								} else {
+
+									if(currentPanel.hasClass('panel-open')){
+										activePanels.splice(activePanels.indexOf(currentPanelID), 1);
+									} else {
+										activePanels.push(currentPanelID);
+									}
+
+								}
 
 							// Adding the currently clicked panel to our panels array
 							panels.push(currentPanelID);
@@ -58,11 +77,10 @@
 								angular.element(this).find('i').toggleClass('fa-chevron-down');
 
 								scope.$apply(function(){
-									scope.options.toggled = !scope.options.toggled;
+									angular.element(nav).removeClass("panel-opened");
+									angular.element(nav).addClass("panel-closed");
 									scope.options.panelCounter++;
 								});
-
-								console.log(panels, scope.options.panelCounter);
 
 								// Scroll listener
 								$document.on('scroll', function(){
@@ -70,13 +88,13 @@
 										top  = document.documentElement.scrollTop || document.body.scrollTop;
 
 										if(top <= (getOffsetTop(about) + aboutThirdHeight) || top >= (getOffsetTop(services) - servicesThirdHeight)){
-											scope.$apply(function(){
-												scope.options.toggled = false;
-											});
+
+											angular.element(nav).addClass("panel-opened");
+											angular.element(nav).removeClass("panel-closed");
+
 										} else {
-											scope.$apply(function(){
-												scope.options.toggled = true;
-											});
+											angular.element(nav).addClass("panel-closed");
+											angular.element(nav).removeClass("panel-opened");
 										}
 									}
 								});
@@ -90,23 +108,40 @@
 							// If more than one panel is open
 							} else {
 
+								var timer, refresh;
 								// Scroll listener
 								$document.on('scroll', function(){
-									if(scope.options.panelCounter > 0){
+									clearTimeout(timer);
+        							timer = setTimeout( refresh , 150 );
+									refresh = function () {
+										if(scope.options.panelCounter > 1){
 
-										top  = document.documentElement.scrollTop || document.body.scrollTop;
+											var el, totalPanelHeight;
 
+											if(activePanels.length > 0){
+												activePanels.forEach(function(entry) {
+													el = document.getElementById(entry);
+													totalPanelHeight = el.parentNode.clientHeight;
+												});
+											}
 
-										if(top <= getOffsetTop(about) || top >= getOffsetTop(services)){
-											scope.$apply(function(){
-												scope.options.toggled = false;
-											});
-										} else {
-											scope.$apply(function(){
-												scope.options.toggled = true;
-											});
+											totalPanelHeight = totalPanelHeight * activePanels.length;
+
+											top  = document.documentElement.scrollTop || document.body.scrollTop;
+
+											var offServ = (getOffsetTop(services) - (totalPanelHeight / activePanels.length));
+											var offAbout = (getOffsetTop(about) + (totalPanelHeight / activePanels.length));
+
+											if(top <= offAbout || top >= offServ){
+												angular.element(nav).addClass("panel-opened");
+												angular.element(nav).removeClass("panel-closed");
+
+											} else {
+												angular.element(nav).addClass("panel-closed");
+												angular.element(nav).removeClass("panel-opened");
+											}
 										}
-									}
+									};
 								});
 
 								// If clicked panel is already open
@@ -120,8 +155,6 @@
 									scope.$apply(function(){
 										scope.options.panelCounter--;
 									});
-
-									console.log(panels, scope.options.panelCounter);
 
 									// At this point, check counter again
 									if(scope.options.panelCounter >= 1){
@@ -145,8 +178,6 @@
 												panels.splice(i, 2);
 											}
 										}
-
-										console.log(panels, scope.options.panelCounter);
 
 										$document.scrollTop(previousPanel.offsetTop - offset, duration);
 
@@ -174,8 +205,11 @@
 
 								scope.$apply(function(){
 
+
 									// Closer 'er up!
-									scope.options.toggled = !scope.options.toggled;
+									angular.element(nav).removeClass("panel-closed");
+									angular.element(nav).addClass("panel-opened");
+
 									$document.scrollTop(workTop, duration);
 
 								});
@@ -184,7 +218,6 @@
 								while(panels.length > 0) {
 								    panels.pop();
 								}
-								console.log(panels, scope.options.panelCounter);
 							}
 
 						});
