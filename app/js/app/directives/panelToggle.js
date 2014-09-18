@@ -11,10 +11,13 @@
 
 						var previousTarget = null,
 							offset = 25,
-							duration = 600,
+							duration = 400,
 							top  = document.documentElement.scrollTop || document.body.scrollTop,
 							panels = [],
 							activePanels = [];
+
+
+
 
 						/*
 							Function that finds the amount of pixels an element is
@@ -34,6 +37,8 @@
 						}
 
 						element.find('h2').on('click', function(){
+
+
 
 							var currentPanel = angular.element(this),
 								currentPanelTop = currentPanel[0].offsetTop - offset,
@@ -65,6 +70,12 @@
 									}
 
 								}
+
+							var lastActivePanel = document.getElementById(activePanels[activePanels.length - 1]);
+
+
+
+
 
 							// Adding the currently clicked panel to our panels array
 							panels.push(currentPanelID);
@@ -103,7 +114,7 @@
 									var ctop = currentPanel[0].offsetTop - offset;
 									$document.scrollTop(ctop, duration);
 
-								}, 200);
+								}, 600);
 
 							// If more than one panel is open
 							} else {
@@ -159,27 +170,9 @@
 									// At this point, check counter again
 									if(scope.options.panelCounter >= 1){
 
-										var lastIndex = panels.lastIndexOf(currentPanelID),
-											 secondLastIndex = panels.lastIndexOf(currentPanelID) - 1,
-											 threeLast = panels.lastIndexOf(currentPanelID) - 2,
-											 previousPanel = document.getElementById(panels[secondLastIndex]),
-											 first = panels[0];
-
-										if (panels[lastIndex] === panels[secondLastIndex]) {
-											secondLastIndex--;
-											previousPanel = document.getElementById(panels[secondLastIndex]);
-
-										}
-
-										var el;
-										for (var i = 0; i <= panels.length; i++) {
-											el = document.getElementById(panels[i]);
-											if(!angular.element(el).hasClass('panel-open')){
-												panels.splice(i, 2);
-											}
-										}
-
-										$document.scrollTop(previousPanel.offsetTop - offset, duration);
+										$timeout(function(){
+											$document.scrollTop(lastActivePanel.offsetTop, duration);
+										}, 600);
 
 									}
 
@@ -196,7 +189,10 @@
 									});
 
 									// Scroll to that panel
-									$document.scrollTop(currentPanelTop, duration);
+									$timeout(function(){
+										$document.scrollTop(currentPanelTop, duration);
+									}, 600);
+
 								}
 							}
 
@@ -210,7 +206,11 @@
 									angular.element(nav).removeClass("panel-closed");
 									angular.element(nav).addClass("panel-opened");
 
-									$document.scrollTop(workTop, duration);
+									$timeout(function(){
+										$document.scrollTop(workTop, duration);
+									}, 600);
+
+
 
 								});
 
