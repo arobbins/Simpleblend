@@ -11,6 +11,7 @@
 
 						var previousTarget = null,
 							offset = 25,
+							timeToScroll = 500,
 							duration = 400,
 							top  = document.documentElement.scrollTop || document.body.scrollTop,
 							panels = [],
@@ -88,8 +89,6 @@
 								angular.element(this).find('i').toggleClass('fa-chevron-down');
 
 								scope.$apply(function(){
-									angular.element(nav).removeClass("panel-opened");
-									angular.element(nav).addClass("panel-closed");
 									scope.options.panelCounter++;
 								});
 
@@ -110,11 +109,14 @@
 									}
 								});
 
+								angular.element(nav).removeClass("panel-opened");
+								angular.element(nav).addClass("panel-closed");
+
 								$timeout(function(){
 									var ctop = currentPanel[0].offsetTop - offset;
 									$document.scrollTop(ctop, duration);
 
-								}, 600);
+								}, timeToScroll);
 
 							// If more than one panel is open
 							} else {
@@ -158,10 +160,6 @@
 								// If clicked panel is already open
 								if(angular.element(this).hasClass('panel-open')){
 
-									// Toggle panel
-									angular.element(this).toggleClass('panel-open');
-									angular.element(this).find('i').toggleClass('fa-chevron-down');
-
 									// Decrement counter
 									scope.$apply(function(){
 										scope.options.panelCounter--;
@@ -172,16 +170,16 @@
 
 										$timeout(function(){
 											$document.scrollTop(lastActivePanel.offsetTop, duration);
-										}, 600);
+										}, timeToScroll);
 
 									}
-
-								// If we clicked an unopened panel
-								} else {
 
 									// Toggle panel
 									angular.element(this).toggleClass('panel-open');
 									angular.element(this).find('i').toggleClass('fa-chevron-down');
+
+								// If we clicked an unopened panel
+								} else {
 
 									// Increment counter
 									scope.$apply(function(){
@@ -191,7 +189,11 @@
 									// Scroll to that panel
 									$timeout(function(){
 										$document.scrollTop(currentPanelTop, duration);
-									}, 600);
+									}, timeToScroll);
+
+									// Toggle panel
+									angular.element(this).toggleClass('panel-open');
+									angular.element(this).find('i').toggleClass('fa-chevron-down');
 
 								}
 							}
@@ -201,14 +203,13 @@
 
 								scope.$apply(function(){
 
-
-									// Closer 'er up!
-									angular.element(nav).removeClass("panel-closed");
-									angular.element(nav).addClass("panel-opened");
-
 									$timeout(function(){
 										$document.scrollTop(workTop, duration);
-									}, 600);
+										// Closer 'er up!
+										angular.element(nav).removeClass("panel-closed");
+										angular.element(nav).addClass("panel-opened");
+
+									}, timeToScroll);
 
 
 

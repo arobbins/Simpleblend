@@ -3,30 +3,14 @@
 	   <ul panel-toggle>
 	   	<li ng-repeat="client in clients" class="panel">
 	   		<h2 id="panel-{{$index}}" slide-toggle="#row_{{$index}}">{{ client.name }} <i class="fa fa-chevron-right"></i></h2>
-	   		<aside id="row_{{$index}}" class="slideable" easing="ease-in-out" duration="0.5s">
-					<ul rn-carousel rn-carousel-control>
-	   				<li>
-							<img src="images/{{ client.images.desktop[0] }}"
-							 	  srcset="images/{{ client.images.desktop[0] }} 696w,
-							          images/{{ client.images.mobile[0] }} 480w"
-							 	  sizes="(max-width: 68em) 33.3vw, 100vw"
-							 	  alt="{{ client.name }} {{$index}}">
-						</li>
-						<li>
-							<img src="images/{{ client.images.desktop[1] }}"
-							 	  srcset="images/{{ client.images.desktop[1] }} 696w,
-							          images/{{ client.images.mobile[1] }} 480w"
-							 	  sizes="(max-width: 68em) 33.3vw, 100vw"
-							 	  alt="{{ client.name }} {{$index}}">
-	   				</li>
-	   				<li>
-							<img src="images/{{ client.images.desktop[2] }}"
-							 	  srcset="images/{{ client.images.desktop[2] }} 696w,
-							          images/{{ client.images.mobile[2] }} 480w"
-							 	  sizes="(max-width: 68em) 33.3vw, 100vw"
-							 	  alt="{{ client.name }} {{$index}}">
-	   				</li>
-	   			</ul>
+	   		<aside id="row_{{$index}}" class="slideable" easing="ease-in-out" duration="0.4s">
+
+		   		<ul rn-carousel rn-carousel-control>
+		   			<li ng-repeat="slide in client.images">
+		   				<div afkl-lazy-image="images/{{ slide.small }} 480w, images/{{ slide.small }} 768w, images/{{ slide.large }}" class="afkl-lazy-wrapper afkl-img-ratio-1-1 demo-image"></div>
+		   			</li>
+		   		</ul>
+
 	   			<section>
 		   			<p>{{ client.description }}</p>
 						<nav>

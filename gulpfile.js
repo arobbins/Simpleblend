@@ -56,7 +56,8 @@ var gulp = require('gulp'),
 					'app/js/vendor/angular-animate.js',
 					'app/js/vendor/angular-touch.min.js',
 					'app/js/vendor/angular-carousel.min.js',
-					'app/js/vendor/appscroll.js'
+					'app/js/vendor/appscroll.js',
+					'app/js/vendor/lazy-image.min.js'
 				],
 				local: [
 					'app/js/app/app.js',

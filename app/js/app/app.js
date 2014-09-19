@@ -7,7 +7,8 @@
 	               'duScroll',
 	               'ngAnimate',
 	               'angularSlideables',
-	               'angular-carousel'
+	               'angular-carousel',
+	               'afkl.lazyImage'
 	]);
 
 	angular.module('app')
