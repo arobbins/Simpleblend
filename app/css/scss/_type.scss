@@ -36,7 +36,6 @@ small {
 	font-style: normal;
 	border-radius: 5px;
 	padding: 3px 8px;
-	// border: 1px solid $color-dark;
 	background-color: $color-dark;
 	color: $color-white;
 }
@@ -128,4 +127,12 @@ footer {
 	a:hover {
 		opacity: 0.6;
 	}
+}
+.fa-chevron-right,
+.fa-chevron-down {
+	font-size: 0.8em;
+}
+.rn-carousel-control.rn-carousel-control-next:before,
+.rn-carousel-control.rn-carousel-control-prev:before {
+	font-size: 0.9em;
 }

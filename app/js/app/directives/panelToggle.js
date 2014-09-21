@@ -8,7 +8,6 @@
 
 					$timeout(function(){
 
-
 						var previousTarget = null,
 							offset = 25,
 							timeToScroll = 200,
@@ -16,10 +15,6 @@
 							top  = document.documentElement.scrollTop || document.body.scrollTop,
 							panels = [],
 							activePanels = [];
-
-
-
-
 						/*
 							Function that finds the amount of pixels an element is
 							positioned from the top of the document. Traverses up the DOM
@@ -96,7 +91,6 @@
 								$document.on('scroll', function(){
 									if(scope.options.panelCounter > 0){
 										top  = document.documentElement.scrollTop || document.body.scrollTop;
-
 
 										$timeout(function(){
 											if(top <= (getOffsetTop(about) + aboutThirdHeight) || top >= (getOffsetTop(services) - servicesThirdHeight)){

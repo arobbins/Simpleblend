@@ -39,13 +39,6 @@
 	}
 }
 
-// @media screen and (max-width: 892px) {
-// 	.page-landing h1 {
-// 		padding-top: 1.7em;
-// 	}
-// }
-
-
 @media screen and (max-width: 640px) {
 
 	.page {
@@ -88,7 +81,15 @@
 		}
 		aside div {
 			nav {
+				-webkit-box-ordinal-group: 1;
+				-moz-box-ordinal-group: 1;
+				-ms-flex-order: 1;
+				-webkit-order: 1;
 				order: 1;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				-moz-box-pack: center;
+				-ms-flex-pack: center;
 				justify-content: center;
 
 				img {
@@ -146,6 +147,10 @@
 		// display: none;
 	}
 	.nav-list {
+		-webkit-box-pack: space-around;
+		-webkit-justify-content: space-around;
+		-moz-box-pack: space-around;
+		-ms-flex-pack: space-around;
 		justify-content: space-around;
 	}
 	h1 {
@@ -164,12 +169,21 @@
 	.nav {
 		flex-direction: column;
 		padding: calc-em(10px, $font-size-base) 0;
+
 		.mark-black {
 			display: none;
 		}
 		&.ui-scrollfix {
 			.mark-black {
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
 				display: flex;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				-moz-box-pack: center;
+				-ms-flex-pack: center;
 				justify-content: center;
 
 				img {
@@ -234,8 +248,16 @@
 		}
 		section {
 			align-self: center;
+			-webkit-box-ordinal-group: 2;
+			-moz-box-ordinal-group: 2;
+			-ms-flex-order: 2;
+			-webkit-order: 2;
 			order: 2;
 			img {
+				-webkit-box-ordinal-group: 2;
+				-moz-box-ordinal-group: 2;
+				-ms-flex-order: 2;
+				-webkit-order: 2;
 				order: 2;
 				margin-top: 1em;
 			}
@@ -244,14 +266,27 @@
 			}
 		}
 		aside {
+			-webkit-box-ordinal-group: 1;
+			-moz-box-ordinal-group: 1;
+			-ms-flex-order: 1;
+			-webkit-order: 1;
 			order: 1;
 		}
 	}
 	.page-work {
 		section {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
 			display: flex;
 			flex-direction: column;
+			-webkit-box-pack: center;
+			-webkit-justify-content: center;
+			-moz-box-pack: center;
+			-ms-flex-pack: center;
 			justify-content: center;
+
 			nav {
 				margin-top: 2em;
 				align-self: center;
@@ -270,14 +305,6 @@
 		}
 		h2 {
 			font-size: calc-em($font-size-32, $font-size-base);
-		}
-	}
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px){
-	.page-services {
-		p {
-			width: 86%;
 		}
 	}
 }
@@ -311,9 +338,6 @@
 		font-size: calc-em(13px, $font-size-base);
 	}
 
-	.btn {
-		// width: 100%;
-	}
 	.page-services dt, .page-services dd {
 		font-size: calc-em($font-size-16, $font-size-base);
 	}
@@ -325,6 +349,7 @@
 	.panel-close {
 		&:hover {
 			padding: 0;
+
 			.type, ul {
 				display: none;
 			}
@@ -360,18 +385,17 @@
 }
 
 @media screen and (max-width: 700px) and (orientation:landscape) {
-
+	.page-services dt, .page-services dd {
+		font-size: calc-em($font-size-16, $font-size-base);
+	}
 	.page-landing {
-
 		.content {
 			padding: 9.7em 0;
 		}
-
 		h1, h2, .btn {
 			display: none;
 		}
 	}
-
 	.logo {
 		.type {
 			display: none;
@@ -385,7 +409,15 @@
 		}
 		&.ui-scrollfix {
 			.mark-black {
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
 				display: flex;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				-moz-box-pack: center;
+				-ms-flex-pack: center;
 				justify-content: center;
 
 				img {
@@ -430,9 +462,6 @@
 		background-image: url('../images/bg_opt_phone_landscape.jpg');
 	}
 	.page-contact {
-		.content {
-			// width: 100% !important;
-		}
 		p {
 			max-width: 100%;
 		}

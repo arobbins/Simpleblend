@@ -3,16 +3,16 @@
 	   <ul panel-toggle>
 	   	<li ng-repeat="client in clients" class="panel">
 	   		<h2 id="panel-{{$index}}" slide-toggle="#row_{{$index}}">{{ client.name }} <i class="fa fa-chevron-right"></i></h2>
-	   		<aside id="row_{{$index}}" class="slideable" easing="ease-in-out" duration="0.4s">
+	   		<aside id="row_{{$index}}" class="slideable {{ client.class }}" easing="ease-in-out" duration="0.4s">
 
 		   		<ul rn-carousel rn-carousel-control>
 		   			<li ng-repeat="slide in client.images">
-		   				<div afkl-lazy-image="images/{{ slide.small }} 480w, images/{{ slide.small }} 768w, images/{{ slide.large }}" afkl-lazy-image-options='{"offset": 200}' class="afkl-lazy-wrapper afkl-img-ratio-1-1 demo-image"></div>
+		   				<div afkl-lazy-image="images/{{ slide.small }} 480w, images/{{ slide.small }} 768w, images/{{ slide.large }}" afkl-lazy-image-options='{"offset": 200}' class="afkl-lazy-wrapper afkl-img-ratio-1-1 demo-image slide_{{ $index }}"></div>
 		   			</li>
 		   		</ul>
 
 	   			<section>
-		   			<p>{{ client.description }}</p>
+		   			<p ng-bind-html="client.description">{{ client.description }}</p>
 						<nav>
 		   				<a href="{{ client.link }}" class="btn btn-s">View project <i class="fa fa-external-link"></i></a>
 		   			</nav>

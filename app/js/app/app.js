@@ -8,7 +8,8 @@
 	               'ngAnimate',
 	               'angularSlideables',
 	               'angular-carousel',
-	               'afkl.lazyImage'
+	               'afkl.lazyImage',
+	               'ngSanitize'
 	]);
 
 	angular.module('app')

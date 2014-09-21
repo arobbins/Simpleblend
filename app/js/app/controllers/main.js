@@ -1,6 +1,6 @@
 (function(){
 
-	var mainCtrl = function($scope, $document){
+	var mainCtrl = function($scope, $document, $sanitize){
 
 		$scope.app = {};
 		$scope.app.name = 'Simpleblend';
@@ -11,9 +11,10 @@
 
 		$scope.clients = [
 			{
-				name: 'Amtrak',
-				description: 'While working at ad agency Olson, I had the oppurtunity to work heavily with Amtrak Guest Rewards - the loyalty side of Amtrak. I was a lead developer in the Front-end development space and helped redesign the entire site in the fall of 2013. Services provided: Coldfusion, HTML, CSS, JavaScript, and SQL.',
-				link: 'http://google.com',
+				name: 'Amtrak Guest Rewards',
+				class: 'amtrak',
+				description: 'While working at ad agency Olson, I had the opportunity to work heavily with Amtrak Guest Rewards&mdash;the loyalty side of <a href="http://www.amtrak.com/home">Amtrak</a>. I was one of a the lead developers in the Front-end space and helped redesign the site in the fall of 2013. Services provided: JavaScript, CSS, HTML, Design, Coldfusion, and SQL.',
+				link: 'https://amtrakguestrewards.com',
 				images: {
 					slide1: {
 						small: "amtrak_mobile_1.jpg",
@@ -26,82 +27,98 @@
 					slide3: {
 						small: "amtrak_mobile_3.jpg",
 						large: "amtrak_desktop_3.jpg"
-					}
-				}
-			},
-			{
-				name: 'Rewards "R" Us',
-				description: 'While working at ad agency Olson, I had the oppurtunity to work heavily with Amtrak Guest Rewards - the loyalty side of Amtrak. I was a lead developer in the Front-end development space and helped redesign the entire site in the fall of 2013. Services provided: Coldfusion, HTML, CSS, JavaScript, and SQL.',
-				link: 'http://google.com',
-				images: {
-					slide1: {
-						small: "amtrak_mobile_1.jpg",
-						large: "amtrak_desktop_1.jpg"
 					},
-					slide2: {
-						small: "amtrak_mobile_2.jpg",
-						large: "amtrak_desktop_2.jpg"
+					slide4: {
+						small: "amtrak_mobile_4.jpg",
+						large: "amtrak_desktop_4.jpg"
 					},
-					slide3: {
-						small: "amtrak_mobile_3.jpg",
-						large: "amtrak_desktop_3.jpg"
+					slide5: {
+						small: "amtrak_mobile_5.jpg",
+						large: "amtrak_desktop_5.jpg"
 					}
 				}
 			},
 			{
 				name: 'Blue Claw Co.',
-				description: 'While working with Blue Claw I was in charge of Design and Development for the entire brand. From logo creation to e-commerence implementation. I helped form a cohesive identity for the brand, and push their web pressence forward. Services provided: Design, HTML, CSS, JavaScript, Email development.',
-				link: 'http://google.com',
+				class: 'blueclawco',
+				description: 'While working with Blue Claw I was in charge of Design and Development for the entire brand. From logo creation to e-commerence implementation, I helped form a cohesive identity and push their web presence forward. Services provided: Design, CSS, HTML, JavaScript, Shopify, and Email development.',
+				link: 'http://blueclawco.com',
 				images: {
 					slide1: {
-						small: "amtrak_mobile_1.jpg",
-						large: "amtrak_desktop_1.jpg"
+						small: "blueclaw_mobile_1.jpg",
+						large: "blueclaw_desktop_1.jpg"
 					},
 					slide2: {
-						small: "amtrak_mobile_2.jpg",
-						large: "amtrak_desktop_2.jpg"
+						small: "blueclaw_mobile_2.jpg",
+						large: "blueclaw_desktop_2.jpg"
 					},
 					slide3: {
-						small: "amtrak_mobile_3.jpg",
-						large: "amtrak_desktop_3.jpg"
+						small: "blueclaw_mobile_3.jpg",
+						large: "blueclaw_desktop_3.jpg"
+					},
+					slide4: {
+						small: "blueclaw_mobile_4.jpg",
+						large: "blueclaw_desktop_4.jpg"
+					},
+					slide5: {
+						small: "blueclaw_mobile_5.jpg",
+						large: "blueclaw_desktop_5.jpg"
 					}
 				}
 			},
 			{
 				name: 'Knot Clothing',
-				description: 'While working at ad agency Olson, I had the oppurtunity to work heavily with Amtrak Guest Rewards - the loyalty side of Amtrak. I was a lead developer in the Front-end development space and helped redesign the entire site in the fall of 2013. Services provided: Coldfusion, HTML, CSS, JavaScript, and SQL.',
-				link: 'http://google.com',
+				class: 'knot',
+				description: 'Two years ago Knot Clothing hired me to help give their site a much needed refresh. Many of the changes included design tweaks and back-end Shopify customizations that helped convert more business.',
+				link: 'http://www.knotclothing.com',
 				images: {
 					slide1: {
-						small: "amtrak_mobile_1.jpg",
-						large: "amtrak_desktop_1.jpg"
+						small: "knot_mobile_1.jpg",
+						large: "knot_desktop_1.jpg"
 					},
 					slide2: {
-						small: "amtrak_mobile_2.jpg",
-						large: "amtrak_desktop_2.jpg"
+						small: "knot_mobile_2.jpg",
+						large: "knot_desktop_2.jpg"
 					},
 					slide3: {
-						small: "amtrak_mobile_3.jpg",
-						large: "amtrak_desktop_3.jpg"
+						small: "knot_mobile_3.jpg",
+						large: "knot_desktop_3.jpg"
+					},
+					slide4: {
+						small: "knot_mobile_4.jpg",
+						large: "knot_desktop_4.jpg"
+					},
+					slide5: {
+						small: "knot_mobile_5.jpg",
+						large: "knot_desktop_5.jpg"
 					}
 				}
 			},
 			{
-				name: 'Isolate and Bloom',
+				name: 'READ Charter School',
+				class: 'read',
 				description: 'While working at ad agency Olson, I had the oppurtunity to work heavily with Amtrak Guest Rewards - the loyalty side of Amtrak. I was a lead developer in the Front-end development space and helped redesign the entire site in the fall of 2013. Services provided: Coldfusion, HTML, CSS, JavaScript, and SQL.',
 				link: 'http://google.com',
 				images: {
 					slide1: {
-						small: "amtrak_mobile_1.jpg",
-						large: "amtrak_desktop_1.jpg"
+						small: "read_mobile_1.jpg",
+						large: "read_desktop_1.jpg"
 					},
 					slide2: {
-						small: "amtrak_mobile_2.jpg",
-						large: "amtrak_desktop_2.jpg"
+						small: "read_mobile_2.jpg",
+						large: "read_desktop_2.jpg"
 					},
 					slide3: {
-						small: "amtrak_mobile_3.jpg",
-						large: "amtrak_desktop_3.jpg"
+						small: "read_mobile_3.jpg",
+						large: "read_desktop_3.jpg"
+					},
+					slide4: {
+						small: "read_mobile_4.jpg",
+						large: "read_desktop_4.jpg"
+					},
+					slide5: {
+						small: "read_mobile_5.jpg",
+						large: "read_desktop_5.jpg"
 					}
 				}
 			}
@@ -109,6 +126,6 @@
 	};
 
 	angular.module('app')
-		.controller('mainCtrl', ['$scope', '$document', mainCtrl]);
+		.controller('mainCtrl', ['$scope', '$document', '$sanitize', mainCtrl]);
 
 }());
