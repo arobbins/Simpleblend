@@ -7,7 +7,7 @@
 
 		   		<ul rn-carousel rn-carousel-control>
 		   			<li ng-repeat="slide in client.images">
-		   				<div afkl-lazy-image="images/{{ slide.small }} 480w, images/{{ slide.small }} 768w, images/{{ slide.large }}" class="afkl-lazy-wrapper afkl-img-ratio-1-1 demo-image"></div>
+		   				<div afkl-lazy-image="images/{{ slide.small }} 480w, images/{{ slide.small }} 768w, images/{{ slide.large }}" afkl-lazy-image-options='{"offset": 200}' class="afkl-lazy-wrapper afkl-img-ratio-1-1 demo-image"></div>
 		   			</li>
 		   		</ul>
 

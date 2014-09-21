@@ -11,8 +11,8 @@
 
 						var previousTarget = null,
 							offset = 25,
-							timeToScroll = 500,
-							duration = 400,
+							timeToScroll = 200,
+							duration = 500,
 							top  = document.documentElement.scrollTop || document.body.scrollTop,
 							panels = [],
 							activePanels = [];
@@ -97,15 +97,19 @@
 									if(scope.options.panelCounter > 0){
 										top  = document.documentElement.scrollTop || document.body.scrollTop;
 
-										if(top <= (getOffsetTop(about) + aboutThirdHeight) || top >= (getOffsetTop(services) - servicesThirdHeight)){
+
+										$timeout(function(){
+											if(top <= (getOffsetTop(about) + aboutThirdHeight) || top >= (getOffsetTop(services) - servicesThirdHeight)){
 
 											angular.element(nav).addClass("panel-opened");
 											angular.element(nav).removeClass("panel-closed");
 
-										} else {
-											angular.element(nav).addClass("panel-closed");
-											angular.element(nav).removeClass("panel-opened");
-										}
+											} else {
+												angular.element(nav).addClass("panel-closed");
+												angular.element(nav).removeClass("panel-opened");
+											}
+										}, timeToScroll);
+
 									}
 								});
 
@@ -121,42 +125,6 @@
 							// If more than one panel is open
 							} else {
 
-								var timer, refresh;
-								// Scroll listener
-								$document.on('scroll', function(){
-									clearTimeout(timer);
-        							timer = setTimeout( refresh , 150 );
-									refresh = function () {
-										if(scope.options.panelCounter > 1){
-
-											var el, totalPanelHeight;
-
-											if(activePanels.length > 0){
-												activePanels.forEach(function(entry) {
-													el = document.getElementById(entry);
-													totalPanelHeight = el.parentNode.clientHeight;
-												});
-											}
-
-											totalPanelHeight = totalPanelHeight * activePanels.length;
-
-											top  = document.documentElement.scrollTop || document.body.scrollTop;
-
-											var offServ = (getOffsetTop(services) - (totalPanelHeight / activePanels.length));
-											var offAbout = (getOffsetTop(about) + (totalPanelHeight / activePanels.length));
-
-											if(top <= offAbout || top >= offServ){
-												angular.element(nav).addClass("panel-opened");
-												angular.element(nav).removeClass("panel-closed");
-
-											} else {
-												angular.element(nav).addClass("panel-closed");
-												angular.element(nav).removeClass("panel-opened");
-											}
-										}
-									};
-								});
-
 								// If clicked panel is already open
 								if(angular.element(this).hasClass('panel-open')){
 
@@ -169,8 +137,8 @@
 									if(scope.options.panelCounter >= 1){
 
 										$timeout(function(){
-											$document.scrollTop(lastActivePanel.offsetTop, duration);
-										}, timeToScroll);
+											$document.scrollTop(lastActivePanel.offsetTop - offset, duration);
+										}, (timeToScroll + 300));
 
 									}
 
@@ -196,6 +164,46 @@
 									angular.element(this).find('i').toggleClass('fa-chevron-down');
 
 								}
+
+								var timer, refresh;
+								// Scroll listener
+								$document.on('scroll', function(){
+									refresh = function () {
+										if(scope.options.panelCounter > 1){
+
+											var el, totalPanelHeight;
+
+											if(activePanels.length > 0){
+												activePanels.forEach(function(entry) {
+													el = document.getElementById(entry);
+													totalPanelHeight = el.parentNode.clientHeight;
+												});
+											}
+
+											totalPanelHeight = totalPanelHeight * activePanels.length;
+
+											top  = document.documentElement.scrollTop || document.body.scrollTop;
+
+											var offServ = (getOffsetTop(services) - (totalPanelHeight / activePanels.length));
+											var offAbout = (getOffsetTop(about) + (totalPanelHeight / activePanels.length));
+
+											if(top <= offAbout || top >= offServ){
+												$timeout(function(){
+													angular.element(nav).addClass("panel-opened");
+													angular.element(nav).removeClass("panel-closed");
+												}, timeToScroll);
+											} else {
+												$timeout(function(){
+													angular.element(nav).addClass("panel-closed");
+													angular.element(nav).removeClass("panel-opened");
+												}, timeToScroll);
+											}
+										}
+									};
+									timer = setTimeout(refresh, 150);
+									clearTimeout(timer);
+								});
+
 							}
 
 							// Finally, check counter again. If zero, scroll to center work section

@@ -50,7 +50,7 @@
 
 	.page {
 		.content {
-			padding: calc-em($gutter*2, $font-size-base) calc-em($gutter, $font-size-base);
+			padding: calc-em($gutter*2, $font-size-base) calc-em($gutter - 10, $font-size-base);
 		}
 	}
 	.page-about {
@@ -90,7 +90,6 @@
 			nav {
 				order: 1;
 				justify-content: center;
-				margin-top: calc-em($gutter*2, $font-size-base);
 
 				img {
 					display: none;
@@ -202,7 +201,7 @@
 	}
 	.mark-white {
 		img {
-			width: 260px;
+			width: 80px;
 			position: relative;
 			top: -2em;
 		}
@@ -360,9 +359,91 @@
 	}
 }
 
-@media screen and (max-width: 568px) and (orientation:landscape) {
+@media screen and (max-width: 700px) and (orientation:landscape) {
+
+	.page-landing {
+
+		.content {
+			padding: 9.7em 0;
+		}
+
+		h1, h2, .btn {
+			display: none;
+		}
+	}
+
+	.logo {
+		.type {
+			display: none;
+		}
+	}
+	.nav {
+		flex-direction: column;
+		padding: calc-em(10px, $font-size-base) 0;
+		.mark-black {
+			display: none;
+		}
+		&.ui-scrollfix {
+			.mark-black {
+				display: flex;
+				justify-content: center;
+
+				img {
+					height: 35px;
+					align-self: center;
+				}
+			}
+		}
+		&.ui-scrollfix + .page-landing{
+			.mark-white {
+				display: none;
+			}
+		}
+		&.panel-close.ui-scrollfix {
+			.mark-black {
+				display: none;
+			}
+		}
+	}
+	.nav-list,
+	.type {
+		display: none;
+	}
+	.scrollDown,
+	.mark-white {
+		display: block;
+		text-align: center;
+		align-self: center;
+	}
+	.mark-white {
+		img {
+			width: 80px;
+			position: relative;
+			top: -2em;
+		}
+	}
+	.panel-close {
+		padding: 0;
+	}
+
 	.page-landing {
 		background-image: url('../images/bg_opt_phone_landscape.jpg');
+	}
+	.page-contact {
+		.content {
+			// width: 100% !important;
+		}
+		p {
+			max-width: 100%;
+		}
+	}
+	.page-work {
+		h2 {
+			font-size: 1.4em;
+		}
+		aside > div p {
+			max-width: 90%;
+		}
 	}
 	.mark-white {
 		top: 18%;
@@ -377,8 +458,19 @@
 		width: 100%;
 		margin-top: 1em;
 	}
+	.nav {
+		display: none;
+	}
+	.page {
+		h1 {
+			font-size: 2em;
+		}
+		p {
+			font-size: 0.6em;
+		}
+	}
 }
-@media screen and (max-width: 320px) and (orientation:portrait) {
+@media screen and (max-width: 480px) and (orientation:portrait) {
 	.page-landing {
 		background-image: url('../images/bg_opt_phone_portrait.jpg');
 	}
@@ -386,14 +478,29 @@
 		top: 31%;
 
 		img {
-			width: 210px;
+			width: 80px;
 		}
 	}
 	.slideable_content {
-		padding: 0 0 1em 0;
+		padding: 0 0 2em 0;
 	}
 	.rn-carousel-container {
 		width: 100%;
 		margin-top: 1em;
+	}
+	.page {
+		.content {
+			h1 {
+				font-size: 1.7em;
+				text-align: center;
+			}
+		}
+	}
+	.page-services {
+		.content {
+			h1 {
+				text-align: left;
+			}
+		}
 	}
 }
