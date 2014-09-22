@@ -215,7 +215,7 @@
 	}
 	.mark-white {
 		img {
-			width: 80px;
+			width: 250px;
 			position: relative;
 			top: -2em;
 		}
@@ -234,6 +234,9 @@
 		}
 		.one, .two {
 			width: 100%;
+			-ms-flex-positive: 0;
+			-ms-flex-negative: auto;
+			-ms-flex-preferred-size: auto;
 			flex: 0 auto;
 			align-self: center;
 		}
@@ -449,7 +452,7 @@
 	}
 	.mark-white {
 		img {
-			width: 80px;
+			// width: 80px;
 			position: relative;
 			top: -2em;
 		}
@@ -507,7 +510,7 @@
 		top: 31%;
 
 		img {
-			width: 80px;
+			width: 200px;
 		}
 	}
 	.slideable_content {
