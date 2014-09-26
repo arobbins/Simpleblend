@@ -90,6 +90,7 @@
 				-webkit-justify-content: center;
 				-moz-box-pack: center;
 				-ms-flex-pack: center;
+				box-pack: center;
 				justify-content: center;
 
 				img {
@@ -151,6 +152,7 @@
 		-webkit-justify-content: space-around;
 		-moz-box-pack: space-around;
 		-ms-flex-pack: space-around;
+		box-pack: space-around;
 		justify-content: space-around;
 	}
 	h1 {
@@ -179,11 +181,14 @@
 				display: -moz-box;
 				display: -ms-flexbox;
 				display: -webkit-flex;
+				display: box;
+				display: flexbox;
 				display: flex;
 				-webkit-box-pack: center;
 				-webkit-justify-content: center;
 				-moz-box-pack: center;
 				-ms-flex-pack: center;
+				box-pack: center;
 				justify-content: center;
 
 				img {
@@ -237,6 +242,7 @@
 			-ms-flex-positive: 0;
 			-ms-flex-negative: auto;
 			-ms-flex-preferred-size: auto;
+			box-flex: 0 auto;
 			flex: 0 auto;
 			align-self: center;
 		}
@@ -288,6 +294,7 @@
 			-webkit-justify-content: center;
 			-moz-box-pack: center;
 			-ms-flex-pack: center;
+			box-pack: center;
 			justify-content: center;
 
 			nav {
@@ -421,6 +428,7 @@
 				-webkit-justify-content: center;
 				-moz-box-pack: center;
 				-ms-flex-pack: center;
+				box-pack: center;
 				justify-content: center;
 
 				img {
@@ -533,6 +541,46 @@
 			h1 {
 				text-align: left;
 			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.android-sub44 {
+		.page-landing div {
+			top: 10em;
+		}
+		.page-services section {
+			display: block;
+			float: left;
+			width: 70%;
+			img {
+				float: left;
+				width: 450px;
+			}
+			div {
+				float: left;
+			}
+		}
+		.page-services aside {
+			width: 50%;
+		}
+		.page-services dl {
+			float: left;
+			width: 350px;
+		}
+		.page-work aside > div p,
+		.page-contact p {
+			margin: 0 auto;
+		}
+		footer nav {
+			margin: 0 auto;
+			width: 500px;
+			text-align: center;
+			padding-left: 50px;
+		}
+		footer small {
+			display: none;
 		}
 	}
 }

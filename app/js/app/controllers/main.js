@@ -9,6 +9,12 @@
 			panelCounter: 0
 		};
 
+		$scope.getAndroidVersion = function() {
+			var ua = navigator.userAgent;
+			var ver = ua.match(/Android\s([0-9\.]*)/);
+			return ver ? ver[1] : false;
+		};
+
 		$scope.clients = [
 			{
 				name: 'Amtrak Guest Rewards',
@@ -97,7 +103,7 @@
 			{
 				name: 'READ Charter School',
 				class: 'read',
-				description: 'While working at ad agency Olson, I had the oppurtunity to work heavily with Amtrak Guest Rewards - the loyalty side of Amtrak. I was a lead developer in the Front-end development space and helped redesign the entire site in the fall of 2013. Services provided: Coldfusion, HTML, CSS, JavaScript, and SQL.',
+				description: 'READ Charter School recently approached me and asked for help developing their site.',
 				link: 'http://google.com',
 				images: {
 					slide1: {
