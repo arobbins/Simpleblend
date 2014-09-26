@@ -146,13 +146,10 @@
 								}
 
 								// Calculate offset for hiding nav during scroll
-								var timer, refresh;
+								var timer, refresh, el, totalPanelHeight;
 								$document.on('scroll', function(){
 									refresh = function () {
 										if(scope.options.panelCounter > 1){
-
-											var el, totalPanelHeight;
-
 											if(activePanels.length > 0){
 												activePanels.forEach(function(entry) {
 													el = document.getElementById(entry);

@@ -19,7 +19,7 @@
 			{
 				name: 'Amtrak Guest Rewards',
 				class: 'amtrak',
-				description: 'During my time at a local agency here in Minneapolis, I had the opportunity to work heavily with Amtrak Guest Rewards&mdash;the loyalty side of <a href="http://www.amtrak.com/home">Amtrak</a>. I was one of a the lead developers in the Front-end space and helped redesign the site in the fall of 2013. Services provided: JavaScript, CSS, HTML, Design, Coldfusion, and SQL.',
+				description: 'During my time at a local agency here in Minneapolis, I had the opportunity to work heavily with Amtrak Guest Rewards&mdash;the loyalty side of <a href="http://www.amtrak.com/home">Amtrak</a>. I was one of a the lead developers in the Front-end space, and helped redesign the site in the fall of 2013. I helped provided: JavaScript, CSS, HTML, Coldfusion, and SQL.',
 				link: 'https://amtrakguestrewards.com',
 				images: {
 					slide1: {
@@ -47,7 +47,7 @@
 			{
 				name: 'Blue Claw Co.',
 				class: 'blueclawco',
-				description: 'While working with Blue Claw I was in charge of Design and Development for the entire brand. From logo creation to e-commerence implementation, I helped form a cohesive identity and push their web presence forward. Services provided: Design, CSS, HTML, JavaScript, Shopify, and Email development.',
+				description: 'While working with Blue Claw I was in charge of Design and Development for the entire brand. From logo creation to e-commerence implementation, I helped form a cohesive identity and push their web presence forward. I helped provided: Design, CSS, HTML, JavaScript, Shopify, and Email development.',
 				link: 'http://blueclawco.com',
 				images: {
 					slide1: {
@@ -75,7 +75,7 @@
 			{
 				name: 'Knot Clothing',
 				class: 'knot',
-				description: 'Two years ago Knot Clothing hired me to help give their site a much needed refresh. Many of the changes included design tweaks and back-end Shopify customizations that helped convert more business.',
+				description: 'Two years ago Knot Clothing hired me to help give their site a much needed refresh. Many of the changes included design tweaks and back-end Shopify customizations. I helped provide: Shopify templating, JavaScript, CSS, Design.',
 				link: 'http://www.knotclothing.com',
 				images: {
 					slide1: {
@@ -103,8 +103,8 @@
 			{
 				name: 'READ Charter School',
 				class: 'read',
-				description: 'READ Charter School recently approached me and asked for help developing their site.',
-				link: 'http://google.com',
+				description: 'READ Charter School needed a website that could help organize and promote their growing community. I pitched Wordpress as a solution and helped them get started from the ground up. I helped provide: Wordpress development and design consultation.',
+				link: '',
 				images: {
 					slide1: {
 						small: "read_mobile_1.jpg",
