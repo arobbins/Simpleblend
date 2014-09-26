@@ -410,9 +410,7 @@ background-color: #005485;background-image:url('data:image/svg+xml;base64,PHN2Zy
 	-webkit-justify-content: space-between;
 	box-pack: space-between;
 	justify-content: space-between;
-
 	flex-flow: column;
-	height: 100%;
 
 	.content {
 		padding-top: calc-em(140px, $font-size-base);
