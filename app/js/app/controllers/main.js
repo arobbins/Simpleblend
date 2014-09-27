@@ -47,7 +47,7 @@
 			{
 				name: 'Blue Claw Co.',
 				class: 'blueclawco',
-				description: 'While working with Blue Claw I was in charge of Design and Development for the entire brand. From logo creation to e-commerence implementation, I helped form a cohesive identity and push their web presence forward. I helped provided: Design, CSS, HTML, JavaScript, Shopify, and Email development.',
+				description: 'While working with Blue Claw I was in charge of Design and Development for the entire brand. From logo creation to e-commerence implementation, I helped form a cohesive identity and push their web presence forward. I helped provide: Design, CSS, HTML, JavaScript, Shopify, and Email development.',
 				link: 'http://blueclawco.com',
 				images: {
 					slide1: {
