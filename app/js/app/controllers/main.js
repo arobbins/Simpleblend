@@ -19,7 +19,7 @@
 			{
 				name: 'Amtrak Guest Rewards',
 				class: 'amtrak',
-				description: 'During my time at a local agency here in Minneapolis, I had the opportunity to work heavily with Amtrak Guest Rewards&mdash;the loyalty side of <a href="http://www.amtrak.com/home">Amtrak</a>. I was one of a the lead developers in the Front-end space, and helped redesign the site in the fall of 2013. I helped provided: JavaScript, CSS, HTML, Coldfusion, and SQL.',
+				description: 'During my time at a local agency here in Minneapolis, I had the opportunity to work heavily with Amtrak Guest Rewards&mdash;the loyalty side of <a href="http://www.amtrak.com/home">Amtrak</a>. I was one of a the lead developers in the Front-end space, and helped redesign the site in the fall of 2013. I helped provide: JavaScript, CSS, HTML, Coldfusion, and SQL.',
 				link: 'https://amtrakguestrewards.com',
 				images: {
 					slide1: {
