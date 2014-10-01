@@ -7,15 +7,20 @@
 
 					var androidClass = 'android-sub44';
 					var versionRaw = scope.getAndroidVersion();
-					var versionParsed = versionRaw.replace(/\./g,'');
-					versionParsed = parseInt(versionParsed);
 
-					if(versionParsed.toString().length == 3){
-						versionParsed = parseInt(versionParsed.toString().slice(0, -1));
-					}
+					if(versionRaw === false){
+						return;
+					} else {
+						var versionParsed = versionRaw.replace(/\./g,'');
+						versionParsed = parseInt(versionParsed);
 
-					if(versionParsed < 44){
-						element.addClass(androidClass);
+						if(versionParsed.toString().length == 3){
+							versionParsed = parseInt(versionParsed.toString().slice(0, -1));
+						}
+
+						if(versionParsed < 44){
+							element.addClass(androidClass);
+						}
 					}
 				}
 			};

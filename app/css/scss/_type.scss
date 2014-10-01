@@ -116,10 +116,7 @@ a:hover {
 	}
 }
 .page-about {
-	h1 {
-		color: $color-dark;
-	}
-	a:hover {
+	h1, a:hover {
 		color: $color-dark;
 	}
 }
