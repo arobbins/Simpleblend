@@ -444,6 +444,9 @@ background-color: #005485;background-image:url('data:image/svg+xml;base64,PHN2Zy
 		i {
 			padding-right: 5px;
 		}
+		a {
+			padding-right: 1em;
+		}
 		a:hover {
 			opacity: 0.6;
 		}
@@ -498,7 +501,7 @@ footer {
 		color: darken($color-white, 70%);
 	}
 	nav {
-		width: 6em;
+		width: 8em;
 		font-size: calc-em($font-size-m, $font-size-base);
 		ul {
 			display: -webkit-box;
