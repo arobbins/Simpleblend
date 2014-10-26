@@ -15,6 +15,15 @@
 			return ver ? ver[1] : false;
 		};
 
+		// Todo: remove from controller
+		if (Function('/*@cc_on return document.documentMode===10@*/')()){
+			document.documentElement.className+=' ie10';
+		} else if (Function('/*@cc_on return document.documentMode===9@*/')()){
+			document.documentElement.className+=' lt-ie10';
+		} else if (Function('/*@cc_on return document.documentMode===8@*/')()){
+			document.documentElement.className+=' lt-ie10';
+		}
+
 		$scope.clients = [
 			{
 				name: 'Amtrak Guest Rewards',
@@ -104,7 +113,7 @@
 				name: 'READ Charter School',
 				class: 'read',
 				description: 'READ Charter School needed a website that could help organize and promote their growing community. I pitched Wordpress as a solution and helped them get started from the ground up. I helped provide: Wordpress development and design consultation.',
-				link: '',
+				link: '#',
 				images: {
 					slide1: {
 						small: "read_mobile_1.jpg",

@@ -573,3 +573,183 @@
 		}
 	}
 }
+
+// Todo: move to IE stylesheet
+
+// IE10
+.ie10 {
+	footer ul li {
+		margin: 0 10px;
+	}
+	.page-services {
+		img {
+			min-height: 240px;
+		}
+	}
+	.accordion {
+		padding-top: 11em;
+	}
+	.panel h2 {
+		i {
+			margin-left: 1%;
+		}
+	}
+	.page-contact {
+		position: relative;
+
+		footer {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+		}
+	}
+	.page-work {
+		.slideable_content {
+			section {
+				display: block;
+
+				p {
+					float: left;
+				}
+				nav {
+					float: right;
+					display: block;
+				}
+			}
+		}
+	}
+}
+.lt-ie10 {
+
+	footer ul li {
+		margin: 0 10px;
+	}
+	.accordion {
+		padding-top: 11em;
+	}
+	.panel h2 {
+		i {
+			margin-left: 1%;
+		}
+	}
+	.logo {
+		width: 40%;
+		float: left;
+	}
+	.nav-list {
+		float: right;
+	}
+	.nav-list li {
+		float: left;
+	}
+	.page-landing {
+		position: relative;
+
+		div {
+			position: absolute;
+			top: 30%;
+			left: 23%;
+		}
+	}
+	.page-about {
+		article {
+			float: left;
+			width: 66%;
+		}
+		figure {
+			float: left;
+			width: 33%;
+		}
+	}
+	.page-contact {
+		position: relative;
+
+		footer {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+		}
+	}
+	.page-work {
+		.slideable_content {
+			section {
+				display: block;
+
+				p {
+					float: left;
+					margin-bottom: 2em;
+				}
+
+				nav {
+					float: right;
+					display: block;
+				}
+			}
+		}
+	}
+
+	.page-services {
+		img {
+			float: left;
+			max-width: 70%;
+			margin-right: 12%;
+			margin-bottom: 2%;
+		}
+		section {
+			div {
+				max-width: 900px;
+
+				dl {
+					float: left;
+					width: 200px;
+					max-width: 200px;
+					min-width: none;
+					margin: 0 1em 8em 0;
+				}
+
+				dd {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+
+	.page-contact {
+
+		.content {
+			p, aside {
+				width: 50%;
+				margin: 0 auto;
+			}
+			aside {
+				text-align: center;
+			}
+		}
+
+		footer {
+			nav {
+				display: block;
+				width: 100%;
+			}
+			ul {
+				margin: 0 auto;
+				width: 300px;
+			}
+			small {
+				display: none;
+			}
+			nav {
+				width: 37%;
+				margin: 0 auto;
+				padding: 0.7em 0 1em 0;
+			}
+			li {
+				display: block;
+				float: left;
+				margin-right: 10px;
+			}
+		}
+	}
+}

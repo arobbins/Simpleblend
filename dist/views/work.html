@@ -1,6 +1,6 @@
 <section class="page page-work" id="work">
 	<div class="content">
-	   <ul panel-toggle>
+	   <ul class="accordion" panel-toggle>
 	   	<li ng-repeat="client in clients" class="panel">
 	   		<h2 id="panel-{{$index}}" slide-toggle="#row_{{$index}}">{{ client.name }} <i class="fa fa-chevron-right"></i></h2>
 	   		<aside id="row_{{$index}}" class="slideable {{ client.class }}" easing="ease-in-out" duration="0.4s">
