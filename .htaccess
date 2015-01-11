@@ -116,10 +116,10 @@ ErrorDocument 404 /404.html
 # Stop screen flicker in IE on CSS rollovers (this only works in
 # combination with the `ExpiresByType` directives for images from below).
 
-# BrowserMatch "MSIE" brokenvary=1
-# BrowserMatch "Mozilla/4.[0-9]{2}" brokenvary=1
-# BrowserMatch "Opera" !brokenvary
-# SetEnvIf brokenvary 1 force-no-vary
+BrowserMatch "MSIE" brokenvary=1
+BrowserMatch "Mozilla/4.[0-9]{2}" brokenvary=1
+BrowserMatch "Opera" !brokenvary
+SetEnvIf brokenvary 1 force-no-vary
 
 
 # ##############################################################################
@@ -422,9 +422,9 @@ AddDefaultCharset utf-8
 # Prevent some of the mobile network providers from modifying the content of
 # your site: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.5.
 
-# <IfModule mod_headers.c>
-#    Header set Cache-Control "no-transform"
-# </IfModule>
+<IfModule mod_headers.c>
+	Header set Cache-Control "no-transform"
+</IfModule>
 
 # ------------------------------------------------------------------------------
 # | ETag removal                                                               |
@@ -548,6 +548,6 @@ FileETag None
 # Enable if you serve a lot of static content but, be aware of the
 # possible disadvantages!
 
-# <IfModule mod_headers.c>
-#    Header set Connection Keep-Alive
-# </IfModule>
+<IfModule mod_headers.c>
+	Header set Connection Keep-Alive
+</IfModule>
